@@ -11,14 +11,14 @@
 <style>
 
 :root{
-    --blue:#dcecf2;
-    --blue-light:#edf6f9;
-    --blue-soft:#f7fbfc;
-    --blue-dark:#91bdcc;
-    --blue-deep:#739eae;
-    --text:#526970;
-    --text-dark:#46616b;
-    --line:#bfd9e2;
+    --gold-bg:#f5f0eb;
+    --gold-light:#faf7f5;
+    --gold-soft:#fbf8f5;
+    --gold-dark:#c5b39a;
+    --gold-deep:#8c7853;
+    --text:#5a524a;
+    --text-dark:#433b34;
+    --line:#e3dad0;
     --white:#ffffff;
 }
 
@@ -33,7 +33,7 @@ html{
 }
 
 body{
-    background:var(--blue-soft);
+    background:var(--gold-soft);
     color:var(--text);
     font-family:'Montserrat',sans-serif;
     overflow-x:hidden;
@@ -75,13 +75,13 @@ h1,h2,h3{
 
 
 /* =====================================================
-   OPENING VIDEO
+   OPENING VIDEO & ENVELOPE
 ===================================================== */
 
 #opening{
     height:100vh;
     min-height:100vh;
-    background:#eef6f8;
+    background:#faf7f5;
     position:relative;
     display:flex;
     align-items:center;
@@ -95,37 +95,35 @@ h1,h2,h3{
     width:100%;
     height:100%;
     object-fit:cover;
-    background:#eef6f8;
-    display:block;
+    background:#faf7f5;
+    display:none; /* Initially hidden until tapped */
+    z-index:2;
 }
 
 .opening-overlay{
     position:absolute;
     inset:0;
-    z-index:5;
+    z-index:10;
     display:flex;
-    align-items:flex-end;
+    flex-direction:column;
+    align-items:center;
     justify-content:center;
-    padding-bottom:115px;
-    background:
-    linear-gradient(
-        to bottom,
-        transparent 60%,
-        rgba(120,160,175,.10)
-    );
+    background:url('env.jpg') center/cover no-repeat;
     cursor:pointer;
 }
 
 .tap-open{
     background:rgba(255,255,255,.90);
-    border:1px solid rgba(130,170,185,.40);
-    padding:11px 20px;
+    border:1px solid rgba(197,179,154,.40);
+    padding:12px 25px;
     border-radius:30px;
-    font-size:8px;
+    font-size:9px;
     letter-spacing:3px;
-    color:#607b84;
-    box-shadow:0 6px 20px rgba(80,110,120,.15);
+    color:#7c6a58;
+    box-shadow:0 6px 20px rgba(100,90,80,.20);
     transition:.3s ease;
+    margin-top:auto;
+    margin-bottom:80px;
 }
 
 .tap-open:hover{
@@ -137,13 +135,13 @@ h1,h2,h3{
     bottom:35px;
     left:50%;
     transform:translateX(-50%);
-    z-index:6;
+    z-index:15;
     display:none;
     flex-direction:column;
     align-items:center;
     gap:8px;
-    color:white;
-    text-shadow:0 1px 8px rgba(50,80,90,.5);
+    color:#7c6a58;
+    text-shadow:0 1px 8px rgba(255,255,255,.8);
     cursor:pointer;
 }
 
@@ -159,7 +157,7 @@ h1,h2,h3{
 .scroll-line{
     width:1px;
     height:30px;
-    background:rgba(255,255,255,.85);
+    background:rgba(124,106,88,.85);
 }
 
 
@@ -172,9 +170,9 @@ h1,h2,h3{
     background:
     linear-gradient(
         135deg,
-        #edf7fa 0%,
-        #dcecf2 48%,
-        #c9e1e9 100%
+        #faf7f5 0%,
+        #f5f0eb 48%,
+        #ebdcd0 100%
     );
     display:flex;
     justify-content:center;
@@ -190,14 +188,14 @@ h1,h2,h3{
 
 .count-title{
     font-size:65px;
-    color:#5d7e89;
+    color:#7c6a58;
     margin-bottom:10px;
 }
 
 .count-sub{
     font-size:9px;
     letter-spacing:3px;
-    color:#68838d;
+    color:#8c7853;
 }
 
 .count-grid{
@@ -210,13 +208,14 @@ h1,h2,h3{
 .count-number{
     font-family:'Cormorant Garamond',serif;
     font-size:50px;
-    color:#5b7d88;
+    color:#7c6a58;
 }
 
 .count-label{
     font-size:8px;
     letter-spacing:2px;
     margin-top:5px;
+    color:#8c7853;
 }
 
 
@@ -226,7 +225,7 @@ h1,h2,h3{
 
 #welcome{
     min-height:90vh;
-    background:#eaf5f8;
+    background:#faf7f5;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -240,7 +239,7 @@ h1,h2,h3{
 
 .welcome-inner h2{
     font-size:65px;
-    color:#638793;
+    color:#7c6a58;
     margin-bottom:25px;
 }
 
@@ -248,7 +247,7 @@ h1,h2,h3{
     font-family:'Cormorant Garamond',serif;
     font-size:21px;
     line-height:1.75;
-    color:#607982;
+    color:#5a524a;
 }
 
 .welcome-flower{
@@ -265,7 +264,7 @@ h1,h2,h3{
 ===================================================== */
 
 .slideshow-section{
-    background:#f8fbfc;
+    background:#f5f0eb;
     padding:55px 0;
     overflow:hidden;
     min-height:auto;
@@ -289,8 +288,8 @@ h1,h2,h3{
     flex-shrink:0;
     padding:6px;
     background:#fff;
-    border:1px solid #c3dce5;
-    box-shadow:0 8px 25px rgba(70,100,110,.10);
+    border:1px solid #e3dad0;
+    box-shadow:0 8px 25px rgba(100,90,80,.10);
 }
 
 .photo-frame img{
@@ -312,7 +311,7 @@ h1,h2,h3{
 
 #vase{
     min-height:65vh;
-    background:#e8f3f7;
+    background:#faf7f5;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -333,7 +332,7 @@ h1,h2,h3{
 ===================================================== */
 
 #venue{
-    background:var(--blue);
+    background:linear-gradient(135deg, #ebdcd0, #f5f0eb);
     padding:85px 20px;
 }
 
@@ -344,13 +343,14 @@ h1,h2,h3{
 
 .section-title h2{
     font-size:60px;
-    color:#5f7f8a;
+    color:#7c6a58;
 }
 
 .section-title p{
     font-size:9px;
     letter-spacing:3px;
     margin-top:8px;
+    color:#8c7853;
 }
 
 .venue-card{
@@ -359,7 +359,7 @@ h1,h2,h3{
     background:white;
     padding:30px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(80,110,120,.10);
+    box-shadow:0 15px 40px rgba(100,90,80,.10);
 }
 
 .venue-sticker{
@@ -367,8 +367,8 @@ h1,h2,h3{
     height:230px;
     background:
     linear-gradient(
-        rgba(220,235,242,.22),
-        rgba(220,235,242,.22)
+        rgba(245,240,235,.22),
+        rgba(245,240,235,.22)
     ),
     url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80") center/cover;
     margin-bottom:30px;
@@ -376,7 +376,7 @@ h1,h2,h3{
 
 .venue-card h3{
     font-size:40px;
-    color:#5b7b86;
+    color:#7c6a58;
 }
 
 .venue-card p{
@@ -391,8 +391,8 @@ h1,h2,h3{
     margin-top:25px;
     background:
     linear-gradient(
-        rgba(220,235,242,.35),
-        rgba(220,235,242,.35)
+        rgba(245,240,235,.35),
+        rgba(245,240,235,.35)
     ),
     url("https://images.unsplash.com/photo-1524666041070-9f8763d3f9b7?auto=format&fit=crop&w=1200&q=80") center/cover;
 }
@@ -401,8 +401,8 @@ h1,h2,h3{
     display:inline-block;
     margin-top:18px;
     padding:12px 22px;
-    border:1px solid #8fb5c3;
-    color:#506b75;
+    border:1px solid #c5b39a;
+    color:#7c6a58;
     text-decoration:none;
     font-size:9px;
     letter-spacing:2px;
@@ -417,9 +417,9 @@ h1,h2,h3{
     background:
     linear-gradient(
         135deg,
-        #f4fafc,
-        #dcecf2,
-        #eef7fa
+        #faf7f5,
+        #f5f0eb,
+        #ebdcd0
     );
     padding:90px 20px;
 }
@@ -433,13 +433,14 @@ h1,h2,h3{
     font-family:'Great Vibes',cursive;
     font-size:62px;
     font-weight:400;
-    color:#638793;
+    color:#7c6a58;
 }
 
 .program-title p{
     font-size:9px;
     letter-spacing:4px;
     margin-top:8px;
+    color:#8c7853;
 }
 
 .timeline{
@@ -459,8 +460,8 @@ h1,h2,h3{
     linear-gradient(
         to bottom,
         transparent,
-        #8fb9c7 10%,
-        #8fb9c7 90%,
+        #c5b39a 10%,
+        #c5b39a 90%,
         transparent
     );
 }
@@ -486,7 +487,7 @@ h1,h2,h3{
     width:9px;
     height:9px;
     border-radius:50%;
-    background:#91bdcc;
+    background:#c5b39a;
     top:35px;
     box-shadow:0 0 0 5px rgba(255,255,255,.6);
 }
@@ -502,12 +503,12 @@ h1,h2,h3{
 .event-time{
     font-size:10px;
     letter-spacing:3px;
-    color:#71929d;
+    color:#8c7853;
 }
 
 .event h3{
     font-size:30px;
-    color:#526f7a;
+    color:#7c6a58;
     margin-top:5px;
 }
 
@@ -531,8 +532,8 @@ h1,h2,h3{
     text-align:center;
     background:
     linear-gradient(
-        rgba(216,235,242,.48),
-        rgba(216,235,242,.48)
+        rgba(245,240,235,.78),
+        rgba(245,240,235,.78)
     ),
     url("https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1400&q=80") center/cover;
 }
@@ -542,18 +543,18 @@ h1,h2,h3{
     max-width:650px;
     background:white;
     padding:55px 35px;
-    box-shadow:0 15px 45px rgba(60,90,100,.12);
+    box-shadow:0 15px 45px rgba(100,90,80,.12);
 }
 
 .dress-icon{
     font-size:45px;
     margin-bottom:20px;
-    color:#8bb4c1;
+    color:#c5b39a;
 }
 
 .dress-inner h2{
     font-size:60px;
-    color:#607f8a;
+    color:#7c6a58;
 }
 
 .dress-inner p{
@@ -561,7 +562,7 @@ h1,h2,h3{
     font-family:'Cormorant Garamond',serif;
     font-size:21px;
     line-height:1.8;
-    color:#607982;
+    color:#5a524a;
 }
 
 
@@ -571,7 +572,7 @@ h1,h2,h3{
 
 #bow{
     min-height:55vh;
-    background:#f8fbfc;
+    background:#faf7f5;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -590,7 +591,7 @@ h1,h2,h3{
 ===================================================== */
 
 #prewedding{
-    background:#dcecf2;
+    background:#f5f0eb;
     padding:85px 20px;
 }
 
@@ -602,14 +603,14 @@ h1,h2,h3{
 .pre-title h2{
     font-size:17px;
     letter-spacing:4px;
-    color:#607f8a;
+    color:#7c6a58;
 }
 
 .pre-title .script{
     font-size:58px;
     display:block;
     margin-top:5px;
-    color:#5d7d88;
+    color:#7c6a58;
 }
 
 .pre-title p{
@@ -631,7 +632,7 @@ h1,h2,h3{
     background:white;
     padding:22px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(70,100,110,.10);
+    box-shadow:0 10px 30px rgba(100,90,80,.10);
 }
 
 .sticker{
@@ -643,7 +644,7 @@ h1,h2,h3{
 
 .pre-card h3{
     font-size:33px;
-    color:#5d7c87;
+    color:#7c6a58;
 }
 
 .pre-card p{
@@ -658,7 +659,7 @@ h1,h2,h3{
 ===================================================== */
 
 #locations{
-    background:#f5fafc;
+    background:#faf7f5;
     padding:85px 20px;
 }
 
@@ -674,14 +675,14 @@ h1,h2,h3{
     background:white;
     padding:35px 25px;
     text-align:center;
-    border:1px solid #d9e7ec;
-    box-shadow:0 10px 30px rgba(70,100,110,.07);
+    border:1px solid #e3dad0;
+    box-shadow:0 10px 30px rgba(100,90,80,.07);
 }
 
 .location-card h3{
     font-size:31px;
     margin-bottom:12px;
-    color:#5d7d88;
+    color:#7c6a58;
 }
 
 .location-card p{
@@ -695,7 +696,7 @@ h1,h2,h3{
 ===================================================== */
 
 #accommodation{
-    background:#eaf5f8;
+    background:#f5f0eb;
     padding:90px 20px;
     text-align:center;
 }
@@ -707,7 +708,7 @@ h1,h2,h3{
 
 #accommodation h2{
     font-size:60px;
-    color:#607f8a;
+    color:#7c6a58;
 }
 
 #accommodation > p{
@@ -724,12 +725,12 @@ h1,h2,h3{
     background:white;
     padding:45px 35px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(70,100,110,.10);
+    box-shadow:0 15px 40px rgba(100,90,80,.10);
 }
 
 .hotel-box h3{
     font-size:35px;
-    color:#5d7c87;
+    color:#7c6a58;
     margin-bottom:25px;
 }
 
@@ -739,7 +740,7 @@ h1,h2,h3{
 }
 
 .hotel-detail{
-    border-bottom:1px solid #e0ebef;
+    border-bottom:1px solid #e3dad0;
     padding-bottom:15px;
 }
 
@@ -752,7 +753,7 @@ h1,h2,h3{
     font-size:8px;
     letter-spacing:3px;
     margin-bottom:7px;
-    color:#8aaab5;
+    color:#8c7853;
 }
 
 .hotel-detail strong{
@@ -767,7 +768,7 @@ h1,h2,h3{
 ===================================================== */
 
 #gallery2{
-    background:#f8fbfc;
+    background:#faf7f5;
     padding:55px 0;
     overflow:hidden;
 }
@@ -790,8 +791,8 @@ h1,h2,h3{
     flex-shrink:0;
     padding:6px;
     background:white;
-    border:1px solid #c3dce5;
-    box-shadow:0 8px 25px rgba(70,100,110,.10);
+    border:1px solid #e3dad0;
+    box-shadow:0 8px 25px rgba(100,90,80,.10);
 }
 
 .gallery-photo img{
@@ -808,14 +809,14 @@ h1,h2,h3{
 
 
 /* =====================================================
-   GIFTS (UPDATED FROM GOLD/BROWN TO LIGHT BLUE)
+   GIFTS
 ===================================================== */
 
 #gifts{
     background:
     linear-gradient(
-        rgba(220,237,243,.85),
-        rgba(220,237,243,.85)
+        rgba(235,220,208,.85),
+        rgba(235,220,208,.85)
     ),
     url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80") center/cover;
     padding:95px 20px;
@@ -827,12 +828,12 @@ h1,h2,h3{
     text-align:center;
     background:white;
     padding:50px 35px;
-    box-shadow:0 15px 45px rgba(60,90,100,.13);
+    box-shadow:0 15px 45px rgba(100,90,80,.13);
 }
 
 .gifts-inner h2{
     font-size:62px;
-    color:#607f8a;
+    color:#7c6a58;
 }
 
 .gifts-message{
@@ -850,16 +851,16 @@ h1,h2,h3{
 }
 
 .bank{
-    background:#f7fbfc;
+    background:#faf7f5;
     padding:28px;
     text-align:left;
-    border:1px solid #dce9ed;
+    border:1px solid #e3dad0;
 }
 
 .bank h3{
     font-size:22px;
     margin-bottom:12px;
-    color:#5e7c87;
+    color:#7c6a58;
 }
 
 .bank p{
@@ -874,7 +875,7 @@ h1,h2,h3{
 
 #swan{
     min-height:60vh;
-    background:#f7fafb;
+    background:#f5f0eb;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -889,16 +890,16 @@ h1,h2,h3{
 
 
 /* =====================================================
-   RSVP (UPDATED FROM GOLD/BROWN TO LIGHT BLUE GRADIENT)
+   RSVP
 ===================================================== */
 
 #rsvp{
     background:
     linear-gradient(
         135deg,
-        #7daab9,
-        #a7cbd6,
-        #739eae
+        #c5b39a,
+        #dcd1c0,
+        #8c7853
     );
     padding:95px 20px;
 }
@@ -925,7 +926,7 @@ h1,h2,h3{
     background:white;
     padding:38px;
     text-align:left;
-    box-shadow:0 20px 50px rgba(50,80,90,.16);
+    box-shadow:0 20px 50px rgba(100,90,80,.16);
 }
 
 .rsvp-form label{
@@ -933,7 +934,7 @@ h1,h2,h3{
     font-size:10px;
     letter-spacing:1px;
     margin-bottom:8px;
-    color:#61757d;
+    color:#7c6a58;
 }
 
 .rsvp-form input,
@@ -941,7 +942,7 @@ h1,h2,h3{
 .rsvp-form textarea{
     width:100%;
     padding:13px;
-    border:1px solid #cbdde4;
+    border:1px solid #e3dad0;
     margin-bottom:22px;
     font-family:'Montserrat',sans-serif;
     outline:none;
@@ -971,7 +972,7 @@ h1,h2,h3{
     width:100%;
     padding:15px;
     border:none;
-    background:#8db8c5;
+    background:#c5b39a;
     color:white;
     letter-spacing:2px;
     cursor:pointer;
@@ -984,7 +985,7 @@ h1,h2,h3{
 
 #ring{
     min-height:60vh;
-    background:#f8fbfc;
+    background:#faf7f5;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1006,8 +1007,8 @@ h1,h2,h3{
     min-height:100vh;
     background:
     linear-gradient(
-        rgba(220,237,243,.78),
-        rgba(220,237,243,.78)
+        rgba(245,240,235,.78),
+        rgba(245,240,235,.78)
     ),
     url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=80") center/cover;
     display:flex;
@@ -1019,7 +1020,7 @@ h1,h2,h3{
 
 .final-inner h2{
     font-size:75px;
-    color:#587985;
+    color:#7c6a58;
 }
 
 .final-date{
@@ -1048,10 +1049,10 @@ h1,h2,h3{
     height:45px;
     border:none;
     border-radius:50%;
-    background:#91bdcc;
+    background:#c5b39a;
     color:white;
     cursor:pointer;
-    box-shadow:0 5px 15px rgba(70,100,110,.2);
+    box-shadow:0 5px 15px rgba(100,90,80,.2);
 }
 
 
@@ -1098,14 +1099,16 @@ h1,h2,h3{
 
 <body class="locked">
 
-<!-- 1. OPENING VIDEO -->
+<!-- 1. OPENING VIDEO & ENVELOPE -->
 <section id="opening">
-    <video id="openingVideo" class="opening-video" playsinline preload="auto">
-        <source src="blue.mp4" type="video/mp4">
-    </video>
     <div id="tapOverlay" class="opening-overlay">
         <div class="tap-open">TAP TO OPEN</div>
     </div>
+    
+    <video id="openingVideo" class="opening-video" playsinline preload="auto">
+        <source src="blue.mp4" type="video/mp4">
+    </video>
+
     <div id="scrollAfter" class="scroll-after">
         <div class="scroll-text">SCROLL</div>
         <div class="scroll-line"></div>
@@ -1158,7 +1161,7 @@ h1,h2,h3{
             <div class="photo-frame"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=80"></div>
             <div class="photo-frame"><img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80"></div>
             <div class="photo-frame"><img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80"></div>
-            <!-- Duplicate for loop -->
+            <!-- Duplicate for infinite loop -->
             <div class="photo-frame"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80"></div>
             <div class="photo-frame"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80"></div>
             <div class="photo-frame"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80"></div>
@@ -1202,7 +1205,7 @@ h1,h2,h3{
         <div class="event"><div class="event-time">14:30</div><h3>Ceremony</h3></div>
         <div class="event"><div class="event-time">16:00</div><h3>Cocktails</h3></div>
         <div class="event"><div class="event-time">18:00</div><h3>Dinner</h3></div>
-        <div class="event"><div class="event-time">20:00</div><h3>CUTTING</h3></div>
+        <div class="event"><div class="event-time">20:00</div><h3>CUTTING THE CAKE</h3></div>
         <div class="event"><div class="event-time">00:00</div><h3>FINISH</h3></div>
     </div>
     <div class="champagne">🥂</div>
@@ -1232,13 +1235,13 @@ h1,h2,h3{
     <div class="pre-events">
         <div class="pre-card">
             <div class="sticker" style="background-image:url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=80');"></div>
-            <h3>Cocktail Party</h3>
+            <h3>Welcome Drinks</h3>
             <p>Friday, September 11th, 2026<br>8:00 PM<br>Bodega García Hidalgo, Ronda</p>
         </div>
         <div class="pre-card">
             <div class="sticker" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');"></div>
-            <h3>Wedding</h3>
-            <p>Saturday, September 12th, 2026<br>11:00 AM<br>Finca El Olivar, Ronda</p>
+            <h3>Farewell Brunch</h3>
+            <p>Sunday, September 13th, 2026<br>12:00 PM<br>Parador de Ronda (terrace)</p>
         </div>
     </div>
 </section>
@@ -1246,8 +1249,7 @@ h1,h2,h3{
 <!-- 11. LOCATIONS -->
 <section id="locations">
     <div class="section-title">
-        <h2>Location</h2>
-        <p>FOR BOTH EVENTS</p>
+        <h2>Location & Transportation</h2>
     </div>
     <div class="location-grid">
         <div class="location-card">
@@ -1268,12 +1270,30 @@ h1,h2,h3{
     <div class="accommodation-icon">✈</div>
     <h2>Accommodation</h2>
     <p>Finca El Olivar does not offer lodging. Here are some recommended options nearby.</p>
-    <div class="hotel-box">
-        <h3>Recommended Accommodation</h3>
+    
+    <div class="hotel-box" style="margin-bottom: 25px;">
+        <h3>PARADOR DE RONDA</h3>
         <div class="hotel-info">
-            <div class="hotel-detail"><span>VISIT WEBSITE</span><strong>www.hotelwebsite.com</strong></div>
-            <div class="hotel-detail"><span>PHONE</span><strong>+34 000 000 000</strong></div>
-            <div class="hotel-detail"><span>EMAIL</span><strong>hello@hotel.com</strong></div>
+            <div class="hotel-detail"><span>LOCATION</span><strong>Ronda (2 km de la finca)</strong></div>
+            <div class="hotel-detail"><span>CONTACT</span><strong>+34 952 877 500 | ronda@parador.es</strong></div>
+            <div class="hotel-detail"><span>WEB</span><strong>Visit Website</strong></div>
+        </div>
+    </div>
+
+    <div class="hotel-box" style="margin-bottom: 25px;">
+        <h3>HOTEL CATALONIA RONDA</h3>
+        <div class="hotel-info">
+            <div class="hotel-detail"><span>LOCATION</span><strong>Ronda (1.5 km)</strong></div>
+            <div class="hotel-detail"><span>CONTACT</span><strong>+34 952 872 315 | ronda@hoteles-catalonia.es</strong></div>
+            <div class="hotel-detail"><span>PROMO CODE</span><strong>BODA2026</strong></div>
+        </div>
+    </div>
+
+    <div class="hotel-box">
+        <h3>HOTEL MONTELIRIO</h3>
+        <div class="hotel-info">
+            <div class="hotel-detail"><span>LOCATION</span><strong>Ronda (Boutique | Sobre el Tajo)</strong></div>
+            <div class="hotel-detail"><span>CONTACT</span><strong>+34 952 873 855 | reservas@hotelmontelirio.com</strong></div>
         </div>
     </div>
 </section>
@@ -1286,7 +1306,7 @@ h1,h2,h3{
             <div class="gallery-photo"><img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80"></div>
             <div class="gallery-photo"><img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=700&q=80"></div>
             <div class="gallery-photo"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80"></div>
-            <!-- Duplicate for loop -->
+            <!-- Duplicate for infinite loop -->
             <div class="gallery-photo"><img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80"></div>
             <div class="gallery-photo"><img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80"></div>
             <div class="gallery-photo"><img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=700&q=80"></div>
@@ -1300,18 +1320,16 @@ h1,h2,h3{
     <div class="gifts-inner">
         <h2>Gifts</h2>
         <div class="gifts-message">
-            Your presence is the greatest gift of all.
-            If you would like to give us something more,
-            we have included our bank details below.
+            Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:
         </div>
         <div class="bank-grid">
             <div class="bank">
                 <h3>CAIXABANK - ANDREA MORALES</h3>
-                <p>IBAN: ES00 0000 0000 0000 0000 0000<br>BIC: CAIXESBBXXX</p>
+                <p>IBAN: ES00 0000 0000 0000 0000 0000<br>BIC/SWIFT: XXXXXXXXXX</p>
             </div>
             <div class="bank">
                 <h3>BANCO SANTANDER - PEDRO FERNÁNDEZ</h3>
-                <p>IBAN: ES00 0000 0000 0000 0000 0000<br>BIC: BSCHESMMXXX</p>
+                <p>IBAN: ES00 0000 0000 0000 0000 0000<br>BIC/SWIFT: XXXXXXXXXX</p>
             </div>
         </div>
     </div>
@@ -1333,24 +1351,24 @@ h1,h2,h3{
                 <label><input type="radio" name="attending" value="Yes" required> Yes, I'll be there</label>
                 <label><input type="radio" name="attending" value="No"> Unfortunately, I can't attend</label>
             </div>
-            <label>Number of guests</label>
+            <label>How many guests?</label>
             <select required>
                 <option value="">Select</option>
                 <option>1</option><option>2</option><option>3</option><option>4</option>
             </select>
-            <label>Main contact name</label>
-            <input type="text" placeholder="Your name" required>
-            <label>Email</label>
-            <input type="email" placeholder="Your email" required>
+            <label>Person 1 (Main contact)</label>
+            <input type="text" placeholder="Full name" required>
+            <label>Email address</label>
+            <input type="email" placeholder="Email address" required>
             <label>Dietary requirements</label>
-            <input type="text" placeholder="Any dietary requirements?">
-            <label>Children</label>
+            <input type="text" placeholder="e.g. vegetarian, allergies, etc.">
+            <label>Will any children be attending?</label>
             <div class="radio-group">
                 <label><input type="radio" name="children" value="Yes"> Yes</label>
                 <label><input type="radio" name="children" value="No"> No</label>
             </div>
-            <label>Message</label>
-            <textarea rows="4" placeholder="Leave us a message..."></textarea>
+            <label>Message for the couple</label>
+            <textarea rows="4" placeholder="Is there anything you'd like to tell us?"></textarea>
             <button type="submit">SEND RSVP</button>
         </form>
     </div>
@@ -1370,7 +1388,7 @@ h1,h2,h3{
     </div>
 </section>
 
-<!-- MUSIC BUTTON -->
+<!-- MUSIC -->
 <button class="music-btn" id="musicButton" type="button">♫</button>
 <audio id="music" loop><source src="inwhite.mp3" type="audio/mpeg"></audio>
 
@@ -1379,16 +1397,27 @@ const openingVideo = document.getElementById("openingVideo");
 const tapOverlay = document.getElementById("tapOverlay");
 const scrollAfter = document.getElementById("scrollAfter");
 const countdown = document.getElementById("countdown");
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
 
 document.body.classList.add("locked");
 
 tapOverlay.addEventListener("click", async function(){
     tapOverlay.style.display = "none";
+    openingVideo.style.display = "block";
+
     try{
         await openingVideo.play();
-    }catch(error){
+        // Also auto-play background music on tap
+        music.play().then(() => {
+            musicPlaying = true;
+            musicButton.textContent = "❚❚";
+        }).catch(err => console.log("Audio autoplay prevented", err));
+    }
+    catch(error){
         console.log("Video could not play:", error);
         tapOverlay.style.display = "flex";
+        openingVideo.style.display = "none";
     }
 });
 
@@ -1404,6 +1433,7 @@ scrollAfter.addEventListener("click", function(){
 
 openingVideo.addEventListener("error", function(){
     tapOverlay.style.display = "flex";
+    openingVideo.style.display = "none";
     tapOverlay.querySelector(".tap-open").textContent = "TAP TO OPEN";
 });
 
@@ -1438,8 +1468,6 @@ function submitRSVP(event){
     event.target.reset();
 }
 
-const music = document.getElementById("music");
-const musicButton = document.getElementById("musicButton");
 let musicPlaying = false;
 
 musicButton.addEventListener("click", function(){
