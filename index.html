@@ -64,7 +64,7 @@ h1,h2,h3{
 #opening{
     height:100vh;
     min-height:100vh;
-    background:#eef6f8;
+    background:#eef6f8 url('env.jpg') center/cover no-repeat;
     position:relative;
     display:flex;
     align-items:center;
@@ -77,8 +77,9 @@ h1,h2,h3{
     width:100%;
     height:100%;
     object-fit:cover;
-    background:#eef6f8;
+    background:#ffffff;
     display:block;
+    z-index:2;
 }
 .opening-overlay{
     position:absolute;
@@ -121,9 +122,9 @@ h1,h2,h3{
     flex-direction:column;
     align-items:center;
     gap:8px;
-    color:white;
+    color:#526970;
     text-shadow:
-    0 1px 8px rgba(50,80,90,.5);
+    0 1px 8px rgba(255,255,255,.8);
     cursor:pointer;
 }
 .scroll-after.show{
@@ -136,7 +137,7 @@ h1,h2,h3{
 .scroll-line{
     width:1px;
     height:30px;
-    background:rgba(255,255,255,.85);
+    background:rgba(82,105,112,.85);
 }
 /* =====================================================
    COUNTDOWN
@@ -851,22 +852,6 @@ h1,h2,h3{
     cursor:pointer;
 }
 /* =====================================================
-   RING
-===================================================== */
-#ring{
-    min-height:60vh;
-    background:#f8fbfc;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:50px 20px;
-}
-.ring-image{
-    width:min(70vw,350px);
-    max-height:420px;
-    object-fit:contain;
-}
-/* =====================================================
    FINAL
 ===================================================== */
 #final{
@@ -1002,7 +987,8 @@ h1,h2,h3{
         id="openingVideo"
         class="opening-video"
         playsinline
-        preload="auto">
+        preload="auto"
+        poster="env.jpg">
         <source
             src="blue.mp4"
             type="video/mp4">
@@ -1242,7 +1228,7 @@ h1,h2,h3{
         </div>
     </div>
     <div class="champagne">
-        🥂
+        💙
     </div>
 </section>
 <!-- =====================================================
@@ -1605,16 +1591,7 @@ h1,h2,h3{
     </div>
 </section>
 <!-- =====================================================
-     17. RING
-===================================================== -->
-<section id="ring">
-    <img
-        src="ring.PNG"
-        class="ring-image"
-        alt="Wedding Ring">
-</section>
-<!-- =====================================================
-     18. FINAL
+     17. FINAL
 ===================================================== -->
 <section id="final">
     <div class="final-inner">
@@ -1657,14 +1634,9 @@ const scrollAfter =
 document.getElementById("scrollAfter");
 const countdown =
 document.getElementById("countdown");
-/*
-   Keep page locked until
-   the opening video finishes.
-*/
+
 document.body.classList.add("locked");
-/*
-   TAP TO OPEN
-*/
+
 tapOverlay.addEventListener(
     "click",
     async function(){
@@ -1681,12 +1653,7 @@ tapOverlay.addEventListener(
         }
     }
 );
-/*
-   When video finishes:
-   keep final frame visible,
-   show SCROLL,
-   unlock website.
-*/
+
 openingVideo.addEventListener(
     "ended",
     function(){
@@ -1699,9 +1666,7 @@ openingVideo.addEventListener(
         );
     }
 );
-/*
-   SCROLL button
-*/
+
 scrollAfter.addEventListener(
     "click",
     function(){
@@ -1710,12 +1675,7 @@ scrollAfter.addEventListener(
         });
     }
 );
-/*
-   If video cannot load,
-   show a useful message instead
-   of leaving the whole website
-   permanently locked.
-*/
+
 openingVideo.addEventListener(
     "error",
     function(){
