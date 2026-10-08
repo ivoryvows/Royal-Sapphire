@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>Sophia & Alex — Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+<style>
+/* =====================================================
+   GENERAL
+===================================================== */
+:root{
+    --blue:#dcecf2;
+    --blue-light:#edf6f9;
+    --blue-soft:#f7fbfc;
+    --blue-mid:#c8e1e9;
+    --blue-dark:#91b9c7;
+    --text:#526970;
+    --text-dark:#425c65;
+    --line:#bfd9e2;
+    --white:#ffffff;
+}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    background:var(--blue-soft);
+    color:var(--text);
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+body.locked{
+    overflow:hidden;
+}
+section{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+h1,h2,h3{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+}
+.script{
+    font-family:'Great Vibes',cursive;
+}
+/* =====================================================
+   OPENING VIDEO
+===================================================== */
+#opening{
+    height:100vh;
+    min-height:100vh;
+    background:#e9f2f5;
+    position:relative;
+}
+#openingVideo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.opening-overlay{
+    position:absolute;
+    inset:0;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+.tap-open{
+    color:#ffffff;
+    background:rgba(75,105,115,.45);
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:30px;
+    padding:9px 18px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px;
+    letter-spacing:3px;
+    backdrop-filter:blur(5px);
+}
+.scroll-hint{
+    position:absolute;
+    z-index:20;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    color:#ffffff;
+    font-size:9px;
+    letter-spacing:4px;
+    opacity:0;
+    transition:opacity .5s;
+    text-shadow:0 2px 7px rgba(0,0,0,.4);
+}
+.scroll-hint.show{
+    opacity:1;
+}
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+#countdown{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    background:
+    linear-gradient(
+        145deg,
+        #eef8fa,
+        #cfe6ee,
+        #f7fbfc
+    );
+}
+.count-title{
+    font-family:'Great Vibes',cursive;
+    font-size:72px;
+    color:#536d76;
+}
+.count-sub{
+    margin-top:4px;
+    font-size:9px;
+    letter-spacing:4px;
+}
+.count-grid{
+    display:flex;
+    justify-content:center;
+    gap:55px;
+    margin-top:50px;
+}
+.count-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:52px;
+    color:#57737c;
+}
+.count-label{
+    font-size:8px;
+    letter-spacing:2px;
+    margin-top:4px;
+}
+/* =====================================================
+   WELCOME
+===================================================== */
+#welcome{
+    min-height:90vh;
+    background:#e9f5f8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 25px;
+}
+.welcome-inner{
+    max-width:650px;
+}
+.welcome-inner h2{
+    font-size:70px;
+    color:#617a83;
+    margin-bottom:25px;
+}
+.welcome-inner p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    line-height:1.8;
+}
+.angel{
+    margin-top:35px;
+    color:#8eb8c5;
+    font-size:25px;
+}
+/* =====================================================
+   SLIDESHOW 1
+===================================================== */
+.slideshow-section{
+    background:#f8fbfc;
+    padding:65px 0;
+}
+.photo-slider{
+    width:100%;
+    overflow:hidden;
+}
+.photo-track{
+    display:flex;
+    width:max-content;
+    gap:15px;
+    animation:photosLeft 34s linear infinite;
+}
+.photo-frame{
+    width:205px;
+    height:270px;
+    flex-shrink:0;
+    padding:7px;
+    background:#fff;
+    border:1px solid #c5dce4;
+    box-shadow:0 7px 22px rgba(70,100,110,.10);
+}
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+@keyframes photosLeft{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+/* =====================================================
+   VASE
+===================================================== */
+#vase{
+    min-height:70vh;
+    background:#e8f3f7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:55px 20px;
+}
+.vase-image{
+    width:min(360px,78vw);
+    max-height:480px;
+    object-fit:contain;
+}
+/* =====================================================
+   VENUE
+===================================================== */
+#venue{
+    background:var(--blue);
+    padding:85px 20px;
+}
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+.section-title h2{
+    font-size:62px;
+    color:#536c75;
+}
+.section-title p{
+    margin-top:7px;
+    font-size:9px;
+    letter-spacing:3px;
+}
+.venue-card{
+    max-width:800px;
+    margin:auto;
+    padding:30px;
+    background:#ffffff;
+    text-align:center;
+    box-shadow:0 12px 35px rgba(70,100,110,.08);
+}
+.venue-sticker{
+    height:230px;
+    width:100%;
+    background:
+    linear-gradient(
+        rgba(205,230,238,.25),
+        rgba(205,230,238,.25)
+    ),
+    url(
+    "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
+    )
+    center/cover;
+    margin-bottom:30px;
+}
+.venue-card h3{
+    font-size:40px;
+}
+.venue-card p{
+    font-size:11px;
+    line-height:1.7;
+    margin:12px 0;
+}
+.map{
+    width:100%;
+    height:220px;
+    margin-top:25px;
+    background:
+    linear-gradient(
+        rgba(210,232,239,.38),
+        rgba(210,232,239,.38)
+    ),
+    url(
+    "https://images.unsplash.com/photo-1524666041070-9f8763d3f9b7?auto=format&fit=crop&w=1200&q=80"
+    )
+    center/cover;
+}
+.map-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 22px;
+    border:1px solid #8fb5c3;
+    color:#506b75;
+    text-decoration:none;
+    font-size:9px;
+    letter-spacing:2px;
+}
+/* =====================================================
+   PROGRAM
+===================================================== */
+#program{
+    padding:90px 20px;
+    background:
+    linear-gradient(
+        145deg,
+        #f3fafc,
+        #cfe5ed,
+        #edf7f9
+    );
+}
+.program-heading{
+    text-align:center;
+    margin-bottom:65px;
+}
+.program-heading h2{
+    font-family:'Great Vibes',cursive;
+    font-size:64px;
+    color:#536d76;
+}
+.program-heading p{
+    margin-top:5px;
+    font-size:9px;
+    letter-spacing:4px;
+}
+.timeline{
+    max-width:760px;
+    margin:auto;
+    position:relative;
+}
+.timeline:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:1px;
+    background:#9fc3cf;
+}
+.event{
+    width:50%;
+    min-height:105px;
+    padding:20px 45px;
+    position:relative;
+}
+.event:nth-child(odd){
+    left:0;
+    text-align:right;
+}
+.event:nth-child(even){
+    left:50%;
+    text-align:left;
+}
+.event:after{
+    content:"";
+    position:absolute;
+    top:36px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#ffffff;
+    border:2px solid #91b9c7;
+}
+.event:nth-child(odd):after{
+    right:-6px;
+}
+.event:nth-child(even):after{
+    left:-6px;
+}
+.event-time{
+    font-size:9px;
+    letter-spacing:3px;
+    color:#75939d;
+}
+.event h3{
+    font-size:30px;
+    margin-top:5px;
+}
+.champagne{
+    text-align:center;
+    font-size:60px;
+    margin-top:40px;
+    color:#8eb7c5;
+}
+/* =====================================================
+   DRESS CODE
+===================================================== */
+#dress{
+    min-height:80vh;
+    padding:65px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    linear-gradient(
+        rgba(202,228,237,.68),
+        rgba(202,228,237,.68)
+    ),
+    url(
+    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80"
+    )
+    center/cover;
+}
+.dress-box{
+    width:min(650px,92%);
+    background:#ffffff;
+    padding:55px 35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(60,90,100,.12);
+}
+.dress-box h2{
+    font-family:'Great Vibes',cursive;
+    font-size:68px;
+    color:#526d76;
+}
+.dress-box p{
+    margin-top:25px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    line-height:1.8;
+}
+/* =====================================================
+   BOW
+===================================================== */
+#bow{
+    min-height:55vh;
+    background:#f8fbfc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px 20px;
+}
+.bow-image{
+    width:min(330px,75vw);
+    max-height:400px;
+    object-fit:contain;
+}
+/* =====================================================
+   PRE-WEDDING
+===================================================== */
+#prewedding{
+    background:var(--blue);
+    padding:85px 20px;
+}
+.pre-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+.pre-title h2{
+    font-size:17px;
+    letter-spacing:4px;
+}
+.pre-title .script{
+    display:block;
+    margin-top:5px;
+    font-size:60px;
+    color:#526c75;
+}
+.pre-title p{
+    max-width:600px;
+    margin:15px auto;
+    font-size:11px;
+    line-height:1.8;
+}
+.pre-events{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+.pre-card{
+    background:#ffffff;
+    padding:20px;
+    text-align:center;
+}
+.sticker{
+    height:210px;
+    margin-bottom:20px;
+    background-size:cover;
+    background-position:center;
+}
+.pre-card h3{
+    font-size:34px;
+}
+.pre-card p{
+    font-size:10px;
+    line-height:1.8;
+    margin-top:12px;
+}
+/* =====================================================
+   LOCATION
+===================================================== */
+#locations{
+    background:#f5fafc;
+    padding:85px 20px;
+}
+.location-grid{
+    max-width:850px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+.location-card{
+    background:#ffffff;
+    padding:35px 25px;
+    text-align:center;
+    border:1px solid #d9e7ec;
+}
+.location-card h3{
+    font-size:31px;
+    margin-bottom:12px;
+}
+.location-card p{
+    font-size:10px;
+    line-height:1.8;
+}
+/* =====================================================
+   ACCOMMODATION
+===================================================== */
+#accommodation{
+    background:#edf6f9;
+    padding:85px 20px;
+    text-align:center;
+}
+.accommodation-icon{
+    font-size:35px;
+    color:#7faebb;
+    margin-bottom:15px;
+}
+#accommodation h2{
+    font-family:'Great Vibes',cursive;
+    font-size:68px;
+    color:#526b74;
+}
+#accommodation > p{
+    max-width:650px;
+    margin:20px auto 40px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.7;
+}
+.accommodation-box{
+    max-width:760px;
+    margin:auto;
+    padding:35px;
+    background:#ffffff;
+}
+.hotel-line{
+    padding:20px 10px;
+    border-bottom:1px solid #dbe9ed;
+}
+.hotel-line:last-child{
+    border-bottom:none;
+}
+.hotel-line h3{
+    font-size:27px;
+}
+.hotel-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+}
+.hotel-links a{
+    text-decoration:none;
+    border:1px solid #a8cbd6;
+    padding:9px 13px;
+    font-size:8px;
+    letter-spacing:1.5px;
+    color:#58747e;
+}
+/* =====================================================
+   SLIDESHOW 2
+===================================================== */
+#gallery2{
+    background:#f8fbfc;
+    padding:65px 0;
+}
+.gallery-slider{
+    width:100%;
+    overflow:hidden;
+}
+.gallery-track{
+    display:flex;
+    width:max-content;
+    gap:15px;
+    animation:galleryLeft 30s linear infinite;
+}
+.gallery-photo{
+    width:205px;
+    height:270px;
+    flex-shrink:0;
+    padding:7px;
+    background:white;
+    border:1px solid #c5dce4;
+}
+.gallery-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+@keyframes galleryLeft{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+/* =====================================================
+   GIFTS
+===================================================== */
+#gifts{
+    padding:90px 20px;
+    background:
+    linear-gradient(
+        rgba(202,229,237,.78),
+        rgba(202,229,237,.78)
+    ),
+    url(
+    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"
+    )
+    center/cover;
+}
+.gifts-inner{
+    max-width:850px;
+    margin:auto;
+    background:#ffffff;
+    padding:50px 35px;
+    text-align:center;
+}
+.gifts-inner h2{
+    font-family:'Great Vibes',cursive;
+    font-size:68px;
+}
+.gifts-message{
+    max-width:650px;
+    margin:20px auto 45px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.7;
+}
+.bank-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.bank{
+    background:#f5fafc;
+    padding:30px;
+    text-align:left;
+    border:1px solid #d8e8ed;
+}
+.bank h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+.bank p{
+    font-size:10px;
+    line-height:2;
+}
+/* =====================================================
+   SWAN
+===================================================== */
+#swan{
+    min-height:60vh;
+    background:#f8fbfc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px 20px;
+}
+.swan-image{
+    width:min(320px,70vw);
+    max-height:420px;
+    object-fit:contain;
+}
+/* =====================================================
+   RSVP
+===================================================== */
+#rsvp{
+    padding:95px 20px;
+    background:
+    linear-gradient(
+        145deg,
+        #a8cbd7,
+        #759fac,
+        #c0dee6
+    );
+}
+.rsvp-box{
+    max-width:650px;
+    margin:auto;
+    text-align:center;
+}
+.rsvp-box h2{
+    font-family:'Great Vibes',cursive;
+    font-size:72px;
+    color:white;
+}
+.rsvp-box > p{
+    margin:15px 0 35px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    color:white;
+}
+.rsvp-form{
+    background:#ffffff;
+    padding:38px;
+    text-align:left;
+}
+.rsvp-form label{
+    display:block;
+    font-size:10px;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #cbdde4;
+    margin-bottom:22px;
+    font-family:'Montserrat',sans-serif;
+    outline:none;
+}
+.radio-group{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:22px;
+}
+.radio-group label{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:10px;
+    margin:0;
+}
+.radio-group input{
+    width:auto;
+    margin:0;
+}
+.rsvp-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#91b9c7;
+    color:white;
+    letter-spacing:2px;
+    cursor:pointer;
+}
+/* =====================================================
+   RING
+===================================================== */
+#ring{
+    min-height:60vh;
+    background:#f8fbfc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px 20px;
+}
+.ring-image{
+    width:min(320px,70vw);
+    max-height:420px;
+    object-fit:contain;
+}
+/* =====================================================
+   FINAL
+===================================================== */
+#final{
+    min-height:100vh;
+    background:
+    linear-gradient(
+        rgba(222,239,245,.88),
+        rgba(222,239,245,.88)
+    ),
+    url(
+    "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=80"
+    )
+    center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+.final-inner h2{
+    font-family:'Great Vibes',cursive;
+    font-size:78px;
+    color:#526b74;
+}
+.final-date{
+    margin-top:15px;
+    font-size:11px;
+    letter-spacing:4px;
+}
+.footer{
+    margin-top:100px;
+    font-size:9px;
+    letter-spacing:2px;
+}
+/* =====================================================
+   MUSIC
+===================================================== */
+.music-btn{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:100;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#91b9c7;
+    color:white;
+    cursor:pointer;
+}
+/* =====================================================
+   MOBILE
+===================================================== */
+@media(max-width:700px){
+    .count-title{
+        font-size:60px;
+    }
+    .count-grid{
+        gap:25px;
+    }
+    .count-number{
+        font-size:38px;
+    }
+    .welcome-inner h2{
+        font-size:62px;
+    }
+    .photo-frame,
+    .gallery-photo{
+        width:175px;
+        height:235px;
+    }
+    .program-heading h2{
+        font-size:54px;
+    }
+    .timeline:before{
+        left:20px;
+    }
+    .event,
+    .event:nth-child(even),
+    .event:nth-child(odd){
+        width:100%;
+        left:0;
+        text-align:left;
+        padding-left:55px;
+    }
+    .event:nth-child(odd):after{
+        left:14px;
+        right:auto;
+    }
+    .event:nth-child(even):after{
+        left:14px;
+    }
+    .pre-events,
+    .location-grid,
+    .bank-grid{
+        grid-template-columns:1fr;
+    }
+    .dress-box h2{
+        font-size:58px;
+    }
+    #accommodation h2{
+        font-size:58px;
+    }
+    .final-inner h2{
+        font-size:58px;
+    }
+}
+</style>
+</head>
+<body class="locked">
+<!-- =====================================================
+     1. OPENING
+===================================================== -->
+<section id="opening">
+    <video
+        id="openingVideo"
+        class="opening-video"
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        muted>
+        <!--
+        IMPORTANT:
+        Google Drive does not always allow direct video streaming.
+        This is the provided Drive file.
+        -->
+        <source
+        src="https://drive.google.com/uc?export=download&id=1oqGZaQj5BM0II72IEy1z3PUs516w4AOv"
+        type="video/mp4">
+    </video>
+    <div
+        id="tapOverlay"
+        class="opening-overlay">
+        <div class="tap-open">
+            TAP TO OPEN
+        </div>
+    </div>
+    <div
+        id="scrollHint"
+        class="scroll-hint">
+        SCROLL ↓
+    </div>
+</section>
+<!-- =====================================================
+     2. COUNTDOWN
+===================================================== -->
+<section id="countdown">
+    <div>
+        <h2 class="count-title">
+            Countdown
+        </h2>
+        <div class="count-sub">
+            UNTIL 12 SEPTEMBER 2026
+        </div>
+        <div class="count-grid">
+            <div>
+                <div
+                class="count-number"
+                id="days">
+                    00
+                </div>
+                <div class="count-label">
+                    DAYS
+                </div>
+            </div>
+            <div>
+                <div
+                class="count-number"
+                id="hours">
+                    00
+                </div>
+                <div class="count-label">
+                    HOURS
+                </div>
+            </div>
+            <div>
+                <div
+                class="count-number"
+                id="minutes">
+                    00
+                </div>
+                <div class="count-label">
+                    MINUTES
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     3. WELCOME
+===================================================== -->
+<section id="welcome">
+    <div class="welcome-inner">
+        <h2 class="script">
+            Welcome
+        </h2>
+        <p>
+            We warmly invite you to celebrate our wedding day with us
+            in the beautiful town of Ronda, Andalusia.
+            We look forward to sharing this unforgettable moment
+            with our most special people.
+        </p>
+        <div class="angel">
+            ♢ ♡ ♢
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     4. PICTURES
+===================================================== -->
+<section class="slideshow-section">
+    <div class="photo-slider">
+        <div class="photo-track">
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="photo-frame">
+                <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     5. VASE
+===================================================== -->
+<section id="vase">
+    <img
+    class="vase-image"
+    src="https://drive.google.com/uc?export=download&id=1Trq36T3WxUi49sSgZM8ljO4DyQLRDW-X"
+    alt="Vase">
+</section>
+<!-- =====================================================
+     6. VENUE
+===================================================== -->
+<section id="venue">
+    <div class="section-title">
+        <h2>
+            The Venue
+        </h2>
+        <p>
+            WHERE WE CELEBRATE
+        </p>
+    </div>
+    <div class="venue-card">
+        <div class="venue-sticker"></div>
+        <h3>
+            Finca El Olivar
+        </h3>
+        <p>
+            12 September 2026
+        </p>
+        <p>
+            11:00
+        </p>
+        <p>
+            Camino de los Olivos s/n,<br>
+            Ronda Málaga, 29400,<br>
+            España
+        </p>
+        <div class="map"></div>
+        <a
+        href="https://www.google.com/maps/search/?api=1&query=Finca+El+Olivar+Ronda+Malaga"
+        target="_blank"
+        class="map-btn">
+            OPEN IN MAPS
+        </a>
+    </div>
+</section>
+<!-- =====================================================
+     7. PROGRAM
+===================================================== -->
+<section id="program">
+    <div class="program-heading">
+        <h2>
+            The Day We Celebrate
+        </h2>
+        <p>
+            OUR WEDDING DAY
+        </p>
+    </div>
+    <div class="timeline">
+        <div class="event">
+            <div class="event-time">
+                14:00
+            </div>
+            <h3>
+                Arrival
+            </h3>
+        </div>
+        <div class="event">
+            <div class="event-time">
+                14:30
+            </div>
+            <h3>
+                Ceremony
+            </h3>
+        </div>
+        <div class="event">
+            <div class="event-time">
+                16:00
+            </div>
+            <h3>
+                Cocktails
+            </h3>
+        </div>
+        <div class="event">
+            <div class="event-time">
+                18:00
+            </div>
+            <h3>
+                Dinner
+            </h3>
+        </div>
+        <div class="event">
+            <div class="event-time">
+                20:00
+            </div>
+            <h3>
+                Cutting
+            </h3>
+        </div>
+        <div class="event">
+            <div class="event-time">
+                00:00
+            </div>
+            <h3>
+                Finish
+            </h3>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     8. DRESS CODE
+===================================================== -->
+<section id="dress">
+    <div class="dress-box">
+        <h2>
+            Dress Code
+        </h2>
+        <p>
+            Women: Cocktail or formal dress
+            <br><br>
+            Men: Dark suit and tie
+        </p>
+    </div>
+</section>
+<!-- =====================================================
+     9. BOW
+===================================================== -->
+<section id="bow">
+    <img
+    class="bow-image"
+    src="https://drive.google.com/uc?export=download&id=1PsMQt3JzPXEcfiE7fveQ-R0WW6iva6Sq"
+    alt="Bow">
+</section>
+<!-- =====================================================
+     10. PRE-WEDDING
+===================================================== -->
+<section id="prewedding">
+    <div class="pre-title">
+        <h2>
+            PRE-WEDDING EVENTS
+        </h2>
+        <span class="script">
+            Come Say Hello…
+        </span>
+        <p>
+            These are informal gatherings,
+            so feel free to join us if you're in the area.
+        </p>
+    </div>
+    <div class="pre-events">
+        <div class="pre-card">
+            <div
+            class="sticker"
+            style="
+            background-image:url(
+            'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80'
+            );
+            ">
+            </div>
+            <h3>
+                Cocktail Party
+            </h3>
+            <p>
+                Friday, September 11th, 2026
+                <br>
+                8:00 PM
+                <br>
+                Bodega García Hidalgo, Ronda
+            </p>
+        </div>
+        <div class="pre-card">
+            <div
+            class="sticker"
+            style="
+            background-image:url(
+            'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80'
+            );
+            ">
+            </div>
+            <h3>
+                Wedding
+            </h3>
+            <p>
+                Sunday, September 13th, 2026
+                <br>
+                11:00 AM
+                <br>
+                Ronda
+            </p>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     11. LOCATION
+===================================================== -->
+<section id="locations">
+    <div class="section-title">
+        <h2>
+            Location
+        </h2>
+        <p>
+            FOR BOTH EVENTS
+        </p>
+    </div>
+    <div class="location-grid">
+        <div class="location-card">
+            <h3>
+                Cocktail Party
+            </h3>
+            <p>
+                Bodega García Hidalgo
+                <br>
+                Ronda, Málaga
+            </p>
+            <a
+            href="https://www.google.com/maps/search/?api=1&query=Bodega+Garcia+Hidalgo+Ronda"
+            target="_blank"
+            class="map-btn">
+                OPEN IN MAPS
+            </a>
+        </div>
+        <div class="location-card">
+            <h3>
+                Wedding
+            </h3>
+            <p>
+                Finca El Olivar
+                <br>
+                Ronda, Málaga
+            </p>
+            <a
+            href="https://www.google.com/maps/search/?api=1&query=Finca+El+Olivar+Ronda+Malaga"
+            target="_blank"
+            class="map-btn">
+                OPEN IN MAPS
+            </a>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     12. ACCOMMODATION
+===================================================== -->
+<section id="accommodation">
+    <div class="accommodation-icon">
+        ♧
+    </div>
+    <h2>
+        Accommodation
+    </h2>
+    <p>
+        Finca El Olivar does not offer lodging.
+        Here are some recommended options nearby.
+    </p>
+    <div class="accommodation-box">
+        <div class="hotel-line">
+            <h3>
+                Recommended Hotel
+            </h3>
+            <div class="hotel-links">
+                <a href="#">
+                    VISIT WEBSITE
+                </a>
+                <a href="tel:+34000000000">
+                    PHONE
+                </a>
+                <a href="mailto:hotel@example.com">
+                    EMAIL
+                </a>
+            </div>
+        </div>
+        <div class="hotel-line">
+            <h3>
+                Nearby Accommodation
+            </h3>
+            <div class="hotel-links">
+                <a href="#">
+                    VISIT WEBSITE
+                </a>
+                <a href="tel:+34000000000">
+                    PHONE
+                </a>
+                <a href="mailto:hotel@example.com">
+                    EMAIL
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     13. SECOND SLIDESHOW
+===================================================== -->
+<section id="gallery2">
+    <div class="gallery-slider">
+        <div class="gallery-track">
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=700&q=80">
+            </div>
+            <div class="gallery-photo">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     14. GIFTS
+===================================================== -->
+<section id="gifts">
+    <div class="gifts-inner">
+        <h2>
+            Gifts
+        </h2>
+        <div class="gifts-message">
+            Your presence is the greatest gift of all.
+            If you would like to give us something more,
+            we have included our bank details below.
+        </div>
+        <div class="bank-grid">
+            <div class="bank">
+                <h3>
+                    CAIXABANK - ANDREA MORALES
+                </h3>
+                <p>
+                    IBAN:
+                    ES00 0000 0000 0000 0000 0000
+                    <br>
+                    BIC:
+                    CAIXESBBXXX
+                </p>
+            </div>
+            <div class="bank">
+                <h3>
+                    BANCO SANTANDER - PEDRO FERNÁNDEZ
+                </h3>
+                <p>
+                    IBAN:
+                    ES00 0000 0000 0000 0000 0000
+                    <br>
+                    BIC:
+                    BSCHESMMXXX
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     15. SWAN
+===================================================== -->
+<section id="swan">
+    <img
+    class="swan-image"
+    src="https://drive.google.com/uc?export=download&id=1qiibgHMw0UHPIOcG_RayFt6SdR18oP0p"
+    alt="Swan">
+</section>
+<!-- =====================================================
+     16. RSVP
+===================================================== -->
+<section id="rsvp">
+    <div class="rsvp-box">
+        <h2>
+            RSVP
+        </h2>
+        <p>
+            Let us know if you can make it
+        </p>
+        <form
+        class="rsvp-form"
+        onsubmit="submitRSVP(event)">
+            <label>
+                Will you be attending?
+            </label>
+            <div class="radio-group">
+                <label>
+                    <input
+                    type="radio"
+                    name="attending"
+                    value="Yes"
+                    required>
+                    Yes, I'll be there
+                </label>
+                <label>
+                    <input
+                    type="radio"
+                    name="attending"
+                    value="No">
+                    Unfortunately, I can't attend
+                </label>
+            </div>
+            <label>
+                Number of guests
+            </label>
+            <select required>
+                <option value="">
+                    Select
+                </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            <label>
+                Main contact name
+            </label>
+            <input
+            type="text"
+            placeholder="Your name"
+            required>
+            <label>
+                Email
+            </label>
+            <input
+            type="email"
+            placeholder="Your email"
+            required>
+            <label>
+                Dietary requirements
+            </label>
+            <input
+            type="text"
+            placeholder="Any dietary requirements?">
+            <label>
+                Children
+            </label>
+            <div class="radio-group">
+                <label>
+                    <input
+                    type="radio"
+                    name="children"
+                    value="Yes">
+                    Yes
+                </label>
+                <label>
+                    <input
+                    type="radio"
+                    name="children"
+                    value="No">
+                    No
+                </label>
+            </div>
+            <label>
+                Message
+            </label>
+            <textarea
+            rows="4"
+            placeholder="Leave us a message..."></textarea>
+            <button type="submit">
+                SEND RSVP
+            </button>
+        </form>
+    </div>
+</section>
+<!-- =====================================================
+     17. RING
+===================================================== -->
+<section id="ring">
+    <img
+    class="ring-image"
+    src="https://drive.google.com/uc?export=download&id=1ONkuZ05UgbW3T4H1AHVGPxGRe1dOfVBD"
+    alt="Ring">
+</section>
+<!-- =====================================================
+     18. FINAL
+===================================================== -->
+<section id="final">
+    <div class="final-inner">
+        <h2>
+            Sophia & Alex
+        </h2>
+        <div class="final-date">
+            12 SEPTEMBER 2026
+        </div>
+        <div class="footer">
+            MADE WITH LOVE BY THE DIGITAL YES
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+<button
+class="music-btn"
+onclick="toggleMusic()">
+    ♫
+</button>
+<audio
+id="music"
+loop>
+</audio>
+<script>
+/* =====================================================
+   OPENING
+===================================================== */
+const video =
+document.getElementById("openingVideo");
+const overlay =
+document.getElementById("tapOverlay");
+const scrollHint =
+document.getElementById("scrollHint");
+overlay.addEventListener(
+    "click",
+    async function(){
+        overlay.style.display="none";
+        try{
+            await video.play();
+        }
+        catch(error){
+            /*
+            If Google Drive blocks the video,
+            the browser will report the problem here.
+            */
+            console.log(
+                "Opening video could not play.",
+                error
+            );
+        }
+    }
+);
+/*
+When video finishes:
+- freeze on final frame
+- unlock scrolling
+- show SCROLL
+*/
+video.addEventListener(
+    "ended",
+    function(){
+        video.pause();
+        if(
+            video.duration &&
+            isFinite(video.duration)
+        ){
+            video.currentTime =
+            video.duration - 0.05;
+        }
+        document.body.classList.remove("locked");
+        scrollHint.classList.add("show");
+    }
+);
+/*
+Some browsers fire timeupdate instead
+of ended when a streamed video ends.
+*/
+video.addEventListener(
+    "timeupdate",
+    function(){
+        if(
+            video.duration &&
+            isFinite(video.duration) &&
+            video.currentTime >= video.duration - .15
+        ){
+            document.body.classList.remove("locked");
+            scrollHint.classList.add("show");
+        }
+    }
+);
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+const weddingDate =
+new Date(
+    "September 12, 2026 11:00:00"
+).getTime();
+function updateCountdown(){
+    const now =
+    new Date().getTime();
+    const distance =
+    weddingDate - now;
+    if(distance <= 0){
+        document.getElementById("days")
+        .innerText="00";
+        document.getElementById("hours")
+        .innerText="00";
+        document.getElementById("minutes")
+        .innerText="00";
+        return;
+    }
+    const days =
+    Math.floor(
+        distance /
+        (1000*60*60*24)
+    );
+    const hours =
+    Math.floor(
+        (distance %
+        (1000*60*60*24))
+        /
+        (1000*60*60)
+    );
+    const minutes =
+    Math.floor(
+        (distance %
+        (1000*60*60))
+        /
+        (1000*60)
+    );
+    document.getElementById("days")
+    .innerText =
+    String(days).padStart(2,"0");
+    document.getElementById("hours")
+    .innerText =
+    String(hours).padStart(2,"0");
+    document.getElementById("minutes")
+    .innerText =
+    String(minutes).padStart(2,"0");
+}
+updateCountdown();
+setInterval(
+    updateCountdown,
+    60000
+);
+/* =====================================================
+   RSVP
+===================================================== */
+function submitRSVP(event){
+    event.preventDefault();
+    alert(
+        "Thank you! Your RSVP has been received."
+    );
+    event.target.reset();
+}
+/* =====================================================
+   MUSIC
+===================================================== */
+let musicPlaying=false;
+function toggleMusic(){
+    const music =
+    document.getElementById("music");
+    if(!musicPlaying){
+        music.play().catch(
+            function(){}
+        );
+        musicPlaying=true;
+    }
+    else{
+        music.pause();
+        musicPlaying=false;
+    }
+}
+</script>
+</body>
+</html>
