@@ -3,402 +3,1074 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#6f91c2">
-<title>Sophia & Alex — Wedding Invitation</title>
+<meta name="theme-color" content="#8baed6">
+<title>Wedding Invitation | Danny & Rudy</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--navy:#2c4a6f;--blue:#5b87c5;--pale:#edf4fc;--ice:#dbe7f5;--white:#fff;--gold:#e8d9b7;--ink:#2c4160}
+:root{
+  --navy:#2c4a6f;
+  --blue:#5b87c5;
+  --pale:#edf4fc;
+  --white:#fff;
+  --ink:#314a68;
+  --glass:rgba(255,255,255,.86);
+  --line:rgba(255,255,255,.6);
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:20px}
-body{margin:0;font-family:'Montserrat',sans-serif;color:var(--ink);background:linear-gradient(180deg,#263f64 0%,#6f95c7 18%,#d7e7f8 42%,#aac8e9 63%,#426da7 82%,#111e3e 100%);background-attachment:fixed;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.32;background-image:radial-gradient(circle,rgba(255,255,255,.95) .7px,transparent 1.5px),radial-gradient(circle,rgba(255,255,255,.7) .8px,transparent 1.7px);background-size:57px 63px,91px 97px;background-position:0 0,27px 41px;animation:twinkle 5s ease-in-out infinite alternate}
-@keyframes twinkle{from{opacity:.15;transform:translateY(0)}to{opacity:.42;transform:translateY(-4px)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:'Montserrat',sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#edf4fc 0%,#dbe7f5 22%,#a9c5e5 52%,#7198c6 78%,#1c2d59 100%);
+  background-attachment:fixed;
+}
 button,input,textarea{font:inherit}
-button{cursor:pointer}
-.page{position:relative;z-index:1;width:100%;max-width:520px;margin:auto;overflow:hidden}
-section{position:relative;text-align:center;padding:48px 24px;color:#fff;background:transparent}
+img,video{max-width:100%}
+main{
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+}
+section{
+  position:relative;
+  padding:42px 22px;
+  text-align:center;
+  scroll-margin-top:12px;
+}
+h1,h2,h3,p{margin-top:0}
 .script{font-family:'Great Vibes',cursive;font-weight:400}
 .serif{font-family:'Cinzel',serif;letter-spacing:1.5px;text-transform:uppercase}
-.small-kicker{font:11px 'Cinzel',serif;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;color:#edf4ff}
-.section-title{font:48px 'Great Vibes',cursive;line-height:1.15;margin:0 0 12px;color:#fff;text-shadow:0 2px 12px #1b315c40}
-.section-copy{font:14px/1.85 'Cormorant Garamond',serif;font-size:18px;color:#f5f8ff;max-width:390px;margin:0 auto}
-.soft-divider{width:62px;height:1px;background:rgba(255,255,255,.65);margin:30px auto}
-.lang-switch{position:fixed;z-index:20;right:max(12px,calc((100vw - 520px)/2 + 12px));top:12px;display:flex;gap:3px;padding:4px;border:1px solid #ffffff80;border-radius:24px;background:#182b4c70;backdrop-filter:blur(8px)}
-.lang-switch button{border:0;background:transparent;color:white;border-radius:18px;padding:7px 10px;font-size:10px;letter-spacing:1px}
-.lang-switch button.active{background:#fff;color:var(--navy)}
-/* Cover */
-#cover{min-height:100svh;padding:0;display:flex;align-items:center;justify-content:center;background:#203758;overflow:hidden}
-.cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
-.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,27,51,.25),rgba(12,27,51,.25) 45%,rgba(12,27,51,.8))}
-.cover-content{position:relative;z-index:2;padding:90px 24px 40px;width:100%;color:white}
-.cover-label{font:11px 'Cinzel',serif;letter-spacing:4px;text-transform:uppercase}
-.cover-names{font:clamp(56px,13vw,82px) 'Great Vibes',cursive;line-height:1.05;margin:22px 0 10px;text-shadow:0 2px 18px #0b183c80}
-.cover-date{font:12px 'Cinzel',serif;letter-spacing:3px;margin:15px 0 28px}
-.open-btn{border:1px solid #fff;background:#ffffff18;color:white;border-radius:30px;padding:13px 23px;font:11px 'Cinzel',serif;letter-spacing:2px;backdrop-filter:blur(8px)}
-.open-btn:hover{background:#fff;color:var(--navy)}
-.cover-note{font-size:10px;letter-spacing:1px;margin-top:14px;opacity:.85}
-#openingVideoSection{display:none;padding:0;background:#172947}
-.video-frame{position:relative;background:#172947;line-height:0}
-#openingVideo{display:block;width:100%;max-height:88svh;object-fit:contain;background:#172947}
-.scroll-hint{display:none;padding:17px 10px 22px;color:white;font:10px 'Cinzel',serif;letter-spacing:3px;animation:hint 1.8s ease-in-out infinite}
-@keyframes hint{50%{opacity:.5;transform:translateY(4px)}}
-.scroll-hint span{display:block;font-size:18px;margin-top:5px}
-/* Countdown and welcome */
-#countdown{padding-top:60px}
-.countdown-until{font:11px 'Cinzel',serif;letter-spacing:2px;color:#e2ecf8;text-transform:uppercase;margin:4px 0 28px}
-.countdown-timers{display:flex;justify-content:center;align-items:center;gap:clamp(7px,2.5vw,15px);margin:0 auto 38px}
-.time-box{min-width:49px}
-.time-value{font:clamp(23px,6vw,31px) 'Cinzel',serif;color:white;text-shadow:0 2px 4px #0002}
-.time-label{font-size:9px;letter-spacing:1px;color:#eaf3ff;margin-top:7px;text-transform:uppercase}
-.time-divider{font-size:20px;color:#d2e5ff;margin-top:-13px}
-.welcome-title{font:52px 'Great Vibes',cursive;margin:0 0 12px;color:white}
-.welcome-text{font:18px/1.8 'Cormorant Garamond',serif;color:#f0f5fc;max-width:390px;margin:auto}
-/* Vase / venue */
-.vase-art{display:block;width:min(205px,65%);height:auto;max-height:260px;object-fit:contain;margin:0 auto 6px;filter:drop-shadow(0 8px 12px #18365b20)}
-#venue{padding-top:20px}
-.venue-subtitle{font:italic 17px 'Cormorant Garamond',serif;margin:0 0 25px;color:#f1f6ff}
-.glass-card{background:rgba(255,255,255,.91);color:var(--ink);border:1px solid #fff9;border-radius:14px;padding:27px 20px;box-shadow:0 15px 35px #122b4a20;backdrop-filter:blur(8px)}
-.building-sketch{display:block;width:100%;max-width:270px;max-height:185px;object-fit:contain;margin:0 auto 18px}
-.finca-title{font:38px 'Great Vibes',cursive;color:var(--navy);margin-bottom:12px}
-.event-datetime{font:12px 'Cinzel',serif;letter-spacing:1px;line-height:1.8;color:#4f5f76}
-.address-text{font:13px/1.8 'Cinzel',serif;color:#485a73;margin:20px 0}
-.map-box{height:180px;border-radius:9px;overflow:hidden;border:1px solid #d0dbe8;margin-bottom:18px}
+.section-title{
+  font:400 47px/1.12 'Great Vibes',cursive;
+  color:#fff;
+  text-shadow:0 2px 8px #243f6530;
+  margin:0 0 12px;
+}
+.kicker{
+  font:500 10px/1.6 'Cinzel',serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#edf4fc;
+  margin:0 0 12px;
+}
+.subtle{font-size:12px;line-height:1.8;color:#f5f8ff}
+.glass-card{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:14px;
+  padding:26px 20px;
+  box-shadow:0 12px 32px rgba(28,45,89,.10);
+  backdrop-filter:blur(8px);
+}
+.divider{
+  width:56px;
+  height:1px;
+  border:0;
+  background:#9db6d5;
+  margin:22px auto;
+}
+.lang-switch{
+  position:fixed;
+  top:12px;
+  right:12px;
+  z-index:50;
+  display:flex;
+  gap:2px;
+  padding:4px;
+  border:1px solid #c7d8eb;
+  border-radius:24px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 4px 16px #1c2d5918;
+}
+.lang-switch button{
+  border:0;
+  background:transparent;
+  color:var(--navy);
+  border-radius:18px;
+  padding:7px 10px;
+  font-size:10px;
+  letter-spacing:1px;
+  cursor:pointer;
+}
+.lang-switch button.active{background:var(--navy);color:white}
+#sparkCanvas{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:20;
+}
+#opening{
+  padding:0;
+  min-height:100svh;
+  background:#182b4c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+#coverButton{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  padding:0;
+  border:0;
+  background:#182b4c;
+  cursor:pointer;
+}
+#coverButton img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.cover-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,#0d1d3030,#0d1d3055);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  padding:0 20px 11vh;
+  color:#fff;
+}
+.cover-small{
+  font:11px 'Cinzel',serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.tap-label{
+  font:400 42px 'Great Vibes',cursive;
+  margin-top:10px;
+  text-shadow:0 2px 12px #0005;
+}
+#openingVideo{
+  display:none;
+  width:100%;
+  height:100svh;
+  object-fit:cover;
+  background:#182b4c;
+}
+#scrollHint{
+  display:none;
+  position:absolute;
+  bottom:22px;
+  left:0;
+  right:0;
+  color:#fff;
+  font:10px 'Cinzel',serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-shadow:0 1px 5px #000;
+  animation:bob 1.8s ease-in-out infinite;
+  pointer-events:none;
+}
+#scrollHint span{display:block;font-size:18px;margin-top:5px}
+@keyframes bob{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(5px)}
+}
+#countdown{padding-top:58px}
+.countdown-grid{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:25px 0 5px;
+}
+.time-box{min-width:55px}
+.time-value{
+  font:500 27px 'Cinzel',serif;
+  color:#fff;
+  text-shadow:0 2px 5px #1c2d5930;
+}
+.time-label{
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#edf4fc;
+  margin-top:5px;
+}
+.time-divider{font-size:22px;color:#edf4fc;margin-top:1px}
+#welcome p{
+  font:14px/1.9 'Cinzel',serif;
+  color:#f4f8ff;
+  max-width:390px;
+  margin:0 auto;
+}
+#vase{padding:22px 20px 6px}
+.decor-image{display:block;object-fit:contain;margin:0 auto}
+.vase-image{width:190px;max-height:250px}
+#venue{padding-top:22px}
+.venue-card{
+  background:#fff;
+  border-radius:14px;
+  padding:26px 20px;
+  box-shadow:0 12px 30px #1c2d5918;
+}
+.building-sketch{
+  display:block;
+  width:100%;
+  max-width:270px;
+  max-height:180px;
+  object-fit:contain;
+  margin:0 auto 18px;
+}
+.finca-title{
+  font:400 39px 'Great Vibes',cursive;
+  color:var(--navy);
+  margin-bottom:12px;
+}
+.event-datetime{
+  font:12px/1.8 'Cinzel',serif;
+  letter-spacing:.5px;
+  color:#555;
+  margin-bottom:18px;
+}
+.address-text{
+  font:12px/1.8 'Cinzel',serif;
+  color:#444;
+  margin-bottom:18px;
+}
+.map-box{
+  height:180px;
+  border-radius:9px;
+  overflow:hidden;
+  border:1px solid #d0dbe8;
+  margin-bottom:18px;
+}
 .map-box iframe{width:100%;height:100%;border:0}
-.outline-btn{display:inline-block;border:1px solid var(--navy);border-radius:24px;padding:11px 18px;color:var(--navy);text-decoration:none;font:11px 'Cinzel',serif;letter-spacing:1.3px;background:transparent}
-.outline-btn:hover{background:var(--navy);color:white}
-/* timeline */
-#timeline{padding-top:60px}
-.programme-date{font:11px 'Cinzel',serif;letter-spacing:2px;margin:6px 0 36px;color:#eaf2ff}
-.timeline{position:relative;margin:0 auto;max-width:360px;padding:5px 0}
-.timeline:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:#dceaffa8}
-.timeline-item{position:relative;display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;gap:5px;margin-bottom:29px;min-height:38px}
-.timeline-item:last-child{margin-bottom:0}
-.timeline-left{text-align:right;padding-right:8px}.timeline-right{text-align:left;padding-left:8px}
-.event-time{font:14px 'Cinzel',serif;letter-spacing:1px;color:#fff;margin-bottom:4px}
-.event-name{font:10px 'Montserrat',sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#edf4ff;line-height:1.5}
-.timeline-dot{justify-self:center;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px #ffffff35;z-index:1}
-.watermark{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.08;font:12px/3 'Cinzel',serif;letter-spacing:3px;transform:rotate(-18deg);color:white;word-spacing:12px}
-/* dress / pre-events */
-#dresscode{padding-top:25px}
-.dress-photo{display:block;width:100%;max-width:340px;height:220px;object-fit:cover;border-radius:12px;margin:0 auto 25px;border:1px solid #ffffff90}
-.dress-note{font:19px/1.7 'Cormorant Garamond',serif;color:#fff;max-width:350px;margin:auto}
-.decor-img{display:block;width:140px;max-height:190px;object-fit:contain;margin:0 auto 15px;filter:drop-shadow(0 7px 10px #18365b24)}
-#prewedding{padding-top:22px}
-.pre-title{font:12px 'Cinzel',serif;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
-.event-grid{display:grid;gap:14px;margin-top:24px}
-.event-card{background:#ffffffed;border-radius:12px;padding:22px 18px;color:var(--navy);box-shadow:0 10px 25px #102a4c18}
-.event-card h3{font:27px 'Great Vibes',cursive;margin:0 0 8px}
-.event-card p{font:13px/1.7 'Montserrat',sans-serif;margin:0;color:#52637c}
-.event-meta{font:10px 'Cinzel',serif;letter-spacing:1px;margin-top:12px;color:#45658e}
-/* Accommodation */
-.hotel-block{margin:0}
-.hotel-name{font:13px 'Cinzel',serif;font-weight:600;letter-spacing:1.2px;margin-bottom:7px;color:var(--navy)}
-.hotel-location,.hotel-distance,.hotel-contact{font-size:12px;line-height:1.8;color:#56657a}
-.hotel-distance{font-style:italic;margin-bottom:6px}
+.outline-btn,.solid-btn{
+  display:inline-block;
+  text-decoration:none;
+  border-radius:22px;
+  padding:11px 18px;
+  font:500 10px 'Cinzel',serif;
+  letter-spacing:1.3px;
+  cursor:pointer;
+}
+.outline-btn{border:1px solid var(--navy);color:var(--navy);background:transparent}
+.solid-btn{border:0;background:var(--navy);color:white}
+#timeline{padding-top:50px}
+.timeline{max-width:360px;margin:26px auto 0;position:relative}
+.timeline:before{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:1px;
+  background:#e7f0fb;
+  transform:translateX(-50%);
+}
+.timeline-item{
+  display:grid;
+  grid-template-columns:1fr 20px 1fr;
+  align-items:center;
+  gap:8px;
+  min-height:66px;
+  position:relative;
+}
+.timeline-item:nth-child(odd) .event-copy:first-child{text-align:right}
+.timeline-item:nth-child(even) .event-copy:last-child{text-align:left}
+.event-copy{
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:#f5f8ff;
+  line-height:1.6;
+}
+.event-time{
+  font:600 14px 'Cinzel',serif;
+  letter-spacing:1px;
+  color:#fff;
+  margin-bottom:3px;
+}
+.timeline-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#fff;
+  justify-self:center;
+  z-index:1;
+  box-shadow:0 0 0 4px #ffffff25;
+}
+#dresscode{padding-top:48px}
+.dress-card{
+  background:linear-gradient(#ffffffa8,#ffffffb5),url('https://i.postimg.cc/3Nps96WC/IMG-8968.jpg') center top/cover;
+  border-radius:18px;
+  padding:34px 22px;
+  box-shadow:0 10px 28px #1c2d591a;
+}
+.dress-card .section-title{color:var(--navy);text-shadow:none}
+.dress-category{
+  font:400 34px 'Great Vibes',cursive;
+  color:#1e3554;
+  margin:18px 0 5px;
+}
+.dress-desc{font-size:13px;color:#3b5983;font-weight:500;letter-spacing:.3px}
+.bow-image{width:140px;max-height:190px;margin:0 auto;display:block}
+#prewedding{padding-top:10px}
+.intro-copy{
+  font-size:12px;
+  line-height:1.8;
+  color:#f5f8ff;
+  max-width:350px;
+  margin:0 auto 25px;
+}
+.event-card{
+  background:#fff;
+  border-radius:13px;
+  padding:28px 18px;
+  margin:0 0 20px;
+  box-shadow:0 10px 26px #1c2d5918;
+}
+.event-icon{width:85px;height:85px;object-fit:contain;margin:0 auto 12px;display:block}
+.event-title{font:400 38px 'Great Vibes',cursive;color:var(--navy);margin-bottom:12px}
+.event-location{font:12px/1.7 'Cinzel',serif;color:#444}
+#accommodation .intro-copy{margin-bottom:22px}
+.hotel-block{padding:8px 0}
+.hotel-name{
+  font:600 13px 'Cinzel',serif;
+  letter-spacing:1px;
+  color:var(--navy);
+  margin-bottom:7px;
+}
+.hotel-location,.hotel-distance,.hotel-contact{font-size:11px;line-height:1.8;color:#555}
+.hotel-distance{font-style:italic;margin-bottom:8px}
 .hotel-contact a{color:var(--navy);overflow-wrap:anywhere}
-.promo-code{font:11px 'Cinzel',serif;margin-top:8px;color:var(--navy)}
-.card-divider{height:1px;width:55px;background:#c7d5e7;margin:22px auto}
-/* Pictures */
-.marquee-wrapper{width:calc(100% + 48px);margin-left:-24px;overflow:hidden;padding:12px 0 18px}
-.marquee-track{display:flex;gap:12px;width:max-content;animation:scrollLeft 24s linear infinite}
+.website-btn{
+  display:inline-block;
+  margin-top:8px;
+  color:var(--navy);
+  font:600 10px 'Cinzel',serif;
+  letter-spacing:1px;
+}
+#pictures{padding-left:0;padding-right:0}
+.picture-heading{padding:0 20px}
+.marquee-wrapper{width:100%;overflow:hidden;padding:10px 0 22px}
+.marquee-track{
+  display:flex;
+  gap:12px;
+  width:max-content;
+  animation:scrollLeft 24s linear infinite;
+}
 .marquee-wrapper:hover .marquee-track{animation-play-state:paused}
-.slide-card{width:145px;height:205px;flex-shrink:0;border-radius:13px;overflow:hidden;box-shadow:0 8px 18px #102a4c2b;border:2px solid #ffffffb0}
-.slide-card img{width:100%;height:100%;object-fit:cover}
-@keyframes scrollLeft{to{transform:translateX(-50%)}}
-#pictures .section-copy{margin-bottom:10px}
-/* gifts */
-.gift-card{max-width:390px;margin:22px auto 0;text-align:left}
-.gift-card .bank-name{font:12px 'Cinzel',serif;letter-spacing:1px;font-weight:600;margin-bottom:13px}
-.bank-detail{font:12px/1.8 'Montserrat',sans-serif;overflow-wrap:anywhere;margin-bottom:5px}
+.slide-card{
+  width:128px;
+  height:190px;
+  border-radius:13px;
+  overflow:hidden;
+  box-shadow:0 6px 15px #0002;
+  flex-shrink:0;
+  background:#fff;
+}
+.slide-card img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes scrollLeft{
+  from{transform:translateX(0)}
+  to{transform:translateX(-420px)}
+}
+#gift{padding-top:40px}
+.gift-subtitle{
+  font:italic 17px/1.6 'Cormorant Garamond',serif;
+  color:#f5f8ff;
+  margin:0 auto 25px;
+  max-width:360px;
+}
+.bank-card{
+  background:#fbf9f7;
+  border:1px solid #ede6e0;
+  border-radius:7px;
+  padding:20px 15px;
+  margin-bottom:15px;
+  text-align:left;
+  color:#5c4b43;
+}
+.bank-name{font:600 12px 'Cinzel',serif;letter-spacing:1px;margin-bottom:13px}
+.bank-detail{font:11px/1.8 'Montserrat',sans-serif;overflow-wrap:anywhere}
 .bank-detail span{font-weight:600}
-.gift-note{font:italic 19px/1.7 'Cormorant Garamond',serif;color:#f4f7ff;max-width:390px;margin:0 auto}
-/* RSVP */
-#rsvp{padding-top:20px}
-.swan-image{display:block;width:130px;height:130px;object-fit:contain;margin:0 auto 18px;padding:10px;border:1px solid #ffffffa0;border-radius:50%;background:#ffffff18}
-.form-card{background:#fff;color:#4a3b32;border-radius:12px;padding:26px 20px;text-align:left;box-shadow:0 15px 35px #06163045;position:relative;z-index:2}
-.form-group{margin-bottom:22px}
-.form-label{font:600 14px 'Montserrat',sans-serif;display:block;margin-bottom:10px;color:#354c6c}
-.radio-option{display:flex;align-items:flex-start;gap:9px;margin:10px 0;font:13px/1.6 'Montserrat',sans-serif;color:#56657a}
-.radio-option input{accent-color:#2b4c8c;margin-top:3px}
-.input-field,.textarea-field{display:block;width:100%;padding:12px;border:1px solid #d9e1eb;border-radius:5px;background:#f9fbfe;font:13px 'Montserrat',sans-serif;color:#344967;margin-top:9px}
-.counter-box{display:flex;align-items:center;gap:15px;margin-top:8px}
-.counter-btn{width:35px;height:35px;border:1px solid #d4deea;background:#f0f5fb;border-radius:5px;color:#344967;font-size:19px}
-.counter-value{font:16px 'Montserrat',sans-serif}
-.submit-btn{width:100%;border:0;background:#1c2d59;color:white;padding:14px;border-radius:5px;font:11px 'Montserrat',sans-serif;letter-spacing:1.5px;text-transform:uppercase}
-.form-message{font-size:12px;line-height:1.6;margin-top:12px;color:#2c4a6f}
-.rsvp-note{font-size:10px;line-height:1.6;color:#dfeaff;margin-top:15px}
-/* ring */
-#ring{padding:50px 24px 58px;background:transparent}
-.rings-container{width:115px;height:115px;margin:0 auto 25px;border:1px solid #ffffffa0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:43px;background:#ffffff12}
-.name-title{font:62px 'Great Vibes',cursive;color:white;line-height:1.08;text-shadow:0 2px 12px #0a183e50}
-.ampersand{font:italic 30px 'Cormorant Garamond',serif;color:#e0ecff;display:block;margin:6px 0}
-.wedding-date{font:12px 'Cinzel',serif;letter-spacing:2px;margin:27px 0 35px}
-.footer-brand{font-size:11px;letter-spacing:1px;color:#d0e1ff}
-.footer-brand span{border-bottom:1px solid #d0e1ff;padding-bottom:3px}
-footer{font:9px 'Montserrat',sans-serif;letter-spacing:1px;text-align:center;padding:18px;color:#e7efff;background:#101d3a55}
-@media(min-width:700px){.page{box-shadow:0 0 60px #071a3520}section{padding-left:35px;padding-right:35px}}
+#rsvp{padding:0 0 45px}
+.swan-top{padding:30px 20px 26px}
+.swan-container{
+  width:125px;
+  height:125px;
+  border:1px solid #ffffffa8;
+  border-radius:50%;
+  background:#ffffffb8;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.swan-logo{width:100%;height:100%;object-fit:contain}
+.rsvp-panel{
+  padding:38px 22px 48px;
+  background:linear-gradient(180deg,#5b87c5aa 0%,#1c2d59e8 70%,#0a1128 100%);
+  position:relative;
+}
+.rsvp-subtitle{
+  font:italic 17px 'Cormorant Garamond',serif;
+  color:#f0f5ff;
+  margin-bottom:25px;
+}
+.form-card{
+  background:#fff;
+  border-radius:8px;
+  padding:25px 18px;
+  text-align:left;
+  box-shadow:0 15px 35px #0002;
+}
+.form-group{margin-bottom:20px}
+.form-label{
+  display:block;
+  font:600 14px 'Cormorant Garamond',serif;
+  color:#4a3b32;
+  margin-bottom:10px;
+}
+.radio-option{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:12px;
+  color:#5c4b43;
+  margin:10px 0;
+}
+.radio-option input{accent-color:#2b4c8c}
+.input-field{
+  display:block;
+  width:100%;
+  padding:12px;
+  border:1px solid #e2dad3;
+  border-radius:4px;
+  background:#fbf9f7;
+  font-size:12px;
+  color:#4a3b32;
+  margin-top:8px;
+}
+.counter-box{display:flex;align-items:center;gap:14px}
+.counter-btn{
+  width:34px;
+  height:34px;
+  border:1px solid #dcd3cb;
+  background:#f4f0ec;
+  border-radius:4px;
+  cursor:pointer;
+}
+.counter-value{font:15px 'Montserrat',sans-serif}
+footer{
+  padding:22px;
+  text-align:center;
+  font-size:10px;
+  letter-spacing:1px;
+  color:#eaf2fc;
+}
+footer a{color:inherit}
+@media(min-width:700px){
+  main{box-shadow:0 0 50px #172d4b18}
+  .section-title{font-size:52px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marquee-track,#scrollHint{animation:none}
+  #sparkCanvas{display:none}
+}
 </style>
 </head>
+
 <body>
-<div class="lang-switch" aria-label="Language selector">
+<canvas id="sparkCanvas" aria-hidden="true"></canvas>
+
+<div class="lang-switch" aria-label="Choose language">
   <button type="button" class="active" data-lang="en">EN</button>
   <button type="button" data-lang="fr">FR</button>
 </div>
 
-<audio id="backgroundMusic" src="inwhite.mp3" preload="auto" loop></audio>
+<main>
 
-<main class="page">
-  <section id="cover" aria-label="Wedding cover">
-    <img class="cover-image" src="env.jpg" alt="" onerror="this.style.display='none'">
-    <div class="cover-shade"></div>
-    <div class="cover-content">
-      <div class="cover-label" data-en="Together with our families" data-fr="Avec nos familles">Together with our families</div>
-      <div class="cover-names">Sophia <span style="font-family:'Cormorant Garamond',serif;font-size:.48em;font-style:italic">&</span> Alex</div>
-      <div class="cover-date" data-en="13 MARCH 2027" data-fr="13 MARS 2027">13 MARCH 2027</div>
-      <button id="openInvitation" class="open-btn" type="button" data-en="TAP TO OPEN" data-fr="TOUCHER POUR OUVRIR">TAP TO OPEN</button>
-      <div class="cover-note" data-en="A little moment, a lifetime of memories" data-fr="Un instant précieux, des souvenirs pour la vie">A little moment, a lifetime of memories</div>
+  <!-- OPENING COVER -->
+  <section id="opening" aria-label="Open invitation">
+    <button id="coverButton" type="button" aria-label="Tap to open invitation">
+      <img src="env.jpg" alt="Wedding invitation cover">
+      <span class="cover-overlay">
+        <span class="cover-small" data-en="YOU ARE INVITED" data-fr="VOUS ÊTES INVITÉS">YOU ARE INVITED</span>
+        <span class="tap-label" data-en="Tap to Open" data-fr="Touchez pour ouvrir">Tap to Open</span>
+      </span>
+    </button>
+
+    <video id="openingVideo" playsinline preload="auto" poster="env.jpg">
+      <source src="blue.mp4" type="video/mp4">
+      Your browser does not support this video.
+    </video>
+
+    <div id="scrollHint">
+      <span data-en="Scroll to Discover" data-fr="Faites défiler pour découvrir">Scroll to Discover</span>
+      <span>⌄</span>
     </div>
   </section>
 
-  <section id="openingVideoSection" aria-label="Opening video">
-    <div class="video-frame">
-      <video id="openingVideo" playsinline preload="auto" poster="env.jpg">
-        <source src="blue.mov" type="video/quicktime">
-        <source src="blue.mov" type="video/mp4">
-        Your browser does not support this video.
-      </video>
-    </div>
-    <div id="scrollHint" class="scroll-hint" data-en="SCROLL TO DISCOVER" data-fr="FAITES DÉFILER POUR DÉCOUVRIR">SCROLL TO DISCOVER<span>↓</span></div>
-  </section>
-
+  <!-- COUNTDOWN -->
   <section id="countdown">
-    <div class="section-title" data-en="Countdown" data-fr="Le compte à rebours">Countdown</div>
-    <div class="countdown-until" data-en="Until 13 March 2027" data-fr="Jusqu'au 13 mars 2027">Until 13 March 2027</div>
-    <div class="countdown-timers" aria-label="Countdown">
-      <div class="time-box"><div class="time-value" id="days">00</div><div class="time-label" data-en="Days" data-fr="Jours">Days</div></div>
+    <div class="section-title" data-en="Countdown" data-fr="Compte à rebours">Countdown</div>
+    <p class="kicker" data-en="Until 13 March 2027" data-fr="Jusqu'au 13 mars 2027">Until 13 March 2027</p>
+
+    <div class="countdown-grid" aria-label="Countdown">
+      <div class="time-box">
+        <div class="time-value" id="days">00</div>
+        <div class="time-label" data-en="Days" data-fr="Jours">Days</div>
+      </div>
       <div class="time-divider">|</div>
-      <div class="time-box"><div class="time-value" id="hours">00</div><div class="time-label" data-en="Hours" data-fr="Heures">Hours</div></div>
+      <div class="time-box">
+        <div class="time-value" id="hours">00</div>
+        <div class="time-label" data-en="Hours" data-fr="Heures">Hours</div>
+      </div>
       <div class="time-divider">|</div>
-      <div class="time-box"><div class="time-value" id="minutes">00</div><div class="time-label" data-en="Minutes" data-fr="Minutes">Minutes</div></div>
+      <div class="time-box">
+        <div class="time-value" id="minutes">00</div>
+        <div class="time-label" data-en="Minutes" data-fr="Minutes">Minutes</div>
+      </div>
       <div class="time-divider">|</div>
-      <div class="time-box"><div class="time-value" id="seconds">00</div><div class="time-label" data-en="Seconds" data-fr="Secondes">Seconds</div></div>
+      <div class="time-box">
+        <div class="time-value" id="seconds">00</div>
+        <div class="time-label" data-en="Seconds" data-fr="Secondes">Seconds</div>
+      </div>
     </div>
-    <div class="soft-divider"></div>
-    <div class="welcome-title" data-en="Welcome!" data-fr="Bienvenue !">Welcome!</div>
-    <p class="welcome-text" data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people." data-fr="Nous vous invitons chaleureusement à célébrer notre mariage avec nous dans la magnifique ville de Ronda, en Andalousie. Nous avons hâte de partager cet instant inoubliable avec les personnes qui nous sont les plus chères.">We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people.</p>
   </section>
 
-  <section id="vase">
-    <img class="vase-art" src="vase.PNG" alt="Decorative vase" onerror="this.style.display='none'">
+  <!-- WELCOME -->
+  <section id="welcome">
+    <div class="section-title" data-en="Welcome!" data-fr="Bienvenue !">Welcome!</div>
+    <p
+      data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people."
+      data-fr="Nous vous invitons chaleureusement à célébrer notre mariage avec nous dans la magnifique ville de Ronda, en Andalousie. Nous avons hâte de partager ce moment inoubliable avec nos proches."
+    >We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people.</p>
   </section>
 
+  <!-- VASE IMAGE -->
+  <section id="vase" aria-label="Floral decoration">
+    <img class="decor-image vase-image" src="vase.PNG" alt="Decorative vase">
+  </section>
+
+  <!-- VENUE -->
   <section id="venue">
-    <div class="small-kicker" data-en="A place to remember" data-fr="Un lieu inoubliable">A place to remember</div>
-    <h2 class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</h2>
-    <p class="venue-subtitle" data-en="Where we celebrate" data-fr="Là où nous célébrerons">Where we celebrate</p>
-    <div class="glass-card">
-      <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Finca El Olivar building sketch" loading="lazy">
+    <p class="kicker" data-en="Where we celebrate" data-fr="Le lieu de célébration">Where we celebrate</p>
+    <div class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</div>
+
+    <div class="venue-card">
+      <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Illustration of Finca El Olivar">
+
       <div class="finca-title">Finca El Olivar</div>
-      <div class="event-datetime" data-en="13 March 2027 · Time to be confirmed" data-fr="13 mars 2027 · Horaire à confirmer">13 March 2027 · Time to be confirmed</div>
-      <div class="soft-divider" style="background:#c8d5e5"></div>
-      <div class="address-text">Camino de los Olivos s/n, Ronda<br>Málaga, 29400 – Spain</div>
-      <div class="map-box"><iframe title="Map to Finca El Olivar" src="https://maps.google.com/maps?q=Finca+El+Olivar+Ronda+Malaga&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe></div>
-      <a class="outline-btn" href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga" target="_blank" rel="noopener" data-en="OPEN IN MAPS" data-fr="OUVRIR DANS MAPS">OPEN IN MAPS</a>
+
+      <div class="event-datetime" data-en="12 September 2026 · 14:00" data-fr="12 septembre 2026 · 14 h 00">
+        12 September 2026 · 14:00
+      </div>
+
+      <hr class="divider">
+
+      <div class="address-text">
+        Camino de los Olivos s/n, Ronda<br>
+        Málaga, 29400 – España
+      </div>
+
+      <div class="map-box">
+        <iframe
+          title="Map to Finca El Olivar"
+          src="https://maps.google.com/maps?q=Finca+El+Olivar+Ronda+Malaga&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <a class="outline-btn"
+         href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga"
+         target="_blank"
+         rel="noopener"
+         data-en="OPEN IN MAPS"
+         data-fr="OUVRIR LA CARTE">OPEN IN MAPS</a>
     </div>
   </section>
 
+  <!-- DAY PROGRAMME -->
   <section id="timeline">
-    <div class="watermark" aria-hidden="true">THE DIGITAL YES · THE DIGITAL YES · THE DIGITAL YES · THE DIGITAL YES</div>
-    <div class="section-title" data-en="Day Programme" data-fr="Programme de la journée">Day Programme</div>
-    <div class="programme-date" data-en="13 MARCH 2027" data-fr="13 MARS 2027">13 MARCH 2027</div>
+    <div class="section-title" data-en="Day Programme" data-fr="Programme du jour">Day Programme</div>
+    <p class="kicker">12 September 2026</p>
+
     <div class="timeline">
-      <div class="timeline-item"><div class="timeline-left"><div class="event-time">14:00</div><div class="event-name" data-en="Arrival" data-fr="Accueil">Arrival</div></div><div class="timeline-dot"></div><div></div></div>
-      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="timeline-right"><div class="event-time">14:30</div><div class="event-name" data-en="Ceremony" data-fr="Cérémonie">Ceremony</div></div></div>
-      <div class="timeline-item"><div class="timeline-left"><div class="event-time">16:00</div><div class="event-name" data-en="Cocktails" data-fr="Cocktail">Cocktails</div></div><div class="timeline-dot"></div><div></div></div>
-      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="timeline-right"><div class="event-time">18:00</div><div class="event-name" data-en="Dinner" data-fr="Dîner">Dinner</div></div></div>
-      <div class="timeline-item"><div class="timeline-left"><div class="event-time">20:00</div><div class="event-name" data-en="Cutting the Cake" data-fr="Découpe du gâteau">Cutting the Cake</div></div><div class="timeline-dot"></div><div></div></div>
-      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="timeline-right"><div class="event-time">00:00</div><div class="event-name" data-en="Celebration Ends" data-fr="Fin de la célébration">Celebration Ends</div></div></div>
+      <div class="timeline-item">
+        <div class="event-copy">
+          <div class="event-time">14:00</div>
+          <span data-en="Arrival" data-fr="Accueil">Arrival</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="timeline-dot"></div>
+        <div class="event-copy">
+          <div class="event-time">14:30</div>
+          <span data-en="Ceremony" data-fr="Cérémonie">Ceremony</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="event-copy">
+          <div class="event-time">16:00</div>
+          <span data-en="Cocktails" data-fr="Cocktail">Cocktails</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="timeline-dot"></div>
+        <div class="event-copy">
+          <div class="event-time">18:00</div>
+          <span data-en="Dinner" data-fr="Dîner">Dinner</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="event-copy">
+          <div class="event-time">20:00</div>
+          <span data-en="Cutting the Cake" data-fr="Découpe du gâteau">Cutting the Cake</span>
+        </div>
+        <div class="timeline-dot"></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="timeline-dot"></div>
+        <div class="event-copy">
+          <div class="event-time">00:00</div>
+          <span data-en="Finish" data-fr="Fin de soirée">Finish</span>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- DRESS CODE -->
   <section id="dresscode">
-    <img class="dress-photo" src="https://i.postimg.cc/3Nps96WC/IMG-8968.jpg" alt="Dress code inspiration" loading="lazy">
-    <div class="section-title" data-en="Dress Code" data-fr="Code vestimentaire">Dress Code</div>
-    <p class="dress-note" data-en="Elegant festive attire is kindly requested. We invite you to dress up for a beautiful day together." data-fr="Une tenue élégante et festive est souhaitée. Nous vous invitons à vous mettre sur votre trente-et-un pour cette belle journée.">Elegant festive attire is kindly requested. We invite you to dress up for a beautiful day together.</p>
+    <div class="dress-card">
+      <div class="section-title" data-en="Dress Code" data-fr="Tenue vestimentaire">Dress Code</div>
+
+      <div class="dress-category" data-en="Women" data-fr="Femmes">Women</div>
+      <div class="dress-desc" data-en="Cocktail or formal dress" data-fr="Robe de cocktail ou tenue de soirée">Cocktail or formal dress</div>
+
+      <hr class="divider">
+
+      <div class="dress-category" data-en="Men" data-fr="Hommes">Men</div>
+      <div class="dress-desc" data-en="Dark suit and tie" data-fr="Costume sombre et cravate">Dark suit and tie</div>
+    </div>
   </section>
 
-  <section id="bow">
-    <img class="decor-img" src="bow.PNG" alt="Decorative bow" onerror="this.style.display='none'">
-  </section>
-
+  <!-- PRE-WEDDING EVENTS -->
   <section id="prewedding">
-    <div class="pre-title" data-en="Before the big day" data-fr="Avant le grand jour">Before the big day</div>
-    <h2 class="section-title" data-en="Come Say Hello" data-fr="Retrouvons-nous">Come Say Hello</h2>
-    <p class="section-copy" data-en="We would love to spend a little extra time with you before the wedding. Join us for these relaxed get-togethers." data-fr="Nous aimerions passer un peu plus de temps avec vous avant le mariage. Rejoignez-nous pour ces moments conviviaux.">We would love to spend a little extra time with you before the wedding. Join us for these relaxed get-togethers.</p>
-    <div class="event-grid">
-      <div class="event-card"><h3 data-en="Welcome Drinks" data-fr="Verre de bienvenue">Welcome Drinks</h3><p data-en="A relaxed evening to greet everyone and begin the celebrations." data-fr="Une soirée décontractée pour retrouver tout le monde et commencer les festivités.">A relaxed evening to greet everyone and begin the celebrations.</p><div class="event-meta" data-en="DATE & LOCATION TO BE CONFIRMED" data-fr="DATE ET LIEU À CONFIRMER">DATE & LOCATION TO BE CONFIRMED</div></div>
-      <div class="event-card"><h3 data-en="A Little Get-Together" data-fr="Un moment ensemble">A Little Get-Together</h3><p data-en="Good company, conversation and a little time together before the big day." data-fr="De belles rencontres, des conversations et un moment ensemble avant le grand jour.">Good company, conversation and a little time together before the big day.</p><div class="event-meta" data-en="DETAILS TO BE CONFIRMED" data-fr="DÉTAILS À CONFIRMER">DETAILS TO BE CONFIRMED</div></div>
+    <img class="bow-image" src="bow.PNG" alt="Decorative blue bow">
+
+    <p class="kicker" data-en="Pre-Wedding Events" data-fr="Événements avant le mariage">Pre-Wedding Events</p>
+    <div class="section-title" data-en="Come Say Hello..." data-fr="Venez nous saluer...">Come Say Hello...</div>
+
+    <p class="intro-copy"
+       data-en="These are informal gatherings, so feel free to join us if you're in the area."
+       data-fr="Ces rencontres sont informelles : rejoignez-nous si vous êtes dans les environs.">
+      These are informal gatherings, so feel free to join us if you're in the area.
+    </p>
+
+    <div class="event-card">
+      <img class="event-icon" src="https://i.postimg.cc/NGTkGYHz/IMG-8948.png" alt="Cocktail illustration">
+      <div class="event-title" data-en="Cocktail Party" data-fr="Cocktail">Cocktail Party</div>
+      <div class="event-datetime" data-en="Friday, September 11th, 2026 · 8:00 PM" data-fr="Vendredi 11 septembre 2026 · 20 h 00">
+        Friday, September 11th, 2026 · 8:00 PM
+      </div>
+      <hr class="divider">
+      <div class="event-location">Bodega García Hidalgo, Ronda</div>
+    </div>
+
+    <div class="event-card">
+      <img class="event-icon" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Wedding day illustration">
+      <div class="event-title" data-en="Wedding Day" data-fr="Jour du mariage">Wedding Day</div>
+      <div class="event-datetime" data-en="Sunday, September 13th, 2026 · 12:00 PM" data-fr="Dimanche 13 septembre 2026 · 12 h 00">
+        Sunday, September 13th, 2026 · 12:00 PM
+      </div>
+      <hr class="divider">
+      <div class="event-location">Parador de Ronda (terrace)</div>
     </div>
   </section>
 
+  <!-- ACCOMMODATION -->
   <section id="accommodation">
-    <h2 class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</h2>
-    <p class="section-copy" style="margin-bottom:24px" data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby." data-fr="La Finca El Olivar ne propose pas d'hébergement, mais voici quelques options recommandées à proximité.">Finca El Olivar does not offer lodging, but here are some recommended options nearby.</p>
+    <div class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</div>
+
+    <p class="intro-copy"
+       data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby."
+       data-fr="La Finca El Olivar ne propose pas d’hébergement ; voici quelques options recommandées à proximité.">
+      Finca El Olivar does not offer lodging, but here are some recommended options nearby.
+    </p>
+
     <div class="glass-card">
-      <div class="hotel-block"><div class="hotel-name">PARADOR DE RONDA</div><div class="hotel-location">Ronda</div><div class="hotel-distance" data-en="Approx. 2 km from the venue" data-fr="À environ 2 km du lieu">Approx. 2 km from the venue</div><div class="hotel-contact"><a href="tel:+34952877500">+34 952 877 500</a><br><a href="mailto:ronda@parador.es">ronda@parador.es</a></div><a class="outline-btn" href="https://www.parador.es" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a></div>
-      <div class="card-divider"></div>
-      <div class="hotel-block"><div class="hotel-name">HOTEL CATALONIA RONDA</div><div class="hotel-location">Ronda</div><div class="hotel-distance" data-en="Approx. 1.5 km from the venue" data-fr="À environ 1,5 km du lieu">Approx. 1.5 km from the venue</div><div class="hotel-contact"><a href="tel:+34952872315">+34 952 872 315</a><br><a href="mailto:ronda@hoteles-catalonia.es">ronda@hoteles-catalonia.es</a></div><a class="outline-btn" href="https://www.catalonialotels.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a><div class="promo-code">Promo Code: BODA2026</div></div>
-      <div class="card-divider"></div>
-      <div class="hotel-block"><div class="hotel-name">HOTEL MONTELIRIO</div><div class="hotel-location">Ronda</div><div class="hotel-distance" data-en="Boutique hotel overlooking El Tajo" data-fr="Hôtel boutique surplombant le Tajo">Boutique hotel overlooking El Tajo</div><div class="hotel-contact"><a href="tel:+34952873855">+34 952 873 855</a><br><a href="mailto:reservas@hotelmontelirio.com">reservas@hotelmontelirio.com</a></div><a class="outline-btn" href="https://www.hotelmontelirio.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a></div>
+      <div class="hotel-block">
+        <div class="hotel-name">PARADOR DE RONDA</div>
+        <div class="hotel-location">Ronda</div>
+        <div class="hotel-distance" data-en="2 km from the venue" data-fr="À 2 km du lieu">2 km from the venue</div>
+        <div class="hotel-contact">
+          <a href="tel:+34952877500">+34 952 877 500</a> ·
+          <a href="mailto:ronda@parador.es">ronda@parador.es</a>
+        </div>
+        <a class="website-btn" href="https://www.parador.es" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
+      </div>
+
+      <hr class="divider">
+
+      <div class="hotel-block">
+        <div class="hotel-name">HOTEL CATALONIA RONDA</div>
+        <div class="hotel-location">Ronda</div>
+        <div class="hotel-distance" data-en="1.5 km from the venue" data-fr="À 1,5 km du lieu">1.5 km from the venue</div>
+        <div class="hotel-contact">
+          <a href="tel:+34952872315">+34 952 872 315</a> ·
+          <a href="mailto:ronda@hoteles-catalonia.es">ronda@hoteles-catalonia.es</a>
+        </div>
+        <a class="website-btn" href="https://www.catalonialotels.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
+        <p class="hotel-distance" style="margin-top:8px">Promo Code: BODA2026</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="hotel-block">
+        <div class="hotel-name">HOTEL MONTELIRIO</div>
+        <div class="hotel-location">Ronda</div>
+        <div class="hotel-distance" data-en="Boutique hotel overlooking El Tajo" data-fr="Hôtel-boutique surplombant le Tajo">Boutique hotel overlooking El Tajo</div>
+        <div class="hotel-contact">
+          <a href="tel:+34952873855">+34 952 873 855</a> ·
+          <a href="mailto:reservas@hotelmontelirio.com">reservas@hotelmontelirio.com</a>
+        </div>
+        <a class="website-btn" href="https://www.hotelmontelirio.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
+      </div>
     </div>
   </section>
 
+  <!-- PICTURE SLIDESHOW -->
   <section id="pictures">
-    <h2 class="section-title" data-en="Our Moments" data-fr="Nos moments">Our Moments</h2>
-    <p class="section-copy" data-en="A few beautiful memories and moments that tell our story." data-fr="Quelques beaux souvenirs et instants qui racontent notre histoire.">A few beautiful memories and moments that tell our story.</p>
-    <div class="marquee-wrapper"><div class="marquee-track">
-      <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=85" alt="Wedding couple" loading="lazy"></div>
-      <div class="slide-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=85" alt="Wedding flowers" loading="lazy"></div>
-      <div class="slide-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=500&q=85" alt="Wedding table" loading="lazy"></div>
-      <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=85" alt="Wedding couple" loading="lazy"></div>
-      <div class="slide-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=85" alt="Wedding flowers" loading="lazy"></div>
-      <div class="slide-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=500&q=85" alt="Wedding table" loading="lazy"></div>
-    </div></div>
+    <div class="picture-heading">
+      <div class="section-title" data-en="Our Memories" data-fr="Nos souvenirs">Our Memories</div>
+      <p class="kicker" data-en="A few moments to cherish" data-fr="Quelques instants à chérir">A few moments to cherish</p>
+    </div>
+
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="slide-card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette">
+        </div>
+        <div class="slide-card">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch">
+        </div>
+        <div class="slide-card">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception">
+        </div>
+        <div class="slide-card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette">
+        </div>
+        <div class="slide-card">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch">
+        </div>
+        <div class="slide-card">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception">
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="gifts">
-    <h2 class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</h2>
-    <p class="gift-note" data-en="Your presence is our greatest gift. If you wish to give us something, you can find the registry details below." data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez les informations ci-dessous.">Your presence is our greatest gift. If you wish to give us something, you can find the registry details below.</p>
-    <div class="glass-card gift-card">
+  <!-- GIFTS -->
+  <section id="gift">
+    <div class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</div>
+
+    <p class="gift-subtitle"
+       data-en="Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:"
+       data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez ci-dessous nos coordonnées bancaires :">
+      Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:
+    </p>
+
+    <div class="bank-card">
       <div class="bank-name">CAIXABANK – ANDREA MORALES</div>
       <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
       <div class="bank-detail">BIC/SWIFT: <span>XXXXXXXXXXX</span></div>
     </div>
-    <div class="glass-card gift-card">
+
+    <div class="bank-card">
       <div class="bank-name">BANCO SANTANDER – PEDRO FERNÁNDEZ</div>
       <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
       <div class="bank-detail">BIC/SWIFT: <span>XXXXXXXXXXX</span></div>
     </div>
   </section>
 
-  <section id="swan">
-    <img class="swan-image" src="swan.PNG" alt="Swan illustration" onerror="this.style.display='none'">
-  </section>
-
+  <!-- RSVP -->
   <section id="rsvp">
-    <h2 class="section-title">RSVP</h2>
-    <p class="section-copy" style="margin-bottom:28px" data-en="Let us know if you can make it" data-fr="Merci de nous confirmer votre présence">Let us know if you can make it</p>
-    <div class="form-card">
-      <!-- This form currently shows a confirmation only. Connect a Google Apps Script or form endpoint to save responses online. -->
-      <form id="rsvpForm">
-        <div class="form-group">
-          <label class="form-label" data-en="Will you be attending? *" data-fr="Serez-vous présent(e) ? *">Will you be attending? *</label>
-          <label class="radio-option"><input type="radio" name="attendance" value="yes" checked><span data-en="Yes, I'll be there" data-fr="Oui, je serai présent(e)">Yes, I'll be there</span></label>
-          <label class="radio-option"><input type="radio" name="attendance" value="no"><span data-en="Unfortunately, I can't make it" data-fr="Malheureusement, je ne pourrai pas venir">Unfortunately, I can't make it</span></label>
-        </div>
-        <div class="form-group"><label class="form-label" for="guestCount" data-en="How many guests?" data-fr="Combien d'invités ?">How many guests?</label><div class="counter-box"><button type="button" class="counter-btn" id="minusGuest" aria-label="Remove guest">−</button><span class="counter-value" id="guestCount">1</span><button type="button" class="counter-btn" id="plusGuest" aria-label="Add guest">+</button></div></div>
-        <div class="form-group"><label class="form-label" for="fullName" data-en="Main contact" data-fr="Contact principal">Main contact</label><input id="fullName" name="name" class="input-field" type="text" placeholder="Full name" data-placeholder-en="Full name" data-placeholder-fr="Nom complet" required><input id="email" name="email" class="input-field" type="email" placeholder="Email address" data-placeholder-en="Email address" data-placeholder-fr="Adresse e-mail" required></div>
-        <div class="form-group"><label class="form-label" for="dietary" data-en="Dietary requirements" data-fr="Régimes alimentaires">Dietary requirements</label><textarea id="dietary" name="dietary" class="textarea-field" rows="3" placeholder="Vegetarian, allergies, etc." data-placeholder-en="Vegetarian, allergies, etc." data-placeholder-fr="Végétarien, allergies, etc."></textarea></div>
-        <button class="submit-btn" type="submit" data-en="Send RSVP" data-fr="Envoyer la réponse">Send RSVP</button>
-        <p id="formMessage" class="form-message" role="status" hidden></p>
-      </form>
+    <div class="swan-top">
+      <div class="swan-container">
+        <img src="swan.PNG" alt="Swan illustration" class="swan-logo">
+      </div>
     </div>
-    <p class="rsvp-note" data-en="Please note: this demo form does not yet send responses to a spreadsheet." data-fr="À noter : ce formulaire de démonstration n'envoie pas encore les réponses vers un tableur.">Please note: this demo form does not yet send responses to a spreadsheet.</p>
+
+    <div class="rsvp-panel">
+      <div class="section-title">RSVP</div>
+
+      <p class="rsvp-subtitle"
+         data-en="Let us know if you can make it"
+         data-fr="Merci de nous confirmer votre présence">
+        Let us know if you can make it
+      </p>
+
+      <div class="form-card">
+        <form id="rsvpForm">
+
+          <div class="form-group">
+            <span class="form-label" data-en="Will you be attending? *" data-fr="Serez-vous présent(e) ? *">Will you be attending? *</span>
+
+            <label class="radio-option">
+              <input type="radio" name="attendance" value="yes" checked>
+              <span data-en="Yes, I'll be there" data-fr="Oui, je serai présent(e)">Yes, I'll be there</span>
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="attendance" value="no">
+              <span data-en="Unfortunately, I can't make it" data-fr="Malheureusement, je ne pourrai pas venir">Unfortunately, I can't make it</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="guestCount" data-en="Number of guests" data-fr="Nombre d’invités">Number of guests</label>
+
+            <div class="counter-box">
+              <button class="counter-btn" type="button" id="minusGuest" aria-label="Remove guest">−</button>
+              <span class="counter-value" id="guestCount">1</span>
+              <button class="counter-btn" type="button" id="plusGuest" aria-label="Add guest">+</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fullName" data-en="Main contact" data-fr="Contact principal">Main contact</label>
+
+            <input id="fullName" name="name" class="input-field" type="text" autocomplete="name" placeholder="Full name" data-placeholder-en="Full name" data-placeholder-fr="Nom complet" required>
+
+            <input id="email" name="email" class="input-field" type="email" autocomplete="email" placeholder="Email address" data-placeholder-en="Email address" data-placeholder-fr="Adresse e-mail" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dietary" data-en="Dietary requirements" data-fr="Régimes alimentaires particuliers">Dietary requirements</label>
+            <input id="dietary" name="dietary" class="input-field" type="text" placeholder="e.g. vegetarian, allergies" data-placeholder-en="e.g. vegetarian, allergies" data-placeholder-fr="Ex. : végétarien, allergies">
+          </div>
+
+          <button class="solid-btn" type="submit" style="width:100%;padding:14px" data-en="SEND RSVP" data-fr="ENVOYER LA RÉPONSE">SEND RSVP</button>
+
+          <p style="font-size:10px;line-height:1.6;color:#777;margin:12px 0 0"
+             data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet."
+             data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">
+            Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.
+          </p>
+        </form>
+      </div>
+    </div>
   </section>
 
-  <section id="ring">
-    <div class="rings-container">💍</div>
-    <div class="name-title">Sophia</div>
-    <span class="ampersand">&</span>
-    <div class="name-title">Alex</div>
-    <div class="wedding-date" data-en="13 MARCH 2027" data-fr="13 MARS 2027">13 MARCH 2027</div>
-    <div class="footer-brand">Made with <span>IvoryVows</span></div>
-  </section>
-  <footer>WITH LOVE · SOPHIA & ALEX</footer>
+  <footer>
+    <span data-en="Made with love" data-fr="Créé avec amour">Made with love</span>
+    · <span class="serif">Ivory Vows</span>
+  </footer>
 </main>
+
+<audio id="backgroundMusic" src="Music inwhite.mp3" preload="auto" loop></audio>
 
 <script>
 (function(){
-  const music = document.getElementById('backgroundMusic');
-  const cover = document.getElementById('cover');
-  const videoSection = document.getElementById('openingVideoSection');
+  const cover = document.getElementById('coverButton');
   const video = document.getElementById('openingVideo');
+  const music = document.getElementById('backgroundMusic');
   const scrollHint = document.getElementById('scrollHint');
-  const openButton = document.getElementById('openInvitation');
   let opened = false;
 
-  openButton.addEventListener('click', async function(){
+  // Tap the cover: hide the cover, start music and play the video.
+  cover.addEventListener('click', async function(){
     if(opened) return;
     opened = true;
-    music.volume = 0.55;
-    try { await music.play(); } catch(e) { /* Browser may block audio until another tap. */ }
+
     cover.style.display = 'none';
-    videoSection.style.display = 'block';
-    video.currentTime = 0;
-    try { await video.play(); } catch(e) {
-      scrollHint.style.display = 'block';
-      videoSection.scrollIntoView({behavior:'smooth'});
+    video.style.display = 'block';
+
+    music.volume = 0.45;
+
+    try {
+      await music.play();
+    } catch(e) {
+      // Browser may block audio.
     }
-    videoSection.scrollIntoView({behavior:'smooth', block:'start'});
+
+    try {
+      await video.play();
+    } catch(e) {
+      video.controls = true;
+      scrollHint.style.display = 'block';
+    }
   });
 
+  // When the video finishes, keep its final frame visible and show Scroll.
   video.addEventListener('ended', function(){
+    if(Number.isFinite(video.duration) && video.duration > 0){
+      try {
+        video.currentTime = Math.max(0, video.duration - 0.05);
+      } catch(e) {}
+    }
+
     video.pause();
-    try { video.currentTime = Math.max(0, video.duration - 0.05); } catch(e) {}
-    scrollHint.style.display = 'block';
-  });
-  video.addEventListener('error', function(){
     scrollHint.style.display = 'block';
   });
 
-  const target = new Date('2027-03-13T00:00:00');
+  // Countdown to 13 March 2027.
+  const target = new Date('2027-03-13T00:00:00').getTime();
+
   function updateCountdown(){
-    let distance = target.getTime() - Date.now();
-    if(distance < 0) distance = 0;
+    let distance = Math.max(0, target - Date.now());
+
     const values = {
       days: Math.floor(distance / 86400000),
       hours: Math.floor((distance % 86400000) / 3600000),
       minutes: Math.floor((distance % 3600000) / 60000),
       seconds: Math.floor((distance % 60000) / 1000)
     };
-    Object.keys(values).forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.textContent = String(values[id]).padStart(2,'0');
+
+    Object.keys(values).forEach(id => {
+      document.getElementById(id).textContent = String(values[id]).padStart(2,'0');
     });
   }
-  updateCountdown(); setInterval(updateCountdown,1000);
 
-  let guests = 1;
-  const guestDisplay = document.getElementById('guestCount');
-  document.getElementById('minusGuest').addEventListener('click',()=>{guests=Math.max(1,guests-1);guestDisplay.textContent=guests;});
-  document.getElementById('plusGuest').addEventListener('click',()=>{guests=Math.min(10,guests+1);guestDisplay.textContent=guests;});
+  updateCountdown();
+  setInterval(updateCountdown,1000);
 
-  document.getElementById('rsvpForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const lang = document.documentElement.lang || 'en';
-    const msg = document.getElementById('formMessage');
-    msg.textContent = lang === 'fr'
-      ? 'Merci ! Le formulaire est prêt visuellement, mais aucune réponse n’est enregistrée en ligne pour le moment.'
-      : 'Thank you! The form is styled and working locally, but responses are not saved online yet.';
-    msg.hidden = false;
-  });
+  // English/French language switch.
+  const langButtons = document.querySelectorAll('.lang-switch button');
 
   function setLanguage(lang){
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-en][data-fr]').forEach(el=>{
+
+    document.querySelectorAll('[data-en][data-fr]').forEach(el => {
       el.textContent = el.dataset[lang];
     });
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(el=>{
-      el.placeholder = el.dataset['placeholder'+(lang==='fr'?'Fr':'En')];
+
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(el => {
+      el.placeholder = el.dataset['placeholder' + (lang === 'en' ? 'En' : 'Fr')];
     });
-    document.querySelectorAll('.lang-switch button').forEach(btn=>{
-      btn.classList.toggle('active',btn.dataset.lang===lang);
+
+    langButtons.forEach(btn => {
+      btn.classList.toggle('active',btn.dataset.lang === lang);
     });
   }
-  document.querySelectorAll('.lang-switch button').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click',()=>setLanguage(btn.dataset.lang));
+  });
+
+  // RSVP guest counter, limited to 1–10.
+  let guests = 1;
+  const guestCount = document.getElementById('guestCount');
+
+  document.getElementById('minusGuest').addEventListener('click',()=>{
+    guests = Math.max(1,guests-1);
+    guestCount.textContent = guests;
+  });
+
+  document.getElementById('plusGuest').addEventListener('click',()=>{
+    guests = Math.min(10,guests+1);
+    guestCount.textContent = guests;
+  });
+
+  // Demo RSVP form: it shows a message but does not save responses online.
+  document.getElementById('rsvpForm').addEventListener('submit',function(e){
+    e.preventDefault();
+
+    const lang = document.documentElement.lang;
+
+    const msg = lang === 'fr'
+      ? 'Merci ! Votre réponse a été saisie dans cette démonstration. Pour enregistrer les réponses en ligne, connectez le formulaire à un tableur ou à un service RSVP.'
+      : 'Thank you! Your response was entered in this demo. To save responses online, connect this form to a spreadsheet or RSVP service.';
+
+    alert(msg);
+  });
+
+  // Tiny, soft white falling sparks across the entire website.
+  const canvas = document.getElementById('sparkCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let width = 0;
+  let height = 0;
+  let ratio = 1;
+  let sparks = [];
+
+  function resize(){
+    ratio = Math.min(window.devicePixelRatio || 1,2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = Math.floor(width * ratio);
+    canvas.height = Math.floor(height * ratio);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+
+    ctx.setTransform(ratio,0,0,ratio,0,0);
+
+    const count = Math.min(42,Math.max(18,Math.floor(width/12)));
+
+    sparks = Array.from({length:count},()=>({
+      x:Math.random()*width,
+      y:Math.random()*height,
+      r:Math.random()*0.8+0.35,
+      speed:Math.random()*0.45+0.18,
+      drift:(Math.random()-0.5)*0.22,
+      alpha:Math.random()*0.35+0.18
+    }));
+  }
+
+  function animateSparks(){
+    ctx.clearRect(0,0,width,height);
+
+    for(const s of sparks){
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(255,255,255,' + s.alpha + ')';
+      ctx.fill();
+
+      s.y += s.speed;
+      s.x += s.drift;
+
+      if(s.y > height+3){
+        s.y = -3;
+        s.x = Math.random()*width;
+      }
+
+      if(s.x < -3) s.x = width+3;
+      if(s.x > width+3) s.x = -3;
+    }
+
+    requestAnimationFrame(animateSparks);
+  }
+
+  resize();
+  window.addEventListener('resize',resize);
+  animateSparks();
 })();
 </script>
+
 </body>
 </html>
