@@ -1,22 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#8baed6">
-<title>Wedding Invitation | Danny & Rudy</title>
+<title>Wedding Invitation | Danny &amp; Rudy</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --navy:#2c4a6f;
+  --navy:#17345b;
   --blue:#5b87c5;
   --pale:#edf4fc;
   --white:#fff;
-  --ink:#314a68;
+  --ink:#17345b;
   --glass:rgba(255,255,255,.86);
   --line:rgba(255,255,255,.6);
 }
@@ -50,20 +49,21 @@ section{
 h1,h2,h3,p{margin-top:0}
 .script{font-family:'Great Vibes',cursive;font-weight:400}
 .serif{font-family:'Cinzel',serif;letter-spacing:1.5px;text-transform:uppercase}
+
 .section-title{
   font:400 47px/1.12 'Great Vibes',cursive;
-  color:#fff;
-  text-shadow:0 2px 8px #243f6530;
+  color:#17345b;
+  text-shadow:none;
   margin:0 0 12px;
 }
 .kicker{
   font:500 10px/1.6 'Cinzel',serif;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:#edf4fc;
+  color:#17345b;
   margin:0 0 12px;
 }
-.subtle{font-size:12px;line-height:1.8;color:#f5f8ff}
+.subtle{font-size:12px;line-height:1.8;color:#17345b}
 .glass-card{
   background:var(--glass);
   border:1px solid rgba(255,255,255,.72);
@@ -79,6 +79,8 @@ h1,h2,h3,p{margin-top:0}
   background:#9db6d5;
   margin:22px auto;
 }
+
+/* LANGUAGE SWITCH */
 .lang-switch{
   position:fixed;
   top:12px;
@@ -104,7 +106,7 @@ h1,h2,h3,p{margin-top:0}
 }
 .lang-switch button.active{background:var(--navy);color:white}
 
-/* WHITE TWINKLING SPARKLES */
+/* TWINKLING WHITE SPARKLES */
 #sparkCanvas{
   position:fixed;
   inset:0;
@@ -114,7 +116,7 @@ h1,h2,h3,p{margin-top:0}
   z-index:20;
 }
 
-/* OPENING COVER: IMAGE + SMALL TAP LABEL ONLY */
+/* OPENING COVER */
 #opening{
   padding:0;
   min-height:100svh;
@@ -141,32 +143,42 @@ h1,h2,h3,p{margin-top:0}
   object-fit:cover;
   display:block;
 }
+
+/* TAP TO OPEN: LOWER PART, CENTERED, NO BOX */
 .cover-overlay{
   position:absolute;
   inset:0;
   display:flex;
+  flex-direction:column;
   justify-content:flex-end;
   align-items:center;
-  padding:0 20px 8vh;
+  padding:0 20px 9vh;
   color:#fff;
   pointer-events:none;
+  background:transparent;
 }
 .tap-label{
-  font:400 19px 'Montserrat',sans-serif;
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  font:400 17px 'Montserrat',sans-serif;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  text-shadow:0 2px 10px #000b;
-  padding:9px 17px;
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:24px;
-  background:rgba(20,35,58,.20);
-  backdrop-filter:blur(3px);
+  text-align:center;
+  color:#fff;
+  text-shadow:0 2px 8px rgba(0,0,0,.85);
   animation:tapPulse 2s ease-in-out infinite;
 }
 @keyframes tapPulse{
   0%,100%{opacity:.78;transform:translateY(0)}
   50%{opacity:1;transform:translateY(-3px)}
 }
+
 #openingVideo{
   display:none;
   width:100%;
@@ -194,7 +206,7 @@ h1,h2,h3,p{margin-top:0}
   50%{transform:translateY(5px)}
 }
 
-/* MUSIC BUTTON */
+/* MUSIC ICON */
 #musicButton{
   display:none;
   position:fixed;
@@ -205,7 +217,7 @@ h1,h2,h3,p{margin-top:0}
   height:43px;
   border-radius:50%;
   border:1px solid rgba(255,255,255,.85);
-  background:rgba(34,58,91,.78);
+  background:rgba(34,58,91,.85);
   color:white;
   box-shadow:0 4px 18px #101d3538;
   backdrop-filter:blur(8px);
@@ -214,14 +226,13 @@ h1,h2,h3,p{margin-top:0}
   align-items:center;
   justify-content:center;
 }
-#musicButton.playing .music-symbol{
-  animation:musicSpin 4s linear infinite;
-}
+#musicButton.playing .music-symbol{animation:musicSpin 4s linear infinite}
 @keyframes musicSpin{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
 }
 
+/* COUNTDOWN */
 #countdown{padding-top:58px}
 .countdown-grid{
   display:flex;
@@ -232,26 +243,32 @@ h1,h2,h3,p{margin-top:0}
 .time-box{min-width:55px}
 .time-value{
   font:500 27px 'Cinzel',serif;
-  color:#fff;
-  text-shadow:0 2px 5px #1c2d5930;
+  color:#17345b;
+  text-shadow:none;
 }
 .time-label{
   font-size:9px;
   letter-spacing:1px;
   text-transform:uppercase;
-  color:#edf4fc;
+  color:#17345b;
   margin-top:5px;
 }
-.time-divider{font-size:22px;color:#edf4fc;margin-top:1px}
+.time-divider{font-size:22px;color:#17345b;margin-top:1px}
+
+/* WELCOME */
 #welcome p{
   font:14px/1.9 'Cinzel',serif;
-  color:#f4f8ff;
+  color:#17345b;
   max-width:390px;
   margin:0 auto;
 }
+
+/* VASE */
 #vase{padding:22px 20px 6px}
 .decor-image{display:block;object-fit:contain;margin:0 auto}
 .vase-image{width:190px;max-height:250px}
+
+/* VENUE */
 #venue{padding-top:22px}
 .venue-card{
   background:#fff;
@@ -302,6 +319,8 @@ h1,h2,h3,p{margin-top:0}
 }
 .outline-btn{border:1px solid var(--navy);color:var(--navy);background:transparent}
 .solid-btn{border:0;background:var(--navy);color:white}
+
+/* DAY PROGRAMME */
 #timeline{padding-top:50px}
 .timeline{max-width:360px;margin:26px auto 0;position:relative}
 .timeline:before{
@@ -311,7 +330,7 @@ h1,h2,h3,p{margin-top:0}
   bottom:0;
   left:50%;
   width:1px;
-  background:#e7f0fb;
+  background:rgba(23,52,91,.35);
   transform:translateX(-50%);
 }
 .timeline-item{
@@ -328,24 +347,26 @@ h1,h2,h3,p{margin-top:0}
   font-size:10px;
   letter-spacing:1.2px;
   text-transform:uppercase;
-  color:#f5f8ff;
+  color:#17345b;
   line-height:1.6;
 }
 .event-time{
   font:600 14px 'Cinzel',serif;
   letter-spacing:1px;
-  color:#fff;
+  color:#17345b;
   margin-bottom:3px;
 }
 .timeline-dot{
   width:8px;
   height:8px;
   border-radius:50%;
-  background:#fff;
+  background:#17345b;
   justify-self:center;
   z-index:1;
-  box-shadow:0 0 0 4px #ffffff25;
+  box-shadow:0 0 0 4px rgba(23,52,91,.15);
 }
+
+/* DRESS CODE */
 #dresscode{padding-top:48px}
 .dress-card{
   background:linear-gradient(#ffffffa8,#ffffffb5),url('https://i.postimg.cc/3Nps96WC/IMG-8968.jpg') center top/cover;
@@ -360,6 +381,8 @@ h1,h2,h3,p{margin-top:0}
   margin:18px 0 5px;
 }
 .dress-desc{font-size:13px;color:#3b5983;font-weight:500;letter-spacing:.3px}
+
+/* PRE-WEDDING */
 .bow-image{width:140px;max-height:190px;margin:0 auto;display:block}
 #prewedding{padding-top:10px}
 #prewedding .section-title,
@@ -371,7 +394,7 @@ h1,h2,h3,p{margin-top:0}
 .intro-copy{
   font-size:12px;
   line-height:1.8;
-  color:#f5f8ff;
+  color:#17345b;
   max-width:350px;
   margin:0 auto 25px;
 }
@@ -385,6 +408,8 @@ h1,h2,h3,p{margin-top:0}
 .event-icon{width:85px;height:85px;object-fit:contain;margin:0 auto 12px;display:block}
 .event-title{font:400 38px 'Great Vibes',cursive;color:var(--navy);margin-bottom:12px}
 .event-location{font:12px/1.7 'Cinzel',serif;color:#444}
+
+/* ACCOMMODATION */
 #accommodation .intro-copy{margin-bottom:22px}
 .hotel-block{padding:8px 0}
 .hotel-name{
@@ -403,6 +428,8 @@ h1,h2,h3,p{margin-top:0}
   font:600 10px 'Cinzel',serif;
   letter-spacing:1px;
 }
+
+/* MOVING PICTURE SLIDESHOW */
 #pictures{padding-left:0;padding-right:0}
 .picture-heading{padding:0 20px}
 .marquee-wrapper{width:100%;overflow:hidden;padding:10px 0 22px}
@@ -427,10 +454,12 @@ h1,h2,h3,p{margin-top:0}
   from{transform:translateX(0)}
   to{transform:translateX(-420px)}
 }
+
+/* GIFTS */
 #gift{padding-top:40px}
 .gift-subtitle{
   font:italic 17px/1.6 'Cormorant Garamond',serif;
-  color:#f5f8ff;
+  color:#17345b;
   margin:0 auto 25px;
   max-width:360px;
 }
@@ -446,6 +475,8 @@ h1,h2,h3,p{margin-top:0}
 .bank-name{font:600 12px 'Cinzel',serif;letter-spacing:1px;margin-bottom:13px}
 .bank-detail{font:11px/1.8 'Montserrat',sans-serif;overflow-wrap:anywhere}
 .bank-detail span{font-weight:600}
+
+/* RSVP */
 #rsvp{padding:0 0 45px}
 .swan-top{padding:30px 20px 26px}
 .swan-container{
@@ -466,6 +497,7 @@ h1,h2,h3,p{margin-top:0}
   background:linear-gradient(180deg,#5b87c5aa 0%,#1c2d59e8 70%,#0a1128 100%);
   position:relative;
 }
+.rsvp-panel .section-title{color:#fff;text-shadow:0 2px 8px #0002}
 .rsvp-subtitle{
   font:italic 17px 'Cormorant Garamond',serif;
   color:#f0f5ff;
@@ -523,6 +555,7 @@ footer{
   color:#eaf2fc;
 }
 footer a{color:inherit}
+
 @media(min-width:700px){
   main{box-shadow:0 0 50px #172d4b18}
   .section-title{font-size:52px}
@@ -549,7 +582,7 @@ footer a{color:inherit}
 
 <main>
 
-  <!-- OPENING: ENV IMAGE WITH ONLY TAP TO OPEN -->
+  <!-- OPENING COVER -->
   <section id="opening" aria-label="Open invitation">
     <button id="coverButton" type="button" aria-label="Tap to open invitation">
       <img src="env.jpg" alt="Wedding invitation cover">
@@ -670,6 +703,7 @@ footer a{color:inherit}
   <section id="accommodation">
     <div class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</div>
     <p class="intro-copy" data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby." data-fr="La Finca El Olivar ne propose pas d’hébergement ; voici quelques options recommandées à proximité.">Finca El Olivar does not offer lodging, but here are some recommended options nearby.</p>
+
     <div class="glass-card">
       <div class="hotel-block">
         <div class="hotel-name">PARADOR DE RONDA</div>
@@ -678,7 +712,9 @@ footer a{color:inherit}
         <div class="hotel-contact"><a href="tel:+34952877500">+34 952 877 500</a> · <a href="mailto:ronda@parador.es">ronda@parador.es</a></div>
         <a class="website-btn" href="https://www.parador.es" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
       </div>
+
       <hr class="divider">
+
       <div class="hotel-block">
         <div class="hotel-name">HOTEL CATALONIA RONDA</div>
         <div class="hotel-location">Ronda</div>
@@ -687,7 +723,9 @@ footer a{color:inherit}
         <a class="website-btn" href="https://www.catalonialotels.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
         <p class="hotel-distance" style="margin-top:8px">Promo Code: BODA2026</p>
       </div>
+
       <hr class="divider">
+
       <div class="hotel-block">
         <div class="hotel-name">HOTEL MONTELIRIO</div>
         <div class="hotel-location">Ronda</div>
@@ -698,12 +736,13 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- PICTURE SLIDESHOW -->
+  <!-- MOVING PICTURE SLIDESHOW -->
   <section id="pictures">
     <div class="picture-heading">
       <div class="section-title" data-en="Our Memories" data-fr="Nos souvenirs">Our Memories</div>
       <p class="kicker" data-en="A few moments to cherish" data-fr="Quelques instants à chérir">A few moments to cherish</p>
     </div>
+
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette"></div>
@@ -720,11 +759,13 @@ footer a{color:inherit}
   <section id="gift">
     <div class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</div>
     <p class="gift-subtitle" data-en="Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:" data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez ci-dessous nos coordonnées bancaires :">Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:</p>
+
     <div class="bank-card">
       <div class="bank-name">CAIXABANK – ANDREA MORALES</div>
       <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
       <div class="bank-detail">BIC/SWIFT: <span>XXXXXXXXXXX</span></div>
     </div>
+
     <div class="bank-card">
       <div class="bank-name">BANCO SANTANDER – PEDRO FERNÁNDEZ</div>
       <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
@@ -735,11 +776,15 @@ footer a{color:inherit}
   <!-- RSVP -->
   <section id="rsvp">
     <div class="swan-top">
-      <div class="swan-container"><img src="swan.PNG" alt="Swan illustration" class="swan-logo"></div>
+      <div class="swan-container">
+        <img src="swan.PNG" alt="Swan illustration" class="swan-logo">
+      </div>
     </div>
+
     <div class="rsvp-panel">
       <div class="section-title">RSVP</div>
       <p class="rsvp-subtitle" data-en="Let us know if you can make it" data-fr="Merci de nous confirmer votre présence">Let us know if you can make it</p>
+
       <div class="form-card">
         <form id="rsvpForm">
           <div class="form-group">
@@ -747,6 +792,7 @@ footer a{color:inherit}
             <label class="radio-option"><input type="radio" name="attendance" value="yes" checked><span data-en="Yes, I'll be there" data-fr="Oui, je serai présent(e)">Yes, I'll be there</span></label>
             <label class="radio-option"><input type="radio" name="attendance" value="no"><span data-en="Unfortunately, I can't make it" data-fr="Malheureusement, je ne pourrai pas venir">Unfortunately, I can't make it</span></label>
           </div>
+
           <div class="form-group">
             <label class="form-label" for="guestCount" data-en="Number of guests" data-fr="Nombre d’invités">Number of guests</label>
             <div class="counter-box">
@@ -755,16 +801,20 @@ footer a{color:inherit}
               <button class="counter-btn" type="button" id="plusGuest" aria-label="Add guest">+</button>
             </div>
           </div>
+
           <div class="form-group">
             <label class="form-label" for="fullName" data-en="Main contact" data-fr="Contact principal">Main contact</label>
             <input id="fullName" name="name" class="input-field" type="text" autocomplete="name" placeholder="Full name" data-placeholder-en="Full name" data-placeholder-fr="Nom complet" required>
             <input id="email" name="email" class="input-field" type="email" autocomplete="email" placeholder="Email address" data-placeholder-en="Email address" data-placeholder-fr="Adresse e-mail" required>
           </div>
+
           <div class="form-group">
             <label class="form-label" for="dietary" data-en="Dietary requirements" data-fr="Régimes alimentaires particuliers">Dietary requirements</label>
             <input id="dietary" name="dietary" class="input-field" type="text" placeholder="e.g. vegetarian, allergies" data-placeholder-en="e.g. vegetarian, allergies" data-placeholder-fr="Ex. : végétarien, allergies">
           </div>
+
           <button class="solid-btn" type="submit" style="width:100%;padding:14px" data-en="SEND RSVP" data-fr="ENVOYER LA RÉPONSE">SEND RSVP</button>
+
           <p style="font-size:10px;line-height:1.6;color:#777;margin:12px 0 0" data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet." data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.</p>
         </form>
       </div>
@@ -777,7 +827,7 @@ footer a{color:inherit}
   </footer>
 </main>
 
-<audio id="backgroundMusic" src="Music inwhite.mp3" preload="auto" loop></audio>
+<audio id="backgroundMusic" src="Music%20inwhite.mp3" preload="auto" loop></audio>
 
 <script>
 (function(){
@@ -798,8 +848,8 @@ footer a{color:inherit}
     musicButton.title = isPlaying ? 'Pause music' : 'Play music';
   }
 
-  // Tap cover: start music and video from the same user interaction.
-  cover.addEventListener('click',async function(){
+  // One tap starts both video and music.
+  cover.addEventListener('click',function(){
     if(opened) return;
     opened = true;
 
@@ -807,31 +857,36 @@ footer a{color:inherit}
     video.style.display = 'block';
     musicButton.style.display = 'flex';
 
-    music.volume = 0.5;
+    music.volume = 0.6;
 
+    // Start music immediately inside the user's tap event.
     const musicPromise = music.play();
-    const videoPromise = video.play();
-
-    if(musicPromise){
-      musicPromise.then(updateMusicButton).catch(function(){
+    if(musicPromise && typeof musicPromise.then === 'function'){
+      musicPromise.then(updateMusicButton).catch(function(error){
+        console.warn('Music could not start. Check the audio file path and format.',error);
         updateMusicButton();
       });
     }
 
-    if(videoPromise){
-      videoPromise.catch(function(){
-        video.controls = true;
+    // Start the opening video from the same tap.
+    const videoPromise = video.play();
+    if(videoPromise && typeof videoPromise.catch === 'function'){
+      videoPromise.catch(function(error){
+        console.warn('Video could not start. Check blue.mp4.',error);
         scrollHint.style.display = 'block';
       });
     }
   });
 
-  // Music icon lets guests pause or resume the music.
-  musicButton.addEventListener('click',async function(){
+  // Music icon pauses or resumes the background music.
+  musicButton.addEventListener('click',function(){
     if(music.paused){
-      try{
-        await music.play();
-      }catch(e){}
+      const playPromise = music.play();
+      if(playPromise && typeof playPromise.catch === 'function'){
+        playPromise.catch(function(error){
+          console.warn('Music could not resume.',error);
+        });
+      }
     }else{
       music.pause();
     }
@@ -841,7 +896,7 @@ footer a{color:inherit}
   music.addEventListener('play',updateMusicButton);
   music.addEventListener('pause',updateMusicButton);
 
-  // Keep the last video frame visible when the video finishes.
+  // Freeze the last frame and show the scroll prompt after the video.
   video.addEventListener('ended',function(){
     if(Number.isFinite(video.duration) && video.duration > 0){
       try{
@@ -852,11 +907,11 @@ footer a{color:inherit}
     scrollHint.style.display = 'block';
   });
 
-  // Countdown to 13 March 2027.
+  // Countdown.
   const target = new Date('2027-03-13T00:00:00').getTime();
 
   function updateCountdown(){
-    let distance = Math.max(0,target - Date.now());
+    const distance = Math.max(0,target - Date.now());
     const values = {
       days:Math.floor(distance / 86400000),
       hours:Math.floor((distance % 86400000) / 3600000),
@@ -864,11 +919,10 @@ footer a{color:inherit}
       seconds:Math.floor((distance % 60000) / 1000)
     };
 
-    Object.keys(values).forEach(id=>{
+    Object.keys(values).forEach(function(id){
       document.getElementById(id).textContent = String(values[id]).padStart(2,'0');
     });
   }
-
   updateCountdown();
   setInterval(updateCountdown,1000);
 
@@ -878,38 +932,40 @@ footer a{color:inherit}
   function setLanguage(lang){
     document.documentElement.lang = lang;
 
-    document.querySelectorAll('[data-en][data-fr]').forEach(el=>{
+    document.querySelectorAll('[data-en][data-fr]').forEach(function(el){
       el.textContent = el.dataset[lang];
     });
 
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(el=>{
-      el.placeholder = el.dataset['placeholder' + (lang === 'en' ? 'En' : 'Fr')];
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(function(el){
+      el.placeholder = el.dataset[lang === 'en' ? 'placeholderEn' : 'placeholderFr'];
     });
 
-    langButtons.forEach(btn=>{
+    langButtons.forEach(function(btn){
       btn.classList.toggle('active',btn.dataset.lang === lang);
     });
   }
 
-  langButtons.forEach(btn=>{
-    btn.addEventListener('click',()=>setLanguage(btn.dataset.lang));
+  langButtons.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      setLanguage(btn.dataset.lang);
+    });
   });
 
-  // RSVP guest counter: minimum 1, maximum 10.
+  // RSVP guest counter.
   let guests = 1;
   const guestCount = document.getElementById('guestCount');
 
-  document.getElementById('minusGuest').addEventListener('click',()=>{
+  document.getElementById('minusGuest').addEventListener('click',function(){
     guests = Math.max(1,guests-1);
     guestCount.textContent = guests;
   });
 
-  document.getElementById('plusGuest').addEventListener('click',()=>{
+  document.getElementById('plusGuest').addEventListener('click',function(){
     guests = Math.min(10,guests+1);
     guestCount.textContent = guests;
   });
 
-  // Demo RSVP form: confirmation only; it does not save responses online.
+  // Demo RSVP form. It displays a message but does not save responses online.
   document.getElementById('rsvpForm').addEventListener('submit',function(e){
     e.preventDefault();
 
@@ -921,7 +977,7 @@ footer a{color:inherit}
     alert(msg);
   });
 
-  /* MORE VISIBLE, TWINKLING WHITE FALLING SPARKLES */
+  // Bright, twinkling white sparkles.
   const canvas = document.getElementById('sparkCanvas');
   const ctx = canvas.getContext('2d');
 
@@ -944,32 +1000,29 @@ footer a{color:inherit}
 
     const count = Math.min(75,Math.max(32,Math.floor(width/7)));
 
-    sparks = Array.from({length:count},()=>({
-      x:Math.random()*width,
-      y:Math.random()*height,
-      r:Math.random()*1.25+0.55,
-      speed:Math.random()*0.38+0.12,
-      drift:(Math.random()-0.5)*0.18,
-      phase:Math.random()*Math.PI*2,
-      twinkleSpeed:Math.random()*0.055+0.018,
-      brightness:Math.random()*0.48+0.42
-    }));
+    sparks = Array.from({length:count},function(){
+      return {
+        x:Math.random()*width,
+        y:Math.random()*height,
+        r:Math.random()*1.25+0.55,
+        speed:Math.random()*0.38+0.12,
+        drift:(Math.random()-0.5)*0.18,
+        phase:Math.random()*Math.PI*2,
+        twinkleSpeed:Math.random()*0.055+0.018,
+        brightness:Math.random()*0.48+0.42
+      };
+    });
   }
 
   function animateSparks(){
     ctx.clearRect(0,0,width,height);
 
     for(const s of sparks){
-      // Each sparkle fades at a different rhythm.
       s.phase += s.twinkleSpeed;
       const twinkle = (Math.sin(s.phase)+1)/2;
       const alpha = 0.12 + twinkle*s.brightness;
 
-      // Soft outer glow.
-      const glow = ctx.createRadialGradient(
-        s.x,s.y,0,
-        s.x,s.y,s.r*5
-      );
+      const glow = ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
       glow.addColorStop(0,'rgba(255,255,255,'+(alpha*0.65)+')');
       glow.addColorStop(1,'rgba(255,255,255,0)');
 
@@ -978,19 +1031,15 @@ footer a{color:inherit}
       ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);
       ctx.fill();
 
-      // Main white sparkle.
       ctx.beginPath();
       ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
       ctx.fillStyle = 'rgba(255,255,255,'+alpha+')';
       ctx.fill();
 
-      // Tiny star-shaped glimmer when the sparkle is brightest.
       if(twinkle > 0.72){
         const glimmerAlpha = (twinkle-0.55)*1.8;
-
         ctx.strokeStyle = 'rgba(255,255,255,'+glimmerAlpha+')';
         ctx.lineWidth = 0.75;
-
         ctx.beginPath();
         ctx.moveTo(s.x-s.r*3.5,s.y);
         ctx.lineTo(s.x+s.r*3.5,s.y);
@@ -999,7 +1048,6 @@ footer a{color:inherit}
         ctx.stroke();
       }
 
-      // Gentle falling movement.
       s.y += s.speed;
       s.x += s.drift;
 
@@ -1007,7 +1055,6 @@ footer a{color:inherit}
         s.y = -8;
         s.x = Math.random()*width;
       }
-
       if(s.x < -8) s.x = width+8;
       if(s.x > width+8) s.x = -8;
     }
