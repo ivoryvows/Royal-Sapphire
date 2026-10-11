@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#8baed6">
-<title>Wedding Invitation | Danny & Rudy</title>
+<title>Wedding Invitation | Danny &amp; Rudy</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,13 +39,13 @@ main{
   margin:0 auto;
   position:relative;
   z-index:1;
-  overflow:hidden
+  overflow:hidden;
 }
 section{
   position:relative;
   padding:42px 22px;
   text-align:center;
-  scroll-margin-top:12px
+  scroll-margin-top:12px;
 }
 h1,h2,h3,p{margin-top:0}
 .script{font-family:'Great Vibes',cursive;font-weight:400}
@@ -54,14 +54,14 @@ h1,h2,h3,p{margin-top:0}
   font:400 47px/1.12 'Great Vibes',cursive;
   color:#fff;
   text-shadow:0 2px 8px #243f6530;
-  margin:0 0 12px
+  margin:0 0 12px;
 }
 .kicker{
   font:500 10px/1.6 'Cinzel',serif;
   letter-spacing:2px;
   text-transform:uppercase;
   color:#edf4fc;
-  margin:0 0 12px
+  margin:0 0 12px;
 }
 .subtle{font-size:12px;line-height:1.8;color:#f5f8ff}
 .glass-card{
@@ -70,76 +70,87 @@ h1,h2,h3,p{margin-top:0}
   border-radius:14px;
   padding:26px 20px;
   box-shadow:0 12px 32px rgba(28,45,89,.10);
-  backdrop-filter:blur(8px)
+  backdrop-filter:blur(8px);
 }
 .divider{
   width:56px;height:1px;border:0;
-  background:#9db6d5;margin:22px auto
+  background:#9db6d5;margin:22px auto;
 }
 .lang-switch{
   position:fixed;top:12px;right:12px;z-index:50;
   display:flex;gap:2px;padding:4px;
   border:1px solid #c7d8eb;border-radius:24px;
   background:rgba(255,255,255,.94);
-  box-shadow:0 4px 16px #1c2d5918
+  box-shadow:0 4px 16px #1c2d5918;
 }
 .lang-switch button{
   border:0;background:transparent;color:var(--navy);
   border-radius:18px;padding:7px 10px;
-  font-size:10px;letter-spacing:1px;cursor:pointer
+  font-size:10px;letter-spacing:1px;cursor:pointer;
 }
 .lang-switch button.active{background:var(--navy);color:white}
 #sparkCanvas{
   position:fixed;inset:0;width:100%;height:100%;
-  pointer-events:none;z-index:20
+  pointer-events:none;z-index:20;
 }
 
 /* OPENING COVER */
 #opening{
   padding:0;
-  min-height:100svh;
+  height:100svh;
+  min-height:540px;
   background:#182b4c;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden
+  overflow:hidden;
 }
 #coverButton{
   position:absolute;inset:0;
   width:100%;height:100%;
   padding:0;border:0;background:#182b4c;
-  cursor:pointer;z-index:2
+  cursor:pointer;z-index:2;
 }
 #coverButton img{
   width:100%;height:100%;
-  object-fit:cover;display:block
+  object-fit:cover;display:block;
 }
 .cover-overlay{
   position:absolute;inset:0;
   background:linear-gradient(180deg,#0d1d3030,#0d1d3055);
   display:flex;flex-direction:column;
   justify-content:flex-end;align-items:center;
-  padding:0 20px 11vh;color:#fff
+  padding:0 20px 11vh;color:#fff;
 }
 .cover-small{
   font:11px 'Cinzel',serif;
-  letter-spacing:3px;text-transform:uppercase
+  letter-spacing:3px;text-transform:uppercase;
 }
 .tap-label{
   font:400 42px 'Great Vibes',cursive;
-  margin-top:10px;text-shadow:0 2px 12px #0005
+  margin-top:10px;text-shadow:0 2px 12px #0005;
 }
 #openingVideo{
-  display:none;width:100%;height:100svh;
-  object-fit:cover;background:#182b4c
+  display:none;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:#182b4c;
 }
 #scrollHint{
-  display:none;position:absolute;
-  bottom:22px;left:0;right:0;color:#fff;
-  font:10px 'Cinzel',serif;letter-spacing:2px;
-  text-transform:uppercase;text-shadow:0 1px 5px #000;
+  display:none;
+  position:absolute;
+  bottom:22px;left:0;right:0;
+  color:#fff;
+  font:10px 'Cinzel',serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-shadow:0 1px 5px #000;
   animation:bob 1.8s ease-in-out infinite;
-  pointer-events:none;z-index:3
+  pointer-events:none;
+  z-index:3;
 }
 #scrollHint span{display:block;font-size:18px;margin-top:5px}
 @keyframes bob{
@@ -151,39 +162,35 @@ h1,h2,h3,p{margin-top:0}
 #musicButton{
   display:none;
   position:fixed;
-  left:16px;
-  bottom:18px;
+  left:16px;bottom:18px;
   width:44px;height:44px;
-  align-items:center;
-  justify-content:center;
+  align-items:center;justify-content:center;
   border:1px solid #ffffffb0;
   border-radius:50%;
   background:rgba(28,45,89,.88);
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
-  z-index:60;
-  box-shadow:0 4px 14px #0002
+  color:#fff;font-size:18px;
+  cursor:pointer;z-index:60;
+  box-shadow:0 4px 14px #0002;
 }
 
 #countdown{padding-top:58px}
 .countdown-grid{
   display:flex;justify-content:center;
-  gap:12px;margin:25px 0 5px
+  gap:12px;margin:25px 0 5px;
 }
 .time-box{min-width:55px}
 .time-value{
   font:500 27px 'Cinzel',serif;
-  color:#fff;text-shadow:0 2px 5px #1c2d5930
+  color:#fff;text-shadow:0 2px 5px #1c2d5930;
 }
 .time-label{
   font-size:9px;letter-spacing:1px;
-  text-transform:uppercase;color:#edf4fc;margin-top:5px
+  text-transform:uppercase;color:#edf4fc;margin-top:5px;
 }
 .time-divider{font-size:22px;color:#edf4fc;margin-top:1px}
 #welcome p{
   font:14px/1.9 'Cinzel',serif;color:#f4f8ff;
-  max-width:390px;margin:0 auto
+  max-width:390px;margin:0 auto;
 }
 #vase{padding:22px 20px 6px}
 .decor-image{display:block;object-fit:contain;margin:0 auto}
@@ -192,34 +199,34 @@ h1,h2,h3,p{margin-top:0}
 #venue{padding-top:22px}
 .venue-card{
   background:#fff;border-radius:14px;padding:26px 20px;
-  box-shadow:0 12px 30px #1c2d5918
+  box-shadow:0 12px 30px #1c2d5918;
 }
 .building-sketch{
   display:block;width:100%;max-width:270px;
-  max-height:180px;object-fit:contain;margin:0 auto 18px
+  max-height:180px;object-fit:contain;margin:0 auto 18px;
 }
 .finca-title{
   font:400 39px 'Great Vibes',cursive;
-  color:var(--navy);margin-bottom:12px
+  color:var(--navy);margin-bottom:12px;
 }
 .event-datetime{
   font:12px/1.8 'Cinzel',serif;
-  letter-spacing:.5px;color:#555;margin-bottom:18px
+  letter-spacing:.5px;color:#555;margin-bottom:18px;
 }
 .address-text{
   font:12px/1.8 'Cinzel',serif;
-  color:#444;margin-bottom:18px
+  color:#444;margin-bottom:18px;
 }
 .map-box{
   height:180px;border-radius:9px;overflow:hidden;
-  border:1px solid #d0dbe8;margin-bottom:18px
+  border:1px solid #d0dbe8;margin-bottom:18px;
 }
 .map-box iframe{width:100%;height:100%;border:0}
 .outline-btn,.solid-btn{
   display:inline-block;text-decoration:none;
   border-radius:22px;padding:11px 18px;
   font:500 10px 'Cinzel',serif;
-  letter-spacing:1.3px;cursor:pointer
+  letter-spacing:1.3px;cursor:pointer;
 }
 .outline-btn{border:1px solid var(--navy);color:var(--navy);background:transparent}
 .solid-btn{border:0;background:var(--navy);color:white}
@@ -228,38 +235,38 @@ h1,h2,h3,p{margin-top:0}
 .timeline{max-width:360px;margin:26px auto 0;position:relative}
 .timeline:before{
   content:"";position:absolute;top:0;bottom:0;left:50%;
-  width:1px;background:#e7f0fb;transform:translateX(-50%)
+  width:1px;background:#e7f0fb;transform:translateX(-50%);
 }
 .timeline-item{
   display:grid;grid-template-columns:1fr 20px 1fr;
-  align-items:center;gap:8px;min-height:66px;position:relative
+  align-items:center;gap:8px;min-height:66px;position:relative;
 }
 .timeline-item:nth-child(odd) .event-copy:first-child{text-align:right}
 .timeline-item:nth-child(even) .event-copy:last-child{text-align:left}
 .event-copy{
   font-size:10px;letter-spacing:1.2px;
-  text-transform:uppercase;color:#f5f8ff;line-height:1.6
+  text-transform:uppercase;color:#f5f8ff;line-height:1.6;
 }
 .event-time{
   font:600 14px 'Cinzel',serif;
-  letter-spacing:1px;color:#fff;margin-bottom:3px
+  letter-spacing:1px;color:#fff;margin-bottom:3px;
 }
 .timeline-dot{
   width:8px;height:8px;border-radius:50%;
   background:#fff;justify-self:center;z-index:1;
-  box-shadow:0 0 0 4px #ffffff25
+  box-shadow:0 0 0 4px #ffffff25;
 }
 
 #dresscode{padding-top:48px}
 .dress-card{
   background:linear-gradient(#ffffffa8,#ffffffb5),url('https://i.postimg.cc/3Nps96WC/IMG-8968.jpg') center top/cover;
   border-radius:18px;padding:34px 22px;
-  box-shadow:0 10px 28px #1c2d591a
+  box-shadow:0 10px 28px #1c2d591a;
 }
 .dress-card .section-title{color:var(--navy);text-shadow:none}
 .dress-category{
   font:400 34px 'Great Vibes',cursive;
-  color:#1e3554;margin:18px 0 5px
+  color:#1e3554;margin:18px 0 5px;
 }
 .dress-desc{font-size:13px;color:#3b5983;font-weight:500;letter-spacing:.3px}
 .bow-image{width:140px;max-height:190px;margin:0 auto;display:block}
@@ -267,19 +274,19 @@ h1,h2,h3,p{margin-top:0}
 #prewedding{padding-top:10px}
 .intro-copy{
   font-size:12px;line-height:1.8;color:#f5f8ff;
-  max-width:350px;margin:0 auto 25px
+  max-width:350px;margin:0 auto 25px;
 }
 .event-card{
   background:#fff;border-radius:13px;padding:28px 18px;
-  margin:0 0 20px;box-shadow:0 10px 26px #1c2d5918
+  margin:0 0 20px;box-shadow:0 10px 26px #1c2d5918;
 }
 .event-icon{
   width:85px;height:85px;object-fit:contain;
-  margin:0 auto 12px;display:block
+  margin:0 auto 12px;display:block;
 }
 .event-title{
   font:400 38px 'Great Vibes',cursive;
-  color:var(--navy);margin-bottom:12px
+  color:var(--navy);margin-bottom:12px;
 }
 .event-location{font:12px/1.7 'Cinzel',serif;color:#444}
 
@@ -287,16 +294,16 @@ h1,h2,h3,p{margin-top:0}
 .hotel-block{padding:8px 0}
 .hotel-name{
   font:600 13px 'Cinzel',serif;
-  letter-spacing:1px;color:var(--navy);margin-bottom:7px
+  letter-spacing:1px;color:var(--navy);margin-bottom:7px;
 }
 .hotel-location,.hotel-distance,.hotel-contact{
-  font-size:11px;line-height:1.8;color:#555
+  font-size:11px;line-height:1.8;color:#555;
 }
 .hotel-distance{font-style:italic;margin-bottom:8px}
 .hotel-contact a{color:var(--navy);overflow-wrap:anywhere}
 .website-btn{
   display:inline-block;margin-top:8px;color:var(--navy);
-  font:600 10px 'Cinzel',serif;letter-spacing:1px
+  font:600 10px 'Cinzel',serif;letter-spacing:1px;
 }
 
 #pictures{padding-left:0;padding-right:0}
@@ -304,13 +311,13 @@ h1,h2,h3,p{margin-top:0}
 .marquee-wrapper{width:100%;overflow:hidden;padding:10px 0 22px}
 .marquee-track{
   display:flex;gap:12px;width:max-content;
-  animation:scrollLeft 24s linear infinite
+  animation:scrollLeft 24s linear infinite;
 }
 .marquee-wrapper:hover .marquee-track{animation-play-state:paused}
 .slide-card{
   width:128px;height:190px;border-radius:13px;
   overflow:hidden;box-shadow:0 6px 15px #0002;
-  flex-shrink:0;background:#fff
+  flex-shrink:0;background:#fff;
 }
 .slide-card img{width:100%;height:100%;object-fit:cover;display:block}
 @keyframes scrollLeft{
@@ -321,19 +328,19 @@ h1,h2,h3,p{margin-top:0}
 #gift{padding-top:40px}
 .gift-subtitle{
   font:italic 17px/1.6 'Cormorant Garamond',serif;
-  color:#f5f8ff;margin:0 auto 25px;max-width:360px
+  color:#f5f8ff;margin:0 auto 25px;max-width:360px;
 }
 .bank-card{
   background:#fbf9f7;border:1px solid #ede6e0;
   border-radius:7px;padding:20px 15px;
-  margin-bottom:15px;text-align:left;color:#5c4b43
+  margin-bottom:15px;text-align:left;color:#5c4b43;
 }
 .bank-name{
   font:600 12px 'Cinzel',serif;
-  letter-spacing:1px;margin-bottom:13px
+  letter-spacing:1px;margin-bottom:13px;
 }
 .bank-detail{
-  font:11px/1.8 'Montserrat',sans-serif;overflow-wrap:anywhere
+  font:11px/1.8 'Montserrat',sans-serif;overflow-wrap:anywhere;
 }
 .bank-detail span{font-weight:600}
 
@@ -342,48 +349,49 @@ h1,h2,h3,p{margin-top:0}
 .swan-container{
   width:125px;height:125px;border:1px solid #ffffffa8;
   border-radius:50%;background:#ffffffb8;margin:0 auto;
-  display:flex;align-items:center;justify-content:center;padding:10px
+  display:flex;align-items:center;justify-content:center;padding:10px;
 }
 .swan-logo{width:100%;height:100%;object-fit:contain}
 .rsvp-panel{
   padding:38px 22px 48px;
   background:linear-gradient(180deg,#5b87c5aa 0%,#1c2d59e8 70%,#0a1128 100%);
-  position:relative
+  position:relative;
 }
 .rsvp-subtitle{
   font:italic 17px 'Cormorant Garamond',serif;
-  color:#f0f5ff;margin-bottom:25px
+  color:#f0f5ff;margin-bottom:25px;
 }
 .form-card{
   background:#fff;border-radius:8px;padding:25px 18px;
-  text-align:left;box-shadow:0 15px 35px #0002
+  text-align:left;box-shadow:0 15px 35px #0002;
 }
 .form-group{margin-bottom:20px}
 .form-label{
   display:block;font:600 14px 'Cormorant Garamond',serif;
-  color:#4a3b32;margin-bottom:10px
+  color:#4a3b32;margin-bottom:10px;
 }
 .radio-option{
   display:flex;gap:8px;align-items:center;
-  font-size:12px;color:#5c4b43;margin:10px 0
+  font-size:12px;color:#5c4b43;margin:10px 0;
 }
 .radio-option input{accent-color:#2b4c8c}
 .input-field{
   display:block;width:100%;padding:12px;
   border:1px solid #e2dad3;border-radius:4px;
-  background:#fbf9f7;font-size:12px;color:#4a3b32;margin-top:8px
+  background:#fbf9f7;font-size:12px;color:#4a3b32;margin-top:8px;
 }
 .counter-box{display:flex;align-items:center;gap:14px}
 .counter-btn{
   width:34px;height:34px;border:1px solid #dcd3cb;
-  background:#f4f0ec;border-radius:4px;cursor:pointer
+  background:#f4f0ec;border-radius:4px;cursor:pointer;
 }
 .counter-value{font:15px 'Montserrat',sans-serif}
 footer{
   padding:22px;text-align:center;
-  font-size:10px;letter-spacing:1px;color:#eaf2fc
+  font-size:10px;letter-spacing:1px;color:#eaf2fc;
 }
 footer a{color:inherit}
+
 @media(min-width:700px){
   main{box-shadow:0 0 50px #172d4b18}
   .section-title{font-size:52px}
@@ -658,13 +666,6 @@ footer a{color:inherit}
 
   let opened = false;
 
-  /*
-    Prepare media loading before the visitor taps the cover.
-    The actual play() calls remain directly inside the tap handler.
-  */
-  video.load();
-  music.load();
-
   function updateMusicButton(){
     if(music.paused){
       musicButton.textContent = '♫';
@@ -677,46 +678,63 @@ footer a{color:inherit}
     }
   }
 
-  // Both video and music are requested on the SAME cover tap.
+  /*
+    Do not await anything before calling play().
+    Both play requests are made directly from the visitor's tap.
+  */
   cover.addEventListener('click',function(){
     if(opened) return;
     opened = true;
 
-    // Reveal video immediately.
     cover.style.display = 'none';
     video.style.display = 'block';
     musicButton.style.display = 'flex';
+    scrollHint.style.display = 'none';
 
     music.volume = 0.45;
 
-    // Do not await one media before starting the other.
-    // Both play requests happen in this user interaction.
-    const musicPromise = music.play();
-    if(musicPromise && typeof musicPromise.then === 'function'){
-      musicPromise.then(function(){
-        updateMusicButton();
-      }).catch(function(error){
-        console.warn('Music could not start. Check inwhite.mp3.',error);
-        updateMusicButton();
-      });
+    // Start both media elements during the same user interaction.
+    let videoPromise;
+    let musicPromise;
+
+    try{
+      videoPromise = video.play();
+    }catch(error){
+      console.error('Video playback failed:',error);
     }
 
-    const videoPromise = video.play();
-    if(videoPromise && typeof videoPromise.then === 'function'){
+    try{
+      musicPromise = music.play();
+    }catch(error){
+      console.error('Music playback failed:',error);
+    }
+
+    if(videoPromise && typeof videoPromise.catch === 'function'){
       videoPromise.catch(function(error){
-        console.warn('Video could not start. Check blue.mp4.',error);
+        console.error('Could not play blue.mp4:',error);
         scrollHint.style.display = 'block';
       });
     }
+
+    if(musicPromise && typeof musicPromise.then === 'function'){
+      musicPromise.then(updateMusicButton).catch(function(error){
+        console.error('Could not play inwhite.mp3:',error);
+        updateMusicButton();
+      });
+    }else{
+      updateMusicButton();
+    }
   });
 
-  // Music icon is only for pausing and resuming after opening.
+  // Music control.
   musicButton.addEventListener('click',function(){
     if(music.paused){
-      const playPromise = music.play();
-      if(playPromise && typeof playPromise.then === 'function'){
-        playPromise.then(updateMusicButton).catch(function(error){
-          console.warn('Music could not resume.',error);
+      const promise = music.play();
+
+      if(promise && typeof promise.then === 'function'){
+        promise.then(updateMusicButton).catch(function(error){
+          console.error('Could not resume music:',error);
+          updateMusicButton();
         });
       }
     }else{
@@ -725,17 +743,28 @@ footer a{color:inherit}
     }
   });
 
-  // Hold the last video frame and show the scroll hint.
+  music.addEventListener('play',updateMusicButton);
+  music.addEventListener('pause',updateMusicButton);
+
+  /*
+    Freeze on the final video frame.
+    Do not set currentTime to zero or hide the video.
+  */
   video.addEventListener('ended',function(){
     video.pause();
     scrollHint.style.display = 'block';
   });
 
-  // Live countdown to 13 March 2027.
+  video.addEventListener('error',function(){
+    console.error('Could not load blue.mp4. Check the filename and file path.');
+    scrollHint.style.display = 'block';
+  });
+
+  // Countdown to 13 March 2027.
   const target = new Date('2027-03-13T00:00:00').getTime();
 
   function updateCountdown(){
-    let distance = Math.max(0,target-Date.now());
+    const distance = Math.max(0,target-Date.now());
 
     const values = {
       days:Math.floor(distance/86400000),
@@ -763,10 +792,12 @@ footer a{color:inherit}
       el.textContent = el.dataset[lang];
     });
 
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(function(el){
-      el.placeholder = el.dataset[
-        lang === 'en' ? 'placeholderEn' : 'placeholderFr'
-      ];
+    document.querySelectorAll(
+      '[data-placeholder-en][data-placeholder-fr]'
+    ).forEach(function(el){
+      el.placeholder = lang === 'en'
+        ? el.dataset.placeholderEn
+        : el.dataset.placeholderFr;
     });
 
     langButtons.forEach(function(btn){
@@ -794,7 +825,7 @@ footer a{color:inherit}
     guestCount.textContent = guests;
   });
 
-  // Demo RSVP: this does not save data to an online spreadsheet.
+  // Demo RSVP: does not save responses to an online spreadsheet.
   document.getElementById('rsvpForm').addEventListener('submit',function(e){
     e.preventDefault();
 
