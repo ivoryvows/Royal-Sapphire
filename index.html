@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,6 +103,8 @@ h1,h2,h3,p{margin-top:0}
   cursor:pointer;
 }
 .lang-switch button.active{background:var(--navy);color:white}
+
+/* WHITE TWINKLING SPARKLES */
 #sparkCanvas{
   position:fixed;
   inset:0;
@@ -110,9 +113,12 @@ h1,h2,h3,p{margin-top:0}
   pointer-events:none;
   z-index:20;
 }
+
+/* OPENING COVER: IMAGE + SMALL TAP LABEL ONLY */
 #opening{
   padding:0;
   min-height:100svh;
+  height:100svh;
   background:#182b4c;
   display:flex;
   align-items:center;
@@ -138,23 +144,28 @@ h1,h2,h3,p{margin-top:0}
 .cover-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,#0d1d3030,#0d1d3055);
   display:flex;
-  flex-direction:column;
   justify-content:flex-end;
   align-items:center;
-  padding:0 20px 11vh;
+  padding:0 20px 8vh;
   color:#fff;
-}
-.cover-small{
-  font:11px 'Cinzel',serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
+  pointer-events:none;
 }
 .tap-label{
-  font:400 42px 'Great Vibes',cursive;
-  margin-top:10px;
-  text-shadow:0 2px 12px #0005;
+  font:400 19px 'Montserrat',sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  text-shadow:0 2px 10px #000b;
+  padding:9px 17px;
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:24px;
+  background:rgba(20,35,58,.20);
+  backdrop-filter:blur(3px);
+  animation:tapPulse 2s ease-in-out infinite;
+}
+@keyframes tapPulse{
+  0%,100%{opacity:.78;transform:translateY(0)}
+  50%{opacity:1;transform:translateY(-3px)}
 }
 #openingVideo{
   display:none;
@@ -182,6 +193,35 @@ h1,h2,h3,p{margin-top:0}
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(5px)}
 }
+
+/* MUSIC BUTTON */
+#musicButton{
+  display:none;
+  position:fixed;
+  left:15px;
+  bottom:18px;
+  z-index:60;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.85);
+  background:rgba(34,58,91,.78);
+  color:white;
+  box-shadow:0 4px 18px #101d3538;
+  backdrop-filter:blur(8px);
+  cursor:pointer;
+  font-size:19px;
+  align-items:center;
+  justify-content:center;
+}
+#musicButton.playing .music-symbol{
+  animation:musicSpin 4s linear infinite;
+}
+@keyframes musicSpin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
 #countdown{padding-top:58px}
 .countdown-grid{
   display:flex;
@@ -322,6 +362,12 @@ h1,h2,h3,p{margin-top:0}
 .dress-desc{font-size:13px;color:#3b5983;font-weight:500;letter-spacing:.3px}
 .bow-image{width:140px;max-height:190px;margin:0 auto;display:block}
 #prewedding{padding-top:10px}
+#prewedding .section-title,
+#prewedding .kicker,
+#prewedding .intro-copy{
+  color:#17345b;
+  text-shadow:none;
+}
 .intro-copy{
   font-size:12px;
   line-height:1.8;
@@ -483,7 +529,7 @@ footer a{color:inherit}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .marquee-track,#scrollHint{animation:none}
+  .marquee-track,#scrollHint,.tap-label{animation:none}
   #sparkCanvas{display:none}
 }
 </style>
@@ -497,14 +543,17 @@ footer a{color:inherit}
   <button type="button" data-lang="fr">FR</button>
 </div>
 
+<button id="musicButton" type="button" aria-label="Pause music" title="Play or pause music">
+  <span class="music-symbol">♫</span>
+</button>
+
 <main>
 
-  <!-- OPENING COVER -->
+  <!-- OPENING: ENV IMAGE WITH ONLY TAP TO OPEN -->
   <section id="opening" aria-label="Open invitation">
     <button id="coverButton" type="button" aria-label="Tap to open invitation">
       <img src="env.jpg" alt="Wedding invitation cover">
       <span class="cover-overlay">
-        <span class="cover-small" data-en="YOU ARE INVITED" data-fr="VOUS ÊTES INVITÉS">YOU ARE INVITED</span>
         <span class="tap-label" data-en="Tap to Open" data-fr="Touchez pour ouvrir">Tap to Open</span>
       </span>
     </button>
@@ -526,38 +575,26 @@ footer a{color:inherit}
     <p class="kicker" data-en="Until 13 March 2027" data-fr="Jusqu'au 13 mars 2027">Until 13 March 2027</p>
 
     <div class="countdown-grid" aria-label="Countdown">
-      <div class="time-box">
-        <div class="time-value" id="days">00</div>
-        <div class="time-label" data-en="Days" data-fr="Jours">Days</div>
-      </div>
+      <div class="time-box"><div class="time-value" id="days">00</div><div class="time-label" data-en="Days" data-fr="Jours">Days</div></div>
       <div class="time-divider">|</div>
-      <div class="time-box">
-        <div class="time-value" id="hours">00</div>
-        <div class="time-label" data-en="Hours" data-fr="Heures">Hours</div>
-      </div>
+      <div class="time-box"><div class="time-value" id="hours">00</div><div class="time-label" data-en="Hours" data-fr="Heures">Hours</div></div>
       <div class="time-divider">|</div>
-      <div class="time-box">
-        <div class="time-value" id="minutes">00</div>
-        <div class="time-label" data-en="Minutes" data-fr="Minutes">Minutes</div>
-      </div>
+      <div class="time-box"><div class="time-value" id="minutes">00</div><div class="time-label" data-en="Minutes" data-fr="Minutes">Minutes</div></div>
       <div class="time-divider">|</div>
-      <div class="time-box">
-        <div class="time-value" id="seconds">00</div>
-        <div class="time-label" data-en="Seconds" data-fr="Secondes">Seconds</div>
-      </div>
+      <div class="time-box"><div class="time-value" id="seconds">00</div><div class="time-label" data-en="Seconds" data-fr="Secondes">Seconds</div></div>
     </div>
   </section>
 
   <!-- WELCOME -->
   <section id="welcome">
     <div class="section-title" data-en="Welcome!" data-fr="Bienvenue !">Welcome!</div>
-    <p
-      data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people."
-      data-fr="Nous vous invitons chaleureusement à célébrer notre mariage avec nous dans la magnifique ville de Ronda, en Andalousie. Nous avons hâte de partager ce moment inoubliable avec nos proches."
-    >We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people.</p>
+    <p data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people."
+       data-fr="Nous vous invitons chaleureusement à célébrer notre mariage avec nous dans la magnifique ville de Ronda, en Andalousie. Nous avons hâte de partager ce moment inoubliable avec nos proches.">
+      We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people.
+    </p>
   </section>
 
-  <!-- VASE IMAGE -->
+  <!-- VASE -->
   <section id="vase" aria-label="Floral decoration">
     <img class="decor-image vase-image" src="vase.PNG" alt="Decorative vase">
   </section>
@@ -566,38 +603,16 @@ footer a{color:inherit}
   <section id="venue">
     <p class="kicker" data-en="Where we celebrate" data-fr="Le lieu de célébration">Where we celebrate</p>
     <div class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</div>
-
     <div class="venue-card">
       <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Illustration of Finca El Olivar">
-
       <div class="finca-title">Finca El Olivar</div>
-
-      <div class="event-datetime" data-en="12 September 2026 · 14:00" data-fr="12 septembre 2026 · 14 h 00">
-        12 September 2026 · 14:00
-      </div>
-
+      <div class="event-datetime" data-en="12 September 2026 · 14:00" data-fr="12 septembre 2026 · 14 h 00">12 September 2026 · 14:00</div>
       <hr class="divider">
-
-      <div class="address-text">
-        Camino de los Olivos s/n, Ronda<br>
-        Málaga, 29400 – España
-      </div>
-
+      <div class="address-text">Camino de los Olivos s/n, Ronda<br>Málaga, 29400 – España</div>
       <div class="map-box">
-        <iframe
-          title="Map to Finca El Olivar"
-          src="https://maps.google.com/maps?q=Finca+El+Olivar+Ronda+Malaga&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+        <iframe title="Map to Finca El Olivar" src="https://maps.google.com/maps?q=Finca+El+Olivar+Ronda+Malaga&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
       </div>
-
-      <a class="outline-btn"
-         href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga"
-         target="_blank"
-         rel="noopener"
-         data-en="OPEN IN MAPS"
-         data-fr="OUVRIR LA CARTE">OPEN IN MAPS</a>
+      <a class="outline-btn" href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga" target="_blank" rel="noopener" data-en="OPEN IN MAPS" data-fr="OUVRIR LA CARTE">OPEN IN MAPS</a>
     </div>
   </section>
 
@@ -605,61 +620,13 @@ footer a{color:inherit}
   <section id="timeline">
     <div class="section-title" data-en="Day Programme" data-fr="Programme du jour">Day Programme</div>
     <p class="kicker">12 September 2026</p>
-
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="event-copy">
-          <div class="event-time">14:00</div>
-          <span data-en="Arrival" data-fr="Accueil">Arrival</span>
-        </div>
-        <div class="timeline-dot"></div>
-        <div></div>
-      </div>
-
-      <div class="timeline-item">
-        <div></div>
-        <div class="timeline-dot"></div>
-        <div class="event-copy">
-          <div class="event-time">14:30</div>
-          <span data-en="Ceremony" data-fr="Cérémonie">Ceremony</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="event-copy">
-          <div class="event-time">16:00</div>
-          <span data-en="Cocktails" data-fr="Cocktail">Cocktails</span>
-        </div>
-        <div class="timeline-dot"></div>
-        <div></div>
-      </div>
-
-      <div class="timeline-item">
-        <div></div>
-        <div class="timeline-dot"></div>
-        <div class="event-copy">
-          <div class="event-time">18:00</div>
-          <span data-en="Dinner" data-fr="Dîner">Dinner</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="event-copy">
-          <div class="event-time">20:00</div>
-          <span data-en="Cutting the Cake" data-fr="Découpe du gâteau">Cutting the Cake</span>
-        </div>
-        <div class="timeline-dot"></div>
-        <div></div>
-      </div>
-
-      <div class="timeline-item">
-        <div></div>
-        <div class="timeline-dot"></div>
-        <div class="event-copy">
-          <div class="event-time">00:00</div>
-          <span data-en="Finish" data-fr="Fin de soirée">Finish</span>
-        </div>
-      </div>
+      <div class="timeline-item"><div class="event-copy"><div class="event-time">14:00</div><span data-en="Arrival" data-fr="Accueil">Arrival</span></div><div class="timeline-dot"></div><div></div></div>
+      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">14:30</div><span data-en="Ceremony" data-fr="Cérémonie">Ceremony</span></div></div>
+      <div class="timeline-item"><div class="event-copy"><div class="event-time">16:00</div><span data-en="Cocktails" data-fr="Cocktail">Cocktails</span></div><div class="timeline-dot"></div><div></div></div>
+      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">18:00</div><span data-en="Dinner" data-fr="Dîner">Dinner</span></div></div>
+      <div class="timeline-item"><div class="event-copy"><div class="event-time">20:00</div><span data-en="Cutting the Cake" data-fr="Découpe du gâteau">Cutting the Cake</span></div><div class="timeline-dot"></div><div></div></div>
+      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">00:00</div><span data-en="Finish" data-fr="Fin de soirée">Finish</span></div></div>
     </div>
   </section>
 
@@ -667,12 +634,9 @@ footer a{color:inherit}
   <section id="dresscode">
     <div class="dress-card">
       <div class="section-title" data-en="Dress Code" data-fr="Tenue vestimentaire">Dress Code</div>
-
       <div class="dress-category" data-en="Women" data-fr="Femmes">Women</div>
       <div class="dress-desc" data-en="Cocktail or formal dress" data-fr="Robe de cocktail ou tenue de soirée">Cocktail or formal dress</div>
-
       <hr class="divider">
-
       <div class="dress-category" data-en="Men" data-fr="Hommes">Men</div>
       <div class="dress-desc" data-en="Dark suit and tie" data-fr="Costume sombre et cravate">Dark suit and tie</div>
     </div>
@@ -681,22 +645,14 @@ footer a{color:inherit}
   <!-- PRE-WEDDING EVENTS -->
   <section id="prewedding">
     <img class="bow-image" src="bow.PNG" alt="Decorative blue bow">
-
     <p class="kicker" data-en="Pre-Wedding Events" data-fr="Événements avant le mariage">Pre-Wedding Events</p>
     <div class="section-title" data-en="Come Say Hello..." data-fr="Venez nous saluer...">Come Say Hello...</div>
-
-    <p class="intro-copy"
-       data-en="These are informal gatherings, so feel free to join us if you're in the area."
-       data-fr="Ces rencontres sont informelles : rejoignez-nous si vous êtes dans les environs.">
-      These are informal gatherings, so feel free to join us if you're in the area.
-    </p>
+    <p class="intro-copy" data-en="These are informal gatherings, so feel free to join us if you're in the area." data-fr="Ces rencontres sont informelles : rejoignez-nous si vous êtes dans les environs.">These are informal gatherings, so feel free to join us if you're in the area.</p>
 
     <div class="event-card">
       <img class="event-icon" src="https://i.postimg.cc/NGTkGYHz/IMG-8948.png" alt="Cocktail illustration">
       <div class="event-title" data-en="Cocktail Party" data-fr="Cocktail">Cocktail Party</div>
-      <div class="event-datetime" data-en="Friday, September 11th, 2026 · 8:00 PM" data-fr="Vendredi 11 septembre 2026 · 20 h 00">
-        Friday, September 11th, 2026 · 8:00 PM
-      </div>
+      <div class="event-datetime" data-en="Friday, September 11th, 2026 · 8:00 PM" data-fr="Vendredi 11 septembre 2026 · 20 h 00">Friday, September 11th, 2026 · 8:00 PM</div>
       <hr class="divider">
       <div class="event-location">Bodega García Hidalgo, Ronda</div>
     </div>
@@ -704,9 +660,7 @@ footer a{color:inherit}
     <div class="event-card">
       <img class="event-icon" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Wedding day illustration">
       <div class="event-title" data-en="Wedding Day" data-fr="Jour du mariage">Wedding Day</div>
-      <div class="event-datetime" data-en="Sunday, September 13th, 2026 · 12:00 PM" data-fr="Dimanche 13 septembre 2026 · 12 h 00">
-        Sunday, September 13th, 2026 · 12:00 PM
-      </div>
+      <div class="event-datetime" data-en="Sunday, September 13th, 2026 · 12:00 PM" data-fr="Dimanche 13 septembre 2026 · 12 h 00">Sunday, September 13th, 2026 · 12:00 PM</div>
       <hr class="divider">
       <div class="event-location">Parador de Ronda (terrace)</div>
     </div>
@@ -715,49 +669,30 @@ footer a{color:inherit}
   <!-- ACCOMMODATION -->
   <section id="accommodation">
     <div class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</div>
-
-    <p class="intro-copy"
-       data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby."
-       data-fr="La Finca El Olivar ne propose pas d’hébergement ; voici quelques options recommandées à proximité.">
-      Finca El Olivar does not offer lodging, but here are some recommended options nearby.
-    </p>
-
+    <p class="intro-copy" data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby." data-fr="La Finca El Olivar ne propose pas d’hébergement ; voici quelques options recommandées à proximité.">Finca El Olivar does not offer lodging, but here are some recommended options nearby.</p>
     <div class="glass-card">
       <div class="hotel-block">
         <div class="hotel-name">PARADOR DE RONDA</div>
         <div class="hotel-location">Ronda</div>
         <div class="hotel-distance" data-en="2 km from the venue" data-fr="À 2 km du lieu">2 km from the venue</div>
-        <div class="hotel-contact">
-          <a href="tel:+34952877500">+34 952 877 500</a> ·
-          <a href="mailto:ronda@parador.es">ronda@parador.es</a>
-        </div>
+        <div class="hotel-contact"><a href="tel:+34952877500">+34 952 877 500</a> · <a href="mailto:ronda@parador.es">ronda@parador.es</a></div>
         <a class="website-btn" href="https://www.parador.es" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
       </div>
-
       <hr class="divider">
-
       <div class="hotel-block">
         <div class="hotel-name">HOTEL CATALONIA RONDA</div>
         <div class="hotel-location">Ronda</div>
         <div class="hotel-distance" data-en="1.5 km from the venue" data-fr="À 1,5 km du lieu">1.5 km from the venue</div>
-        <div class="hotel-contact">
-          <a href="tel:+34952872315">+34 952 872 315</a> ·
-          <a href="mailto:ronda@hoteles-catalonia.es">ronda@hoteles-catalonia.es</a>
-        </div>
+        <div class="hotel-contact"><a href="tel:+34952872315">+34 952 872 315</a> · <a href="mailto:ronda@hoteles-catalonia.es">ronda@hoteles-catalonia.es</a></div>
         <a class="website-btn" href="https://www.catalonialotels.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
         <p class="hotel-distance" style="margin-top:8px">Promo Code: BODA2026</p>
       </div>
-
       <hr class="divider">
-
       <div class="hotel-block">
         <div class="hotel-name">HOTEL MONTELIRIO</div>
         <div class="hotel-location">Ronda</div>
         <div class="hotel-distance" data-en="Boutique hotel overlooking El Tajo" data-fr="Hôtel-boutique surplombant le Tajo">Boutique hotel overlooking El Tajo</div>
-        <div class="hotel-contact">
-          <a href="tel:+34952873855">+34 952 873 855</a> ·
-          <a href="mailto:reservas@hotelmontelirio.com">reservas@hotelmontelirio.com</a>
-        </div>
+        <div class="hotel-contact"><a href="tel:+34952873855">+34 952 873 855</a> · <a href="mailto:reservas@hotelmontelirio.com">reservas@hotelmontelirio.com</a></div>
         <a class="website-btn" href="https://www.hotelmontelirio.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
       </div>
     </div>
@@ -769,27 +704,14 @@ footer a{color:inherit}
       <div class="section-title" data-en="Our Memories" data-fr="Nos souvenirs">Our Memories</div>
       <p class="kicker" data-en="A few moments to cherish" data-fr="Quelques instants à chérir">A few moments to cherish</p>
     </div>
-
     <div class="marquee-wrapper">
       <div class="marquee-track">
-        <div class="slide-card">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette">
-        </div>
-        <div class="slide-card">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch">
-        </div>
-        <div class="slide-card">
-          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception">
-        </div>
-        <div class="slide-card">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette">
-        </div>
-        <div class="slide-card">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch">
-        </div>
-        <div class="slide-card">
-          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception">
-        </div>
+        <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette"></div>
+        <div class="slide-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch"></div>
+        <div class="slide-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception"></div>
+        <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette"></div>
+        <div class="slide-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch"></div>
+        <div class="slide-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception"></div>
       </div>
     </div>
   </section>
@@ -797,19 +719,12 @@ footer a{color:inherit}
   <!-- GIFTS -->
   <section id="gift">
     <div class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</div>
-
-    <p class="gift-subtitle"
-       data-en="Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:"
-       data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez ci-dessous nos coordonnées bancaires :">
-      Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:
-    </p>
-
+    <p class="gift-subtitle" data-en="Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:" data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez ci-dessous nos coordonnées bancaires :">Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:</p>
     <div class="bank-card">
       <div class="bank-name">CAIXABANK – ANDREA MORALES</div>
       <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
       <div class="bank-detail">BIC/SWIFT: <span>XXXXXXXXXXX</span></div>
     </div>
-
     <div class="bank-card">
       <div class="bank-name">BANCO SANTANDER – PEDRO FERNÁNDEZ</div>
       <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
@@ -820,67 +735,37 @@ footer a{color:inherit}
   <!-- RSVP -->
   <section id="rsvp">
     <div class="swan-top">
-      <div class="swan-container">
-        <img src="swan.PNG" alt="Swan illustration" class="swan-logo">
-      </div>
+      <div class="swan-container"><img src="swan.PNG" alt="Swan illustration" class="swan-logo"></div>
     </div>
-
     <div class="rsvp-panel">
       <div class="section-title">RSVP</div>
-
-      <p class="rsvp-subtitle"
-         data-en="Let us know if you can make it"
-         data-fr="Merci de nous confirmer votre présence">
-        Let us know if you can make it
-      </p>
-
+      <p class="rsvp-subtitle" data-en="Let us know if you can make it" data-fr="Merci de nous confirmer votre présence">Let us know if you can make it</p>
       <div class="form-card">
         <form id="rsvpForm">
-
           <div class="form-group">
             <span class="form-label" data-en="Will you be attending? *" data-fr="Serez-vous présent(e) ? *">Will you be attending? *</span>
-
-            <label class="radio-option">
-              <input type="radio" name="attendance" value="yes" checked>
-              <span data-en="Yes, I'll be there" data-fr="Oui, je serai présent(e)">Yes, I'll be there</span>
-            </label>
-
-            <label class="radio-option">
-              <input type="radio" name="attendance" value="no">
-              <span data-en="Unfortunately, I can't make it" data-fr="Malheureusement, je ne pourrai pas venir">Unfortunately, I can't make it</span>
-            </label>
+            <label class="radio-option"><input type="radio" name="attendance" value="yes" checked><span data-en="Yes, I'll be there" data-fr="Oui, je serai présent(e)">Yes, I'll be there</span></label>
+            <label class="radio-option"><input type="radio" name="attendance" value="no"><span data-en="Unfortunately, I can't make it" data-fr="Malheureusement, je ne pourrai pas venir">Unfortunately, I can't make it</span></label>
           </div>
-
           <div class="form-group">
             <label class="form-label" for="guestCount" data-en="Number of guests" data-fr="Nombre d’invités">Number of guests</label>
-
             <div class="counter-box">
               <button class="counter-btn" type="button" id="minusGuest" aria-label="Remove guest">−</button>
               <span class="counter-value" id="guestCount">1</span>
               <button class="counter-btn" type="button" id="plusGuest" aria-label="Add guest">+</button>
             </div>
           </div>
-
           <div class="form-group">
             <label class="form-label" for="fullName" data-en="Main contact" data-fr="Contact principal">Main contact</label>
-
             <input id="fullName" name="name" class="input-field" type="text" autocomplete="name" placeholder="Full name" data-placeholder-en="Full name" data-placeholder-fr="Nom complet" required>
-
             <input id="email" name="email" class="input-field" type="email" autocomplete="email" placeholder="Email address" data-placeholder-en="Email address" data-placeholder-fr="Adresse e-mail" required>
           </div>
-
           <div class="form-group">
             <label class="form-label" for="dietary" data-en="Dietary requirements" data-fr="Régimes alimentaires particuliers">Dietary requirements</label>
             <input id="dietary" name="dietary" class="input-field" type="text" placeholder="e.g. vegetarian, allergies" data-placeholder-en="e.g. vegetarian, allergies" data-placeholder-fr="Ex. : végétarien, allergies">
           </div>
-
           <button class="solid-btn" type="submit" style="width:100%;padding:14px" data-en="SEND RSVP" data-fr="ENVOYER LA RÉPONSE">SEND RSVP</button>
-
-          <p style="font-size:10px;line-height:1.6;color:#777;margin:12px 0 0"
-             data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet."
-             data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">
-            Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.
-          </p>
+          <p style="font-size:10px;line-height:1.6;color:#777;margin:12px 0 0" data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet." data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.</p>
         </form>
       </div>
     </div>
@@ -900,40 +785,69 @@ footer a{color:inherit}
   const video = document.getElementById('openingVideo');
   const music = document.getElementById('backgroundMusic');
   const scrollHint = document.getElementById('scrollHint');
+  const musicButton = document.getElementById('musicButton');
   let opened = false;
 
-  // Tap the cover: hide the cover, start music and play the video.
-  cover.addEventListener('click', async function(){
+  function updateMusicButton(){
+    const isPlaying = !music.paused;
+    musicButton.classList.toggle('playing',isPlaying);
+    musicButton.innerHTML = isPlaying
+      ? '<span class="music-symbol">♫</span>'
+      : '<span class="music-symbol">♪</span>';
+    musicButton.setAttribute('aria-label',isPlaying ? 'Pause music' : 'Play music');
+    musicButton.title = isPlaying ? 'Pause music' : 'Play music';
+  }
+
+  // Tap cover: start music and video from the same user interaction.
+  cover.addEventListener('click',async function(){
     if(opened) return;
     opened = true;
 
     cover.style.display = 'none';
     video.style.display = 'block';
+    musicButton.style.display = 'flex';
 
-    music.volume = 0.45;
+    music.volume = 0.5;
 
-    try {
-      await music.play();
-    } catch(e) {
-      // Browser may block audio.
+    const musicPromise = music.play();
+    const videoPromise = video.play();
+
+    if(musicPromise){
+      musicPromise.then(updateMusicButton).catch(function(){
+        updateMusicButton();
+      });
     }
 
-    try {
-      await video.play();
-    } catch(e) {
-      video.controls = true;
-      scrollHint.style.display = 'block';
+    if(videoPromise){
+      videoPromise.catch(function(){
+        video.controls = true;
+        scrollHint.style.display = 'block';
+      });
     }
   });
 
-  // When the video finishes, keep its final frame visible and show Scroll.
-  video.addEventListener('ended', function(){
-    if(Number.isFinite(video.duration) && video.duration > 0){
-      try {
-        video.currentTime = Math.max(0, video.duration - 0.05);
-      } catch(e) {}
+  // Music icon lets guests pause or resume the music.
+  musicButton.addEventListener('click',async function(){
+    if(music.paused){
+      try{
+        await music.play();
+      }catch(e){}
+    }else{
+      music.pause();
     }
+    updateMusicButton();
+  });
 
+  music.addEventListener('play',updateMusicButton);
+  music.addEventListener('pause',updateMusicButton);
+
+  // Keep the last video frame visible when the video finishes.
+  video.addEventListener('ended',function(){
+    if(Number.isFinite(video.duration) && video.duration > 0){
+      try{
+        video.currentTime = Math.max(0,video.duration - 0.05);
+      }catch(e){}
+    }
     video.pause();
     scrollHint.style.display = 'block';
   });
@@ -942,16 +856,15 @@ footer a{color:inherit}
   const target = new Date('2027-03-13T00:00:00').getTime();
 
   function updateCountdown(){
-    let distance = Math.max(0, target - Date.now());
-
+    let distance = Math.max(0,target - Date.now());
     const values = {
-      days: Math.floor(distance / 86400000),
-      hours: Math.floor((distance % 86400000) / 3600000),
-      minutes: Math.floor((distance % 3600000) / 60000),
-      seconds: Math.floor((distance % 60000) / 1000)
+      days:Math.floor(distance / 86400000),
+      hours:Math.floor((distance % 86400000) / 3600000),
+      minutes:Math.floor((distance % 3600000) / 60000),
+      seconds:Math.floor((distance % 60000) / 1000)
     };
 
-    Object.keys(values).forEach(id => {
+    Object.keys(values).forEach(id=>{
       document.getElementById(id).textContent = String(values[id]).padStart(2,'0');
     });
   }
@@ -965,24 +878,24 @@ footer a{color:inherit}
   function setLanguage(lang){
     document.documentElement.lang = lang;
 
-    document.querySelectorAll('[data-en][data-fr]').forEach(el => {
+    document.querySelectorAll('[data-en][data-fr]').forEach(el=>{
       el.textContent = el.dataset[lang];
     });
 
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(el => {
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(el=>{
       el.placeholder = el.dataset['placeholder' + (lang === 'en' ? 'En' : 'Fr')];
     });
 
-    langButtons.forEach(btn => {
+    langButtons.forEach(btn=>{
       btn.classList.toggle('active',btn.dataset.lang === lang);
     });
   }
 
-  langButtons.forEach(btn => {
+  langButtons.forEach(btn=>{
     btn.addEventListener('click',()=>setLanguage(btn.dataset.lang));
   });
 
-  // RSVP guest counter, limited to 1–10.
+  // RSVP guest counter: minimum 1, maximum 10.
   let guests = 1;
   const guestCount = document.getElementById('guestCount');
 
@@ -996,12 +909,11 @@ footer a{color:inherit}
     guestCount.textContent = guests;
   });
 
-  // Demo RSVP form: it shows a message but does not save responses online.
+  // Demo RSVP form: confirmation only; it does not save responses online.
   document.getElementById('rsvpForm').addEventListener('submit',function(e){
     e.preventDefault();
 
     const lang = document.documentElement.lang;
-
     const msg = lang === 'fr'
       ? 'Merci ! Votre réponse a été saisie dans cette démonstration. Pour enregistrer les réponses en ligne, connectez le formulaire à un tableur ou à un service RSVP.'
       : 'Thank you! Your response was entered in this demo. To save responses online, connect this form to a spreadsheet or RSVP service.';
@@ -1009,7 +921,7 @@ footer a{color:inherit}
     alert(msg);
   });
 
-  // Tiny, soft white falling sparks across the entire website.
+  /* MORE VISIBLE, TWINKLING WHITE FALLING SPARKLES */
   const canvas = document.getElementById('sparkCanvas');
   const ctx = canvas.getContext('2d');
 
@@ -1030,15 +942,17 @@ footer a{color:inherit}
 
     ctx.setTransform(ratio,0,0,ratio,0,0);
 
-    const count = Math.min(42,Math.max(18,Math.floor(width/12)));
+    const count = Math.min(75,Math.max(32,Math.floor(width/7)));
 
     sparks = Array.from({length:count},()=>({
       x:Math.random()*width,
       y:Math.random()*height,
-      r:Math.random()*0.8+0.35,
-      speed:Math.random()*0.45+0.18,
-      drift:(Math.random()-0.5)*0.22,
-      alpha:Math.random()*0.35+0.18
+      r:Math.random()*1.25+0.55,
+      speed:Math.random()*0.38+0.12,
+      drift:(Math.random()-0.5)*0.18,
+      phase:Math.random()*Math.PI*2,
+      twinkleSpeed:Math.random()*0.055+0.018,
+      brightness:Math.random()*0.48+0.42
     }));
   }
 
@@ -1046,21 +960,56 @@ footer a{color:inherit}
     ctx.clearRect(0,0,width,height);
 
     for(const s of sparks){
+      // Each sparkle fades at a different rhythm.
+      s.phase += s.twinkleSpeed;
+      const twinkle = (Math.sin(s.phase)+1)/2;
+      const alpha = 0.12 + twinkle*s.brightness;
+
+      // Soft outer glow.
+      const glow = ctx.createRadialGradient(
+        s.x,s.y,0,
+        s.x,s.y,s.r*5
+      );
+      glow.addColorStop(0,'rgba(255,255,255,'+(alpha*0.65)+')');
+      glow.addColorStop(1,'rgba(255,255,255,0)');
+
       ctx.beginPath();
-      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(255,255,255,' + s.alpha + ')';
+      ctx.fillStyle = glow;
+      ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);
       ctx.fill();
 
+      // Main white sparkle.
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(255,255,255,'+alpha+')';
+      ctx.fill();
+
+      // Tiny star-shaped glimmer when the sparkle is brightest.
+      if(twinkle > 0.72){
+        const glimmerAlpha = (twinkle-0.55)*1.8;
+
+        ctx.strokeStyle = 'rgba(255,255,255,'+glimmerAlpha+')';
+        ctx.lineWidth = 0.75;
+
+        ctx.beginPath();
+        ctx.moveTo(s.x-s.r*3.5,s.y);
+        ctx.lineTo(s.x+s.r*3.5,s.y);
+        ctx.moveTo(s.x,s.y-s.r*3.5);
+        ctx.lineTo(s.x,s.y+s.r*3.5);
+        ctx.stroke();
+      }
+
+      // Gentle falling movement.
       s.y += s.speed;
       s.x += s.drift;
 
-      if(s.y > height+3){
-        s.y = -3;
+      if(s.y > height+8){
+        s.y = -8;
         s.x = Math.random()*width;
       }
 
-      if(s.x < -3) s.x = width+3;
-      if(s.x > width+3) s.x = -3;
+      if(s.x < -8) s.x = width+8;
+      if(s.x > width+8) s.x = -8;
     }
 
     requestAnimationFrame(animateSparks);
