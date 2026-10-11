@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,8 +144,6 @@ h1,h2,h3,p{margin-top:0}
   object-fit:cover;
   display:block;
 }
-
-/* TAP TO OPEN: LOWER PART, CENTERED, NO BOX */
 .cover-overlay{
   position:absolute;
   inset:0;
@@ -606,7 +605,6 @@ footer a{color:inherit}
   <section id="countdown">
     <div class="section-title" data-en="Countdown" data-fr="Compte à rebours">Countdown</div>
     <p class="kicker" data-en="Until 13 March 2027" data-fr="Jusqu'au 13 mars 2027">Until 13 March 2027</p>
-
     <div class="countdown-grid" aria-label="Countdown">
       <div class="time-box"><div class="time-value" id="days">00</div><div class="time-label" data-en="Days" data-fr="Jours">Days</div></div>
       <div class="time-divider">|</div>
@@ -827,7 +825,10 @@ footer a{color:inherit}
   </footer>
 </main>
 
-<audio id="backgroundMusic" src="Music%20inwhite.mp3" preload="auto" loop></audio>
+<!-- UPDATED: exact audio filename -->
+<audio id="backgroundMusic" preload="auto" loop>
+  <source src="inwhite.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 (function(){
@@ -848,7 +849,10 @@ footer a{color:inherit}
     musicButton.title = isPlaying ? 'Pause music' : 'Play music';
   }
 
-  // One tap starts both video and music.
+  music.addEventListener('error',function(){
+    console.error('Music failed to load. Check that inwhite.mp3 exists beside index.html and the filename matches exactly.');
+  });
+
   cover.addEventListener('click',function(){
     if(opened) return;
     opened = true;
@@ -859,16 +863,15 @@ footer a{color:inherit}
 
     music.volume = 0.6;
 
-    // Start music immediately inside the user's tap event.
-    const musicPromise = music.play();
-    if(musicPromise && typeof musicPromise.then === 'function'){
-      musicPromise.then(updateMusicButton).catch(function(error){
-        console.warn('Music could not start. Check the audio file path and format.',error);
-        updateMusicButton();
-      });
-    }
+    // Start music directly from the user's tap.
+    music.play().then(function(){
+      updateMusicButton();
+    }).catch(function(error){
+      console.error('Music could not start. Check the filename, file format and upload.',error);
+      updateMusicButton();
+    });
 
-    // Start the opening video from the same tap.
+    // Start opening video from the same tap.
     const videoPromise = video.play();
     if(videoPromise && typeof videoPromise.catch === 'function'){
       videoPromise.catch(function(error){
@@ -878,25 +881,21 @@ footer a{color:inherit}
     }
   });
 
-  // Music icon pauses or resumes the background music.
   musicButton.addEventListener('click',function(){
     if(music.paused){
-      const playPromise = music.play();
-      if(playPromise && typeof playPromise.catch === 'function'){
-        playPromise.catch(function(error){
-          console.warn('Music could not resume.',error);
-        });
-      }
+      music.play().then(updateMusicButton).catch(function(error){
+        console.error('Music could not resume.',error);
+        updateMusicButton();
+      });
     }else{
       music.pause();
+      updateMusicButton();
     }
-    updateMusicButton();
   });
 
   music.addEventListener('play',updateMusicButton);
   music.addEventListener('pause',updateMusicButton);
 
-  // Freeze the last frame and show the scroll prompt after the video.
   video.addEventListener('ended',function(){
     if(Number.isFinite(video.duration) && video.duration > 0){
       try{
@@ -907,7 +906,7 @@ footer a{color:inherit}
     scrollHint.style.display = 'block';
   });
 
-  // Countdown.
+  // Countdown
   const target = new Date('2027-03-13T00:00:00').getTime();
 
   function updateCountdown(){
@@ -926,7 +925,7 @@ footer a{color:inherit}
   updateCountdown();
   setInterval(updateCountdown,1000);
 
-  // English/French language switch.
+  // English/French language switch
   const langButtons = document.querySelectorAll('.lang-switch button');
 
   function setLanguage(lang){
@@ -951,7 +950,7 @@ footer a{color:inherit}
     });
   });
 
-  // RSVP guest counter.
+  // RSVP guest counter
   let guests = 1;
   const guestCount = document.getElementById('guestCount');
 
@@ -965,7 +964,7 @@ footer a{color:inherit}
     guestCount.textContent = guests;
   });
 
-  // Demo RSVP form. It displays a message but does not save responses online.
+  // Demo RSVP form: responses are not saved online
   document.getElementById('rsvpForm').addEventListener('submit',function(e){
     e.preventDefault();
 
@@ -977,7 +976,7 @@ footer a{color:inherit}
     alert(msg);
   });
 
-  // Bright, twinkling white sparkles.
+  // Twinkling white sparkles
   const canvas = document.getElementById('sparkCanvas');
   const ctx = canvas.getContext('2d');
 
