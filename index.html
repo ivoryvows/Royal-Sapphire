@@ -45,7 +45,7 @@ body{
   font-family:'Montserrat',sans-serif;
   color:var(--ink);
 
-  /* Light blue → deep navy → light blue */
+  /* ORIGINAL BACKGROUND GRADIENT — UNCHANGED */
   background:linear-gradient(
     180deg,
     #eaf4ff 0%,
@@ -412,15 +412,15 @@ h1,h2,h3,p{margin-top:0}
   color:white;
 }
 
-/* DARK BLUE DAY PROGRAMME */
+/* WHITE DAY PROGRAMME */
 #timeline{padding-top:50px}
 
 #timeline .section-title,
 #timeline .kicker,
 #timeline .event-copy,
 #timeline .event-time{
-  color:#102d52;
-  text-shadow:none;
+  color:#ffffff;
+  text-shadow:0 2px 6px rgba(0,0,0,.18);
 }
 
 .timeline{
@@ -436,7 +436,7 @@ h1,h2,h3,p{margin-top:0}
   bottom:0;
   left:50%;
   width:1px;
-  background:#17365d;
+  background:rgba(255,255,255,.8);
   transform:translateX(-50%);
 }
 
@@ -452,14 +452,14 @@ h1,h2,h3,p{margin-top:0}
 .timeline-item:nth-child(odd) .event-copy:first-child{text-align:right}
 .timeline-item:nth-child(even) .event-copy:last-child{text-align:left}
 
-.event-copy{
+#timeline .event-copy{
   font-size:10px;
   letter-spacing:1.2px;
   text-transform:uppercase;
   line-height:1.6;
 }
 
-.event-time{
+#timeline .event-time{
   font:600 14px 'Cinzel',serif;
   letter-spacing:1px;
   margin-bottom:3px;
@@ -469,11 +469,11 @@ h1,h2,h3,p{margin-top:0}
   width:8px;
   height:8px;
   border-radius:50%;
-  background:#17365d;
-  border:1px solid #17365d;
+  background:#ffffff;
+  border:1px solid #ffffff;
   justify-self:center;
   z-index:1;
-  box-shadow:0 0 0 4px #17365d20;
+  box-shadow:0 0 0 4px rgba(255,255,255,.18);
 }
 
 #dresscode{padding-top:48px}
@@ -1077,10 +1077,10 @@ footer a{color:inherit}
   lockScrolling();
 
   /*
-    Do not use a timer here.
-    Both play requests are made immediately inside the user's tap.
+    Start both media requests directly from the user's interaction.
+    The video is muted so it can play independently of the music.
   */
-  function openInvitation(event){
+  function openInvitation(){
     if(opened) return;
 
     opened = true;
@@ -1091,9 +1091,10 @@ footer a{color:inherit}
     musicButton.style.display = 'flex';
     scrollHint.style.display = 'none';
 
-    /* Start the music from the tap itself. */
     music.volume = 1;
+    music.muted = false;
 
+    /* Music starts from the same tap as the cover. */
     try{
       const musicPromise = music.play();
 
@@ -1101,10 +1102,7 @@ footer a{color:inherit}
         musicPromise.then(function(){
           updateMusicButton();
         }).catch(function(error){
-          console.error(
-            'Music could not start. Check that inwhite.mp3 exists and plays correctly.',
-            error
-          );
+          console.error('Music could not start. Check inwhite.mp3:',error);
           updateMusicButton();
         });
       }
@@ -1112,17 +1110,16 @@ footer a{color:inherit}
       console.error('Music playback error:',error);
     }
 
-    /* Start the video immediately; no timeout or waiting for music. */
+    /* Start the intro video immediately. */
+    video.muted = true;
+
     try{
       video.currentTime = 0;
       const videoPromise = video.play();
 
       if(videoPromise && typeof videoPromise.then === 'function'){
         videoPromise.catch(function(error){
-          console.error(
-            'Video could not start. Check blue.mp4 and its encoding.',
-            error
-          );
+          console.error('Video could not start. Check blue.mp4:',error);
         });
       }
     }catch(error){
@@ -1130,11 +1127,14 @@ footer a{color:inherit}
     }
   }
 
+  /* pointerdown responds promptly on touch screens; click remains a fallback. */
+  cover.addEventListener('pointerdown',openInvitation);
   cover.addEventListener('click',openInvitation);
 
   /* Music button can pause or resume music at any time. */
   musicButton.addEventListener('click',function(){
     if(music.paused){
+      music.muted = false;
       const promise = music.play();
 
       if(promise && typeof promise.then === 'function'){
@@ -1159,9 +1159,7 @@ footer a{color:inherit}
   });
 
   video.addEventListener('error',function(){
-    console.error(
-      'Could not load blue.mp4. Check its filename, location and MP4 encoding.'
-    );
+    console.error('Could not load blue.mp4. Check its filename, location and MP4 encoding.');
   });
 
   /* Countdown to 13 March 2027. */
@@ -1242,7 +1240,7 @@ footer a{color:inherit}
     alert(msg);
   });
 
-  /* Soft white falling sparkles. */
+  /* Small, softly twinkling white dots. */
   const canvas = document.getElementById('sparkCanvas');
   const ctx = canvas.getContext('2d');
 
@@ -1280,10 +1278,18 @@ footer a{color:inherit}
   function animateSparks(){
     ctx.clearRect(0,0,width,height);
 
-    for(const s of sparks){
+    const time = performance.now()/1000;
+
+    for(let i=0;i<sparks.length;i++){
+      const s = sparks[i];
+
+      /* Gentle brightness change; dot size remains unchanged. */
+      const twinkle = (Math.sin(time*1.7+i*2.1)+1)/2;
+      const alpha = 0.12+twinkle*0.42;
+
       ctx.beginPath();
       ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(255,255,255,'+s.alpha+')';
+      ctx.fillStyle = 'rgba(255,255,255,'+alpha+')';
       ctx.fill();
 
       s.y += s.speed;
