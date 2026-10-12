@@ -1283,15 +1283,20 @@ footer a{color:inherit}
     for(let i=0;i<sparks.length;i++){
       const s = sparks[i];
 
-      /* Gentle brightness change; dot size remains unchanged. */
-      const twinkle = (Math.sin(time*1.7+i*2.1)+1)/2;
-      const alpha = 0.12+twinkle*0.42;
-
+      /* Gentle Gentle twinkling effect
+      const twinkle = (Math.sin(time * 2.2 + i * 1.8) + 1) / 2;
+    const alpha = 0.15 + twinkle * 0.8;
+    const radius = s.r * (0.8 + twinkle * 0.7);
+     
       ctx.beginPath();
-      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(255,255,255,'+alpha+')';
-      ctx.fill();
+      ctx.arc(s.x, s.y, radius, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,255,255,' + alpha + ')';
+    ctx.shadowBlur = twinkle * 5;
+    ctx.shadowColor = '#ctx.arc(s.x, s.y, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
 
+// Slow falling movement
       s.y += s.speed;
       s.x += s.drift;
 
