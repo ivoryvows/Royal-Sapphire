@@ -1,1336 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#244a80">
 
-<title>Forever | groom &amp; bride</title>
+<title>Wedding Dinner | Zainab &amp; Mizan</title>
+<meta name="description" content="Zainab & Mizan's Wedding Dinner — 26 November 2026, Ahmedabad.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Forever | groom &amp; bride">
-<meta property="og:description" content="A beautiful wedding invitation">
-<meta property="og:url" content="https://ivoryvows.github.io/Royal-Sapphire/">
-<meta property="og:image" content="https://ivoryvows.github.io/Royal-Sapphire/env.jpg">
-<meta property="og:image:secure_url" content="https://ivoryvows.github.io/Royal-Sapphire/env.jpg">
-<meta property="og:image:alt" content="Forever wedding invitation">
+<meta property="og:title" content="Wedding Dinner | Zainab &amp; Mizan">
+<meta property="og:description" content="Join us for the Wedding Dinner of Zainab & Mizan on 26 November 2026.">
+<meta property="og:url" content="https://ivoryvows.github.io/Wedding-Dinne/">
+<meta property="og:image" content="https://ivoryvows.github.io/Wedding-Dinne/msg.JPG">
+<meta property="og:image:alt" content="Zainab and Mizan — Wedding Dinner">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ivoryvows.github.io/Royal-Sapphire/env.jpg">
+<meta name="twitter:title" content="Wedding Dinner | Zainab &amp; Mizan">
+<meta name="twitter:image" content="https://ivoryvows.github.io/Wedding-Dinne/msg.JPG">
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --navy:#17365d;
-  --deep-blue:#0b1938;
-  --blue:#315f98;
-  --pale:#eaf4ff;
-  --white:#fff;
-  --ink:#17365d;
-  --glass:rgba(255,255,255,.88);
-  --line:rgba(255,255,255,.6);
+:root {
+  --navy: #17284d;
+  --blue: #244a80;
+  --mid-blue: #5b87c5;
+  --pale-blue: #edf4fc;
+  --gold: #c6a66a;
+  --cream: #fffdf8;
+  --text: #263957;
 }
 
-*{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-  min-height:100%;
-  background:#eaf4ff;
+* {
+  box-sizing: border-box;
 }
 
-html.invitation-locked,
-body.invitation-locked{
-  height:100% !important;
-  overflow:hidden !important;
-  overscroll-behavior:none !important;
+html {
+  scroll-behavior: smooth;
+  background: var(--pale-blue);
 }
 
-body{
-  margin:0;
-  min-height:100vh;
-  overflow-x:hidden;
-  font-family:'Montserrat',sans-serif;
-  color:var(--ink);
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
 
-  /* ORIGINAL BACKGROUND GRADIENT — UNCHANGED */
-  background:linear-gradient(
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  background: linear-gradient(
     180deg,
-    #eaf4ff 0%,
-    #c8e0fa 12%,
-    #8fb8e7 24%,
-    #416fa8 36%,
-    #17365d 46%,
-    #091630 53%,
-    #17365d 61%,
-    #416fa8 72%,
-    #8fb8e7 84%,
-    #c8e0fa 93%,
-    #eaf4ff 100%
+    #edf4fc 0%,
+    #dbe7f5 25%,
+    #a9c5e5 55%,
+    #7198c6 78%,
+    #1c2d59 100%
   );
-  background-attachment:fixed;
-}
-
-body.invitation-locked{touch-action:none}
-
-button,input,textarea{font:inherit}
-img,video{max-width:100%}
-
-main{
-  width:100%;
-  max-width:520px;
-  margin:0 auto;
-  position:relative;
-  z-index:1;
-  overflow:hidden;
-}
-
-section{
-  position:relative;
-  padding:42px 22px;
-  text-align:center;
-  scroll-margin-top:12px;
-}
-
-h1,h2,h3,p{margin-top:0}
-.script{font-family:'Great Vibes',cursive;font-weight:400}
-.serif{font-family:'Cinzel',serif;letter-spacing:1.5px;text-transform:uppercase}
-
-.section-title{
-  font:400 47px/1.12 'Great Vibes',cursive;
-  color:#fff;
-  text-shadow:0 2px 8px #243f6530;
-  margin:0 0 12px;
-}
-
-.kicker{
-  font:500 10px/1.6 'Cinzel',serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#edf4fc;
-  margin:0 0 12px;
-}
-
-.subtle{font-size:12px;line-height:1.8;color:#f5f8ff}
-
-.glass-card{
-  background:var(--glass);
-  border:1px solid rgba(255,255,255,.72);
-  border-radius:14px;
-  padding:26px 20px;
-  box-shadow:0 12px 32px rgba(28,45,89,.10);
-  backdrop-filter:blur(8px);
-}
-
-.divider{
-  width:56px;
-  height:1px;
-  border:0;
-  background:#9db6d5;
-  margin:22px auto;
-}
-
-.lang-switch{
-  position:fixed;
-  top:12px;
-  right:12px;
-  z-index:50;
-  display:flex;
-  gap:2px;
-  padding:4px;
-  border:1px solid #c7d8eb;
-  border-radius:24px;
-  background:rgba(255,255,255,.94);
-  box-shadow:0 4px 16px #1c2d5918;
-}
-
-.lang-switch button{
-  border:0;
-  background:transparent;
-  color:var(--navy);
-  border-radius:18px;
-  padding:7px 10px;
-  font-size:10px;
-  letter-spacing:1px;
-  cursor:pointer;
-}
-
-.lang-switch button.active{
-  background:var(--navy);
-  color:white;
-}
-
-/* VISIBLE, GENTLY TWINKLING SPARKLES */
-#sparkCanvas{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:20;
-}
-
-/* OPENING COVER */
-#opening{
-  padding:0;
-  height:100vh;
-  height:100svh;
-  min-height:100svh;
-  background:#091630;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  isolation:isolate;
-}
-
-#coverButton{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  padding:0;
-  border:0;
-  background:#091630;
-  cursor:pointer;
-  z-index:2;
-  opacity:1;
-  transition:opacity .5s ease;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
-
-/* Cover remains until the video actually starts. */
-#coverButton.fade-out{
-  opacity:0;
-  pointer-events:none;
-}
-
-#coverButton img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.cover-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,#0d1d3030,#0d1d3055);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  align-items:center;
-  padding:0 20px 11vh;
-  color:#fff;
-  pointer-events:none;
-}
-
-.cover-small{
-  font:11px 'Cinzel',serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-.tap-label{
-  font:400 42px 'Great Vibes',cursive;
-  margin-top:10px;
-  text-shadow:0 2px 12px #0005;
-}
-
-#openingVideo{
-  display:none;
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  max-width:none;
-  object-fit:cover;
-  background:#091630;
-  z-index:1;
-  opacity:0;
-  transition:opacity .5s ease;
-}
-
-/* Reveal the video only when playback has started. */
-#openingVideo.video-visible{
-  opacity:1;
-}
-
-#scrollHint{
-  display:none;
-  position:absolute;
-  bottom:22px;
-  left:0;
-  right:0;
-  color:#fff;
-  font:10px 'Cinzel',serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  text-shadow:0 1px 5px #000;
-  animation:bob 1.8s ease-in-out infinite;
-  pointer-events:none;
-  z-index:3;
-}
-
-#scrollHint span{
-  display:block;
-  font-size:18px;
-  margin-top:5px;
-}
-
-@keyframes bob{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(5px)}
-}
-
-/* MUSIC BUTTON */
-#musicButton{
-  display:none;
-  position:fixed;
-  left:16px;
-  bottom:18px;
-  width:44px;
-  height:44px;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #ffffffb0;
-  border-radius:50%;
-  background:rgba(11,25,56,.92);
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
-  z-index:60;
-  box-shadow:0 4px 14px #0002;
-  -webkit-tap-highlight-color:transparent;
-}
-
-#countdown{padding-top:58px}
-
-/* DARK BLUE COUNTDOWN */
-#countdown .section-title,
-#countdown .kicker,
-#countdown .time-value,
-#countdown .time-label,
-#countdown .time-divider{
-  color:#102d52;
-  text-shadow:none;
-}
-
-.countdown-grid{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin:25px 0 5px;
-}
-
-.time-box{min-width:55px}
-.time-value{font:500 27px 'Cinzel',serif}
-
-.time-label{
-  font-size:9px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  margin-top:5px;
-}
-
-.time-divider{font-size:22px;margin-top:1px}
-
-/* DARK BLUE WELCOME */
-#welcome .section-title,
-#welcome p{
-  color:#102d52;
-  text-shadow:none;
-}
-
-#welcome p{
-  font:14px/1.9 'Cinzel',serif;
-  max-width:390px;
-  margin:0 auto;
-}
-
-#vase{padding:22px 20px 6px}
-
-.decor-image{
-  display:block;
-  object-fit:contain;
-  margin:0 auto;
-}
-
-.vase-image{width:190px;max-height:250px}
-
-#venue{padding-top:22px}
-
-.venue-card{
-  background:#fff;
-  border-radius:14px;
-  padding:26px 20px;
-  box-shadow:0 12px 30px #1c2d5918;
-}
-
-.building-sketch{
-  display:block;
-  width:100%;
-  max-width:270px;
-  max-height:180px;
-  object-fit:contain;
-  margin:0 auto 18px;
-}
-
-.finca-title{
-  font:400 39px 'Great Vibes',cursive;
-  color:var(--navy);
-  margin-bottom:12px;
-}
-
-.event-datetime{
-  font:12px/1.8 'Cinzel',serif;
-  letter-spacing:.5px;
-  color:#555;
-  margin-bottom:18px;
-}
-
-.address-text{
-  font:12px/1.8 'Cinzel',serif;
-  color:#444;
-  margin-bottom:18px;
-}
-
-.map-box{
-  height:180px;
-  border-radius:9px;
-  overflow:hidden;
-  border:1px solid #d0dbe8;
-  margin-bottom:18px;
-}
-
-.map-box iframe{width:100%;height:100%;border:0}
-
-.outline-btn,.solid-btn{
-  display:inline-block;
-  text-decoration:none;
-  border-radius:22px;
-  padding:11px 18px;
-  font:500 10px 'Cinzel',serif;
-  letter-spacing:1.3px;
-  cursor:pointer;
-}
-
-.outline-btn{
-  border:1px solid var(--navy);
-  color:var(--navy);
-  background:transparent;
-}
-
-.solid-btn{
-  border:0;
-  background:var(--navy);
-  color:white;
-}
-
-/* WHITE DAY PROGRAMME */
-#timeline{padding-top:50px}
-
-#timeline .section-title,
-#timeline .kicker,
-#timeline .event-copy,
-#timeline .event-time{
-  color:#ffffff;
-  text-shadow:0 2px 6px rgba(0,0,0,.18);
-}
-
-.timeline{
-  max-width:360px;
-  margin:26px auto 0;
-  position:relative;
-}
-
-.timeline:before{
-  content:"";
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:50%;
-  width:1px;
-  background:rgba(255,255,255,.8);
-  transform:translateX(-50%);
-}
-
-.timeline-item{
-  display:grid;
-  grid-template-columns:1fr 20px 1fr;
-  align-items:center;
-  gap:8px;
-  min-height:66px;
-  position:relative;
-}
-
-.timeline-item:nth-child(odd) .event-copy:first-child{text-align:right}
-.timeline-item:nth-child(even) .event-copy:last-child{text-align:left}
-
-#timeline .event-copy{
-  font-size:10px;
-  letter-spacing:1.2px;
-  text-transform:uppercase;
-  line-height:1.6;
-}
-
-#timeline .event-time{
-  font:600 14px 'Cinzel',serif;
-  letter-spacing:1px;
-  margin-bottom:3px;
-}
-
-.timeline-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#ffffff;
-  border:1px solid #ffffff;
-  justify-self:center;
-  z-index:1;
-  box-shadow:0 0 0 4px rgba(255,255,255,.18);
-}
-
-#dresscode{padding-top:48px}
-
-.dress-card{
-  background:linear-gradient(#ffffffa8,#ffffffb5),url('https://i.postimg.cc/3Nps96WC/IMG-8968.jpg') center top/cover;
-  border-radius:18px;
-  padding:34px 22px;
-  box-shadow:0 10px 28px #1c2d591a;
-}
-
-.dress-card .section-title{color:var(--navy);text-shadow:none}
-
-.dress-category{
-  font:400 34px 'Great Vibes',cursive;
-  color:#1e3554;
-  margin:18px 0 5px;
-}
-
-.dress-desc{
-  font-size:13px;
-  color:#3b5983;
-  font-weight:500;
-  letter-spacing:.3px;
-}
-
-.bow-image{
-  width:140px;
-  max-height:190px;
-  margin:0 auto;
-  display:block;
-}
-
-#prewedding{padding-top:10px}
-
-.intro-copy{
-  font-size:12px;
-  line-height:1.8;
-  color:#f5f8ff;
-  max-width:350px;
-  margin:0 auto 25px;
-}
-
-.event-card{
-  background:#fff;
-  border-radius:13px;
-  padding:28px 18px;
-  margin:0 0 20px;
-  box-shadow:0 10px 26px #1c2d5918;
-}
-
-.event-icon{
-  width:85px;
-  height:85px;
-  object-fit:contain;
-  margin:0 auto 12px;
-  display:block;
-}
-
-.event-title{
-  font:400 38px 'Great Vibes',cursive;
-  color:var(--navy);
-  margin-bottom:12px;
-}
-
-.event-location{
-  font:12px/1.7 'Cinzel',serif;
-  color:#444;
-}
-
-#accommodation .intro-copy{margin-bottom:22px}
-.hotel-block{padding:8px 0}
-
-.hotel-name{
-  font:600 13px 'Cinzel',serif;
-  letter-spacing:1px;
-  color:var(--navy);
-  margin-bottom:7px;
-}
-
-.hotel-location,.hotel-distance,.hotel-contact{
-  font-size:11px;
-  line-height:1.8;
-  color:#555;
-}
-
-.hotel-distance{font-style:italic;margin-bottom:8px}
-.hotel-contact a{color:var(--navy);overflow-wrap:anywhere}
-
-.website-btn{
-  display:inline-block;
-  margin-top:8px;
-  color:var(--navy);
-  font:600 10px 'Cinzel',serif;
-  letter-spacing:1px;
-}
-
-#pictures{padding-left:0;padding-right:0}
-.picture-heading{padding:0 20px}
-
-.marquee-wrapper{
-  width:100%;
-  overflow:hidden;
-  padding:10px 0 22px;
-}
-
-.marquee-track{
-  display:flex;
-  gap:12px;
-  width:max-content;
-  animation:scrollLeft 24s linear infinite;
-}
-
-.marquee-wrapper:hover .marquee-track{animation-play-state:paused}
-
-.slide-card{
-  width:128px;
-  height:190px;
-  border-radius:13px;
-  overflow:hidden;
-  box-shadow:0 6px 15px #0002;
-  flex-shrink:0;
-  background:#fff;
-}
-
-.slide-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-@keyframes scrollLeft{
-  from{transform:translateX(0)}
-  to{transform:translateX(-420px)}
-}
-
-#gift{padding-top:40px}
-
-.gift-subtitle{
-  font:italic 17px/1.6 'Cormorant Garamond',serif;
-  color:#f5f8ff;
-  margin:0 auto 25px;
-  max-width:360px;
-}
-
-.bank-card{
-  background:#fbf9f7;
-  border:1px solid #ede6e0;
-  border-radius:7px;
-  padding:20px 15px;
-  margin-bottom:15px;
-  text-align:left;
-  color:#5c4b43;
-}
-
-.bank-name{
-  font:600 12px 'Cinzel',serif;
-  letter-spacing:1px;
-  margin-bottom:13px;
-}
-
-.bank-detail{
-  font:11px/1.8 'Montserrat',sans-serif;
-  overflow-wrap:anywhere;
-}
-
-.bank-detail span{font-weight:600}
-
-#rsvp{padding:0 0 45px}
-
-.swan-top{padding:30px 20px 26px}
-
-.swan-container{
-  width:125px;
-  height:125px;
-  border:1px solid #ffffffa8;
-  border-radius:50%;
-  background:#ffffffb8;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px;
-}
-
-.swan-logo{width:100%;height:100%;object-fit:contain}
-
-.rsvp-panel{
-  padding:38px 22px 48px;
-  background:linear-gradient(180deg,#5b87c5aa 0%,#1c2d59e8 70%,#0a1128 100%);
-  position:relative;
-}
-
-.rsvp-subtitle{
-  font:italic 17px 'Cormorant Garamond',serif;
-  color:#f0f5ff;
-  margin-bottom:25px;
-}
-
-.form-card{
-  background:#fff;
-  border-radius:8px;
-  padding:25px 18px;
-  text-align:left;
-  box-shadow:0 15px 35px #0002;
-}
-
-.form-group{margin-bottom:20px}
-
-.form-label{
-  display:block;
-  font:600 14px 'Cormorant Garamond',serif;
-  color:#4a3b32;
-  margin-bottom:10px;
-}
-
-.radio-option{
-  display:flex;
-  gap:8px;
-  align-items:center;
-  font-size:12px;
-  color:#5c4b43;
-  margin:10px 0;
-}
-
-.radio-option input{accent-color:#2b4c8c}
-
-.input-field{
-  display:block;
-  width:100%;
-  padding:12px;
-  border:1px solid #e2dad3;
-  border-radius:4px;
-  background:#fbf9f7;
-  font-size:12px;
-  color:#4a3b32;
-  margin-top:8px;
-}
-
-.counter-box{display:flex;align-items:center;gap:14px}
-
-.counter-btn{
-  width:34px;
-  height:34px;
-  border:1px solid #dcd3cb;
-  background:#f4f0ec;
-  border-radius:4px;
-  cursor:pointer;
-}
-
-.counter-value{font:15px 'Montserrat',sans-serif}
-
-footer{
-  padding:22px;
-  text-align:center;
-  font-size:10px;
-  letter-spacing:1px;
-  color:#eaf2fc;
-}
-
-footer a{color:inherit}
-
-@media(min-width:700px){
-  main{box-shadow:0 0 50px #172d4b18}
-  .section-title{font-size:52px}
-}
-
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .marquee-track,#scrollHint{animation:none}
-  /* Sparkle canvas intentionally remains visible. */
+  overflow-x: hidden;
+}
+
+body.invitation-locked {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+button {
+  font: inherit;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 500px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #dce9f8, #244a80);
+}
+
+#openingVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #17284d;
+  display: block;
+  z-index: 1;
+}
+
+#coverButton {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+#coverButton img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+.cover-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 30, 59, .08),
+    rgba(15, 30, 59, .18) 45%,
+    rgba(15, 30, 59, .65)
+  );
+  pointer-events: none;
+}
+
+.cover-title {
+  position: relative;
+  margin-top: 48vh;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(43px, 10vw, 70px);
+  line-height: 1.15;
+  text-shadow: 0 3px 18px rgba(0,0,0,.35);
+  pointer-events: none;
+}
+
+.tap-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 40px;
+  background: rgba(20, 39, 75, .42);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+#coverButton.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#mediaMessage {
+  position: absolute;
+  z-index: 8;
+  left: 18px;
+  right: 18px;
+  bottom: 24px;
+  display: none;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  background: rgba(20, 35, 65, .85);
+  font-size: 12px;
+  text-align: center;
+}
+
+.language-switch {
+  position: fixed;
+  z-index: 20;
+  top: max(14px, env(safe-area-inset-top));
+  right: 14px;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 30px;
+  background: rgba(255,255,255,.76);
+  backdrop-filter: blur(12px);
+}
+
+.language-switch button {
+  border: 0;
+  border-radius: 22px;
+  padding: 8px 11px;
+  color: var(--navy);
+  background: transparent;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.language-switch button.active {
+  color: white;
+  background: var(--blue);
+}
+
+.music-button {
+  position: fixed;
+  z-index: 20;
+  top: max(15px, env(safe-area-inset-top));
+  left: 14px;
+  width: 42px;
+  height: 42px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 50%;
+  color: var(--navy);
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 4px 18px rgba(20,40,75,.12);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.music-button.playing {
+  animation: musicPulse 2s infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,.5); }
+  50% { box-shadow: 0 0 0 7px rgba(255,255,255,0); }
+}
+
+.invitation-content {
+  display: none;
+  padding: 55px 18px 60px;
+  text-align: center;
+  animation: reveal 1.2s ease both;
+}
+
+.invitation-content.visible {
+  display: block;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.invitation-card {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 22px;
+  padding: 35px 22px;
+  overflow: hidden;
+  border: 1px solid rgba(198,166,106,.75);
+  border-radius: 180px 180px 14px 14px;
+  background: rgba(255,253,248,.92);
+  box-shadow: 0 15px 45px rgba(23,40,77,.12);
+}
+
+.invitation-card::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(198,166,106,.35);
+  border-radius: 170px 170px 8px 8px;
+  pointer-events: none;
+}
+
+.eyebrow {
+  position: relative;
+  margin: 12px 0;
+  color: #8d7447;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.couple-names {
+  position: relative;
+  margin: 18px 0 8px;
+  color: var(--navy);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(48px, 12vw, 70px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.ampersand {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-style: italic;
+}
+
+.parent-line {
+  position: relative;
+  margin: 9px 0;
+  color: #64738a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.gold-line {
+  position: relative;
+  width: 55px;
+  height: 1px;
+  margin: 22px auto;
+  background: var(--gold);
+}
+
+.detail-card {
+  max-width: 500px;
+  margin: 18px auto;
+  padding: 29px 20px;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 14px;
+  background: rgba(255,253,248,.92);
+  box-shadow: 0 12px 35px rgba(23,40,77,.1);
+}
+
+.detail-icon {
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: 23px;
+}
+
+.detail-heading {
+  margin: 5px 0 14px;
+  color: #8d7447;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.detail-main {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 7vw, 35px);
+  line-height: 1.3;
+}
+
+.detail-sub {
+  margin: 9px 0 0;
+  color: #64738a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 19px;
+  padding: 12px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  color: var(--navy);
+  background: transparent;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: background .2s ease;
+}
+
+.map-button:active {
+  background: #e7eef8;
+}
+
+.bow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 34px auto;
+}
+
+.bow-wrap img {
+  display: block;
+  width: min(170px, 45vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 10px rgba(23,40,77,.12));
+}
+
+.closing {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 28px 12px 15px;
+  color: white;
+}
+
+.closing-script {
+  margin: 8px 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(39px, 10vw, 54px);
+}
+
+.closing-family {
+  margin-top: 8px;
+  color: #fff1d1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  letter-spacing: 1px;
+}
+
+.closing-line {
+  width: 55px;
+  height: 1px;
+  margin: 20px auto;
+  background: var(--gold);
+}
+
+.footer-space {
+  height: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
 
 <body class="invitation-locked">
-<canvas id="sparkCanvas" aria-hidden="true"></canvas>
 
-<div class="lang-switch" aria-label="Choose language">
-  <button type="button" class="active" data-lang="en">EN</button>
-  <button type="button" data-lang="fr">FR</button>
+<div class="language-switch" aria-label="Choose language">
+  <button type="button" id="englishButton" class="active">ENGLISH</button>
+  <button type="button" id="hindiButton">हिंदी</button>
 </div>
 
-<main>
-  <section id="opening" aria-label="Open invitation">
-    <button id="coverButton" type="button" aria-label="Tap to open invitation">
-      <img src="env.jpg" alt="Wedding invitation cover" fetchpriority="high">
-      <span class="cover-overlay">
-        <span class="cover-small" data-en="YOU ARE INVITED" data-fr="VOUS ÊTES INVITÉS">YOU ARE INVITED</span>
-        <span class="tap-label" data-en="Tap to Open" data-fr="Touchez pour ouvrir">Tap to Open</span>
-      </span>
-    </button>
+<button type="button" class="music-button" id="musicButton"
+        aria-label="Play or pause music" title="Music">♫</button>
 
-    <video id="openingVideo" playsinline webkit-playsinline preload="auto" poster="env.jpg">
-      <source src="blue.mp4" type="video/mp4">
-      Your browser does not support this video.
-    </video>
+<section class="hero" id="hero">
 
-    <div id="scrollHint">
-      <span data-en="Scroll to Discover" data-fr="Faites défiler pour découvrir">Scroll to Discover</span>
-      <span>⌄</span>
-    </div>
+  <video id="openingVideo"
+         playsinline
+         webkit-playsinline
+         preload="auto"
+         muted
+         disablepictureinpicture
+         aria-label="Wedding invitation opening video">
+    <source src="blue..mp4" type="video/mp4">
+    Your browser does not support this video.
+  </video>
+
+  <button type="button" id="coverButton" aria-label="Tap to open invitation">
+    <img src="env.jpg" alt="Wedding invitation envelope cover">
+    <span class="cover-shade"></span>
+    <span class="cover-title">Zainab &amp; Mizan</span>
+    <span class="tap-label" id="tapLabel">TAP TO OPEN</span>
+  </button>
+
+  <div id="mediaMessage" role="status"></div>
+</section>
+
+<main class="invitation-content" id="invitationContent">
+
+  <section class="invitation-card">
+    <p class="eyebrow" data-en="Together with their families"
+       data-hi="अपने परिवारों के साथ">Together with their families</p>
+
+    <h1 class="couple-names">
+      Zainab <span class="ampersand">&amp;</span><br>Mizan
+    </h1>
+
+    <div class="gold-line"></div>
+
+    <p class="parent-line"
+       data-en="Zainab, daughter of Mrs Neelam &amp; Mr Minhaz Kanani"
+       data-hi="ज़ैनब, श्रीमती नीलम और श्री मिन्हाज़ कनानी की सुपुत्री">
+      Zainab, daughter of Mrs Neelam &amp; Mr Minhaz Kanani
+    </p>
+
+    <p class="parent-line"
+       data-en="Mizan, son of Mrs Fazila &amp; Mr Gulamabbas Hirani"
+       data-hi="मिज़ान, श्रीमती फ़ज़िला और श्री गुलामअब्बास हिरानी के सुपुत्र">
+      Mizan, son of Mrs Fazila &amp; Mr Gulamabbas Hirani
+    </p>
+
+    <div class="gold-line"></div>
+
+    <p class="eyebrow" data-en="Request the pleasure of your company"
+       data-hi="आपकी उपस्थिति हमारे लिए सम्मान की बात होगी">
+      Request the pleasure of your company
+    </p>
+
+    <p class="detail-main"
+       style="font-size:30px"
+       data-en="Wedding Dinner"
+       data-hi="वेडिंग डिनर">Wedding Dinner</p>
   </section>
 
-  <section id="countdown">
-    <div class="section-title" data-en="Countdown" data-fr="Compte à rebours">Countdown</div>
-    <p class="kicker" data-en="Until 13 March 2027" data-fr="Jusqu'au 13 mars 2027">Until 13 March 2027</p>
-    <div class="countdown-grid" aria-label="Countdown">
-      <div class="time-box"><div class="time-value" id="days">00</div><div class="time-label" data-en="Days" data-fr="Jours">Days</div></div>
-      <div class="time-divider">|</div>
-      <div class="time-box"><div class="time-value" id="hours">00</div><div class="time-label" data-en="Hours" data-fr="Heures">Hours</div></div>
-      <div class="time-divider">|</div>
-      <div class="time-box"><div class="time-value" id="minutes">00</div><div class="time-label" data-en="Minutes" data-fr="Minutes">Minutes</div></div>
-      <div class="time-divider">|</div>
-      <div class="time-box"><div class="time-value" id="seconds">00</div><div class="time-label" data-en="Seconds" data-fr="Secondes">Seconds</div></div>
-    </div>
-  </section>
-
-  <section id="welcome">
-    <div class="section-title" data-en="Welcome!" data-fr="Bienvenue !">Welcome!</div>
-    <p data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people."
-       data-fr="Nous vous invitons chaleureusement à célébrer notre mariage avec nous dans la magnifique ville de Ronda, en Andalousie. Nous avons hâte de partager ce moment inoubliable avec nos proches.">
-      We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people.
+  <section class="detail-card">
+    <div class="detail-icon">✧</div>
+    <p class="detail-heading" data-en="Save the Date" data-hi="तारीख़ याद रखें">
+      Save the Date
+    </p>
+    <h2 class="detail-main"
+        data-en="Thursday, 26 November 2026"
+        data-hi="गुरुवार, 26 नवंबर 2026">
+      Thursday, 26 November 2026
+    </h2>
+    <p class="detail-sub"
+       data-en="6:00 PM – 10:00 PM"
+       data-hi="शाम 6:00 बजे – रात 10:00 बजे">
+      6:00 PM – 10:00 PM
     </p>
   </section>
 
-  <section id="vase" aria-label="Floral decoration">
-    <img class="decor-image vase-image" src="vase.PNG" alt="Decorative vase">
+  <section class="detail-card">
+    <div class="detail-icon">⌖</div>
+    <p class="detail-heading" data-en="The Venue" data-hi="कार्यक्रम स्थल">
+      The Venue
+    </p>
+    <h2 class="detail-main">Brooks Restaurant</h2>
+    <p class="detail-sub">
+      Mansarovar Rd, beside Kataria Maruti Suzuki Service Center,<br>
+      Tragad, Ahmedabad, Gujarat 382470
+    </p>
+
+    <a class="map-button"
+       id="mapLink"
+       href="https://www.google.com/maps/search/?api=1&amp;query=Brooks+Restaurant%2C+Mansarovar+Road%2C+Tragad%2C+Ahmedabad%2C+Gujarat+382470"
+       target="_blank"
+       rel="noopener noreferrer"
+       data-en="OPEN LOCATION ↗"
+       data-hi="लोकेशन देखें ↗">
+      OPEN LOCATION ↗
+    </a>
   </section>
 
-  <section id="venue">
-    <p class="kicker" data-en="Where we celebrate" data-fr="Le lieu de célébration">Where we celebrate</p>
-    <div class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</div>
-    <div class="venue-card">
-      <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Illustration of Finca El Olivar">
-      <div class="finca-title">Finca El Olivar</div>
-      <div class="event-datetime" data-en="12 September 2026 · 14:00" data-fr="12 septembre 2026 · 14 h 00">12 September 2026 · 14:00</div>
-      <hr class="divider">
-      <div class="address-text">Camino de los Olivos s/n, Ronda<br>Málaga, 29400 – España</div>
-      <div class="map-box">
-        <iframe title="Map to Finca El Olivar" src="https://maps.google.com/maps?q=Finca+El+Olivar+Ronda+Malaga&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
-      </div>
-      <a class="outline-btn" href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga" target="_blank" rel="noopener" data-en="OPEN IN MAPS" data-fr="OUVRIR LA CARTE">OPEN IN MAPS</a>
-    </div>
-  </section>
+  <div class="bow-wrap">
+    <img src="bow.PNG" alt="Decorative blue bow">
+  </div>
 
-  <section id="timeline">
-    <div class="section-title" data-en="Day Programme" data-fr="Programme du jour">Day Programme</div>
-    <p class="kicker">12 September 2026</p>
-    <div class="timeline">
-      <div class="timeline-item"><div class="event-copy"><div class="event-time">14:00</div><span data-en="Arrival" data-fr="Accueil">Arrival</span></div><div class="timeline-dot"></div><div></div></div>
-      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">14:30</div><span data-en="Ceremony" data-fr="Cérémonie">Ceremony</span></div></div>
-      <div class="timeline-item"><div class="event-copy"><div class="event-time">16:00</div><span data-en="Cocktails" data-fr="Cocktail">Cocktails</span></div><div class="timeline-dot"></div><div></div></div>
-      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">18:00</div><span data-en="Dinner" data-fr="Dîner">Dinner</span></div></div>
-      <div class="timeline-item"><div class="event-copy"><div class="event-time">20:00</div><span data-en="Cutting the Cake" data-fr="Découpe du gâteau">Cutting the Cake</span></div><div class="timeline-dot"></div><div></div></div>
-      <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">00:00</div><span data-en="Finish" data-fr="Fin de soirée">Finish</span></div></div>
-    </div>
-  </section>
-
-  <section id="dresscode">
-    <div class="dress-card">
-      <div class="section-title" data-en="Dress Code" data-fr="Tenue vestimentaire">Dress Code</div>
-      <div class="dress-category" data-en="Women" data-fr="Femmes">Women</div>
-      <div class="dress-desc" data-en="Cocktail or formal dress" data-fr="Robe de cocktail ou tenue de soirée">Cocktail or formal dress</div>
-      <hr class="divider">
-      <div class="dress-category" data-en="Men" data-fr="Hommes">Men</div>
-      <div class="dress-desc" data-en="Dark suit and tie" data-fr="Costume sombre et cravate">Dark suit and tie</div>
-    </div>
-  </section>
-
-  <section id="prewedding">
-    <img class="bow-image" src="bow.PNG" alt="Decorative blue bow">
-    <p class="kicker" data-en="Pre-Wedding Events" data-fr="Événements avant le mariage">Pre-Wedding Events</p>
-    <div class="section-title" data-en="Come Say Hello..." data-fr="Venez nous saluer...">Come Say Hello...</div>
-    <p class="intro-copy" data-en="These are informal gatherings, so feel free to join us if you're in the area." data-fr="Ces rencontres sont informelles : rejoignez-nous si vous êtes dans les environs.">These are informal gatherings, so feel free to join us if you're in the area.</p>
-
-    <div class="event-card">
-      <img class="event-icon" src="https://i.postimg.cc/NGTkGYHz/IMG-8948.png" alt="Cocktail illustration">
-      <div class="event-title" data-en="Cocktail Party" data-fr="Cocktail">Cocktail Party</div>
-      <div class="event-datetime" data-en="Friday, September 11th, 2026 · 8:00 PM" data-fr="Vendredi 11 septembre 2026 · 20 h 00">Friday, September 11th, 2026 · 8:00 PM</div>
-      <hr class="divider">
-      <div class="event-location">Bodega García Hidalgo, Ronda</div>
-    </div>
-
-    <div class="event-card">
-      <img class="event-icon" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Wedding day illustration">
-      <div class="event-title" data-en="Wedding Day" data-fr="Jour du mariage">Wedding Day</div>
-      <div class="event-datetime" data-en="Sunday, September 13th, 2026 · 12:00 PM" data-fr="Dimanche 13 septembre 2026 · 12 h 00">Sunday, September 13th, 2026 · 12:00 PM</div>
-      <hr class="divider">
-      <div class="event-location">Parador de Ronda (terrace)</div>
-    </div>
-  </section>
-
-  <section id="accommodation">
-    <div class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</div>
-    <p class="intro-copy" data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby." data-fr="La Finca El Olivar ne propose pas d’hébergement ; voici quelques options recommandées à proximité.">Finca El Olivar does not offer lodging, but here are some recommended options nearby.</p>
-
-    <div class="glass-card">
-      <div class="hotel-block">
-        <div class="hotel-name">PARADOR DE RONDA</div>
-        <div class="hotel-location">Ronda</div>
-        <div class="hotel-distance" data-en="2 km from the venue" data-fr="À 2 km du lieu">2 km from the venue</div>
-        <div class="hotel-contact"><a href="tel:+34952877500">+34 952 877 500</a> · <a href="mailto:ronda@parador.es">ronda@parador.es</a></div>
-        <a class="website-btn" href="https://www.parador.es" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
-      </div>
-
-      <hr class="divider">
-
-      <div class="hotel-block">
-        <div class="hotel-name">HOTEL CATALONIA RONDA</div>
-        <div class="hotel-location">Ronda</div>
-        <div class="hotel-distance" data-en="1.5 km from the venue" data-fr="À 1,5 km du lieu">1.5 km from the venue</div>
-        <div class="hotel-contact"><a href="tel:+34952872315">+34 952 872 315</a> · <a href="mailto:ronda@hoteles-catalonia.es">ronda@hoteles-catalonia.es</a></div>
-        <a class="website-btn" href="https://www.catalonialotels.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
-        <p class="hotel-distance" style="margin-top:8px">Promo Code: BODA2026</p>
-      </div>
-
-      <hr class="divider">
-
-      <div class="hotel-block">
-        <div class="hotel-name">HOTEL MONTELIRIO</div>
-        <div class="hotel-location">Ronda</div>
-        <div class="hotel-distance" data-en="Boutique hotel overlooking El Tajo" data-fr="Hôtel-boutique surplombant le Tajo">Boutique hotel overlooking El Tajo</div>
-        <div class="hotel-contact"><a href="tel:+34952873855">+34 952 873 855</a> · <a href="mailto:reservas@hotelmontelirio.com">reservas@hotelmontelirio.com</a></div>
-        <a class="website-btn" href="https://www.hotelmontelirio.com" target="_blank" rel="noopener" data-en="VISIT WEBSITE" data-fr="VISITER LE SITE">VISIT WEBSITE</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="pictures">
-    <div class="picture-heading">
-      <div class="section-title" data-en="Our Memories" data-fr="Nos souvenirs">Our Memories</div>
-      <p class="kicker" data-en="A few moments to cherish" data-fr="Quelques instants à chérir">A few moments to cherish</p>
-    </div>
-    <div class="marquee-wrapper">
-      <div class="marquee-track">
-        <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette"></div>
-        <div class="slide-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch"></div>
-        <div class="slide-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception"></div>
-        <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette"></div>
-        <div class="slide-card"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=85" alt="Wedding floral arch"></div>
-        <div class="slide-card"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=400&q=85" alt="Wedding reception"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gift">
-    <div class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</div>
-    <p class="gift-subtitle" data-en="Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:" data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez ci-dessous nos coordonnées bancaires :">Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:</p>
-
-    <div class="bank-card">
-      <div class="bank-name">CAIXABANK – ANDREA MORALES</div>
-      <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
-      <div class="bank-detail">BIC/SWIFT: <span>XXXXXXXXXXX</span></div>
-    </div>
-
-    <div class="bank-card">
-      <div class="bank-name">BANCO SANTANDER – PEDRO FERNÁNDEZ</div>
-      <div class="bank-detail">IBAN: <span>ES00 0000 0000 0000 0000 0000</span></div>
-      <div class="bank-detail">BIC/SWIFT: <span>XXXXXXXXXXX</span></div>
-    </div>
-  </section>
-
-  <section id="rsvp">
-    <div class="swan-top">
-      <div class="swan-container">
-        <img src="swan.PNG" alt="Swan illustration" class="swan-logo">
-      </div>
-    </div>
-
-    <div class="rsvp-panel">
-      <div class="section-title">RSVP</div>
-      <p class="rsvp-subtitle" data-en="Let us know if you can make it" data-fr="Merci de nous confirmer votre présence">Let us know if you can make it</p>
-
-      <div class="form-card">
-        <form id="rsvpForm">
-          <div class="form-group">
-            <span class="form-label" data-en="Will you be attending? *" data-fr="Serez-vous présent(e) ? *">Will you be attending? *</span>
-            <label class="radio-option"><input type="radio" name="attendance" value="yes" checked><span data-en="Yes, I'll be there" data-fr="Oui, je serai présent(e)">Yes, I'll be there</span></label>
-            <label class="radio-option"><input type="radio" name="attendance" value="no"><span data-en="Unfortunately, I can't make it" data-fr="Malheureusement, je ne pourrai pas venir">Unfortunately, I can't make it</span></label>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="guestCount" data-en="Number of guests" data-fr="Nombre d’invités">Number of guests</label>
-            <div class="counter-box">
-              <button class="counter-btn" type="button" id="minusGuest" aria-label="Remove guest">−</button>
-              <span class="counter-value" id="guestCount">1</span>
-              <button class="counter-btn" type="button" id="plusGuest" aria-label="Add guest">+</button>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="fullName" data-en="Main contact" data-fr="Contact principal">Main contact</label>
-            <input id="fullName" name="name" class="input-field" type="text" autocomplete="name" placeholder="Full name" data-placeholder-en="Full name" data-placeholder-fr="Nom complet" required>
-            <input id="email" name="email" class="input-field" type="email" autocomplete="email" placeholder="Email address" data-placeholder-en="Email address" data-placeholder-fr="Adresse e-mail" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="dietary" data-en="Dietary requirements" data-fr="Régimes alimentaires particuliers">Dietary requirements</label>
-            <input id="dietary" name="dietary" class="input-field" type="text" placeholder="e.g. vegetarian, allergies" data-placeholder-en="e.g. vegetarian, allergies" data-placeholder-fr="Ex. : végétarien, allergies">
-          </div>
-
-          <button class="solid-btn" type="submit" style="width:100%;padding:14px" data-en="SEND RSVP" data-fr="ENVOYER LA RÉPONSE">SEND RSVP</button>
-
-          <p style="font-size:10px;line-height:1.6;color:#777;margin:12px 0 0" data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet." data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span data-en="Made with love" data-fr="Créé avec amour">Made with love</span>
-    · <span class="serif">Ivory Vows</span>
+  <footer class="closing">
+    <div class="closing-line"></div>
+    <p class="closing-script"
+       data-en="With regards"
+       data-hi="सादर">With regards</p>
+    <p class="closing-family"
+       data-en="Kanani Family"
+       data-hi="कनानी परिवार">Kanani Family</p>
+    <div class="closing-line"></div>
   </footer>
+
+  <div class="footer-space"></div>
 </main>
 
-<audio id="backgroundMusic" preload="auto" loop playsinline>
-  <source src="inwhite.mp3" type="audio/mpeg">
+<audio id="backgroundMusic" preload="auto" loop>
+  <source src="dulha.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicButton" type="button" aria-label="Pause music" title="Pause / Play music">♫</button>
-
 <script>
-(function(){
-  const html = document.documentElement;
-  const body = document.body;
+(function () {
   const cover = document.getElementById('coverButton');
   const video = document.getElementById('openingVideo');
   const music = document.getElementById('backgroundMusic');
   const musicButton = document.getElementById('musicButton');
-  const scrollHint = document.getElementById('scrollHint');
+  const message = document.getElementById('mediaMessage');
+  const content = document.getElementById('invitationContent');
+  const englishButton = document.getElementById('englishButton');
+  const hindiButton = document.getElementById('hindiButton');
+  const tapLabel = document.getElementById('tapLabel');
 
   let opened = false;
-  let videoFinished = false;
+  let invitationFinished = false;
 
-  function preventPageScroll(event){
-    if(!videoFinished) event.preventDefault();
+  function showMessage(text) {
+    message.textContent = text;
+    message.style.display = 'block';
   }
 
-  function preventScrollKeys(event){
-    if(videoFinished) return;
-
-    const blockedKeys = [
-      'ArrowUp','ArrowDown','ArrowLeft','ArrowRight',
-      'PageUp','PageDown','Home','End',' '
-    ];
-
-    if(
-      blockedKeys.includes(event.key) &&
-      !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)
-    ){
-      event.preventDefault();
-    }
+  function hideMessage() {
+    message.textContent = '';
+    message.style.display = 'none';
   }
 
-  window.addEventListener('wheel',preventPageScroll,{passive:false});
-  window.addEventListener('touchmove',preventPageScroll,{passive:false});
-  window.addEventListener('keydown',preventScrollKeys,{passive:false});
-
-  function lockScrolling(){
-    videoFinished = false;
-    html.classList.add('invitation-locked');
-    body.classList.add('invitation-locked');
-    html.style.overflow = 'hidden';
-    body.style.overflow = 'hidden';
-    body.style.touchAction = 'none';
-    scrollHint.style.display = 'none';
+  function updateMusicButton() {
+    const isPlaying = !music.paused;
+    musicButton.textContent = isPlaying ? '♫' : '♪';
+    musicButton.classList.toggle('playing', isPlaying);
+    musicButton.setAttribute(
+      'aria-label',
+      isPlaying ? 'Pause music' : 'Play music'
+    );
   }
-
-  function unlockScrolling(){
-    videoFinished = true;
-    html.classList.remove('invitation-locked');
-    body.classList.remove('invitation-locked');
-    html.style.overflow = '';
-    body.style.overflow = '';
-    body.style.touchAction = '';
-    scrollHint.style.display = 'block';
-  }
-
-  function updateMusicButton(){
-    if(music.paused){
-      musicButton.textContent = '♫';
-      musicButton.setAttribute('aria-label','Play music');
-      musicButton.title = 'Play music';
-    }else{
-      musicButton.textContent = 'Ⅱ';
-      musicButton.setAttribute('aria-label','Pause music');
-      musicButton.title = 'Pause music';
-    }
-  }
-
-  lockScrolling();
-
-  function openInvitation(){
-    if(opened) return;
-
-    opened = true;
-    lockScrolling();
-
-    /*
-      IMPORTANT:
-      Do not hide the cover immediately.
-      Keep env.jpg visible while blue.mp4 loads.
-    */
-    cover.style.display = 'block';
-    cover.classList.remove('fade-out');
-
-    video.style.display = 'block';
-    video.classList.remove('video-visible');
-
-    musicButton.style.display = 'flex';
-    scrollHint.style.display = 'none';
-
-    music.volume = 1;
-    music.muted = false;
-
-    /* Start music directly from the cover tap. */
-    try{
-      const musicPromise = music.play();
-
-      if(musicPromise && typeof musicPromise.then === 'function'){
-        musicPromise.then(updateMusicButton).catch(function(error){
-          console.error('Music could not start. Check inwhite.mp3:',error);
-          updateMusicButton();
-        });
-      }
-    }catch(error){
-      console.error('Music playback error:',error);
-    }
-
-    /* Start the intro video immediately after the tap. */
-    video.muted = true;
-    video.playsInline = true;
-
-    try{
-      video.currentTime = 0;
-
-      const videoPromise = video.play();
-
-      if(videoPromise && typeof videoPromise.then === 'function'){
-        videoPromise.catch(function(error){
-          console.error('Video could not start. Check blue.mp4:',error);
-        });
-      }
-    }catch(error){
-      console.error('Video playback error:',error);
-    }
-  }
-
-  cover.addEventListener('pointerdown',openInvitation);
-  cover.addEventListener('click',openInvitation);
 
   /*
-    Smooth handoff:
-    Only fade env.jpg away after the video starts playing.
-    This prevents a blank screen during video loading.
+    IMPORTANT:
+    This function is called directly by the cover's click event.
+    Music and video playback are requested immediately from that tap.
   */
-  video.addEventListener('playing',function(){
-    video.classList.add('video-visible');
+  function openInvitation() {
+    if (opened) return;
+
+    opened = true;
+    hideMessage();
+
+    // Show the music control immediately.
+    musicButton.style.display = 'flex';
+
+    // Start music directly from the user's tap.
+    music.currentTime = 0;
+    const musicPromise = music.play();
+
+    if (musicPromise && typeof musicPromise.catch === 'function') {
+      musicPromise.then(updateMusicButton).catch(function () {
+        updateMusicButton();
+        showMessage(
+          'Tap the music button ♫ to try playing the music again.'
+        );
+      });
+    }
+
+    // Play the invitation video inline and muted for iPhone compatibility.
+    video.muted = true;
+    video.playsInline = true;
+    video.currentTime = 0;
+    video.style.display = 'block';
+
+    const videoPromise = video.play();
+
+    if (videoPromise && typeof videoPromise.then === 'function') {
+      videoPromise.then(function () {
+        // The cover disappears only once the video actually starts.
+        cover.classList.add('fade-out');
+        hideMessage();
+      }).catch(function () {
+        opened = false;
+        video.pause();
+        showMessage(
+          'Video start nahi hui. blue..mp4 ka exact filename aur file location check karein, phir cover par dobara tap karein.'
+        );
+      });
+    }
+  }
+
+  // Use one click handler to avoid duplicate opening attempts.
+  cover.addEventListener('click', openInvitation);
+
+  video.addEventListener('playing', function () {
     cover.classList.add('fade-out');
+    hideMessage();
   });
 
-  musicButton.addEventListener('click',function(){
-    if(music.paused){
-      music.muted = false;
+  video.addEventListener('error', function () {
+    if (!invitationFinished) {
+      opened = false;
+      showMessage(
+        'Video load nahi hui. GitHub par blue..mp4 ka filename aur upload check karein.'
+      );
+    }
+  });
 
-      const promise = music.play();
+  // Freeze on the final frame and reveal the invitation details.
+  video.addEventListener('ended', function () {
+    invitationFinished = true;
+    video.pause();
 
-      if(promise && typeof promise.then === 'function'){
-        promise.then(updateMusicButton).catch(function(error){
-          console.error('Could not resume music:',error);
-          updateMusicButton();
-        });
-      }
-    }else{
+    document.body.classList.remove('invitation-locked');
+    content.classList.add('visible');
+
+    // Keep the final video frame visible at the top of the page.
+    window.setTimeout(function () {
+      content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 250);
+  });
+
+  music.addEventListener('play', updateMusicButton);
+  music.addEventListener('pause', updateMusicButton);
+  music.addEventListener('error', function () {
+    updateMusicButton();
+  });
+
+  musicButton.addEventListener('click', function () {
+    if (music.paused) {
+      music.play().then(updateMusicButton).catch(function () {
+        showMessage(
+          'Music play nahi hui. dulha.mp3 ka exact filename check karein.'
+        );
+      });
+    } else {
       music.pause();
       updateMusicButton();
     }
   });
 
-  music.addEventListener('play',updateMusicButton);
-  music.addEventListener('pause',updateMusicButton);
+  function setLanguage(language) {
+    const isHindi = language === 'hi';
 
-  /*
-    Keep the final video frame visible.
-    Unlock page scrolling when the intro finishes.
-  */
-  video.addEventListener('ended',function(){
-    video.pause();
-    unlockScrolling();
-  });
+    document.documentElement.lang = isHindi ? 'hi' : 'en';
 
-  video.addEventListener('error',function(){
-    console.error('Could not load blue.mp4. Check filename, location and MP4 encoding.');
-  });
-
-  /* Countdown to 13 March 2027. */
-  const target = new Date('2027-03-13T00:00:00').getTime();
-
-  function updateCountdown(){
-    const distance = Math.max(0,target-Date.now());
-
-    const values = {
-      days:Math.floor(distance/86400000),
-      hours:Math.floor((distance%86400000)/3600000),
-      minutes:Math.floor((distance%3600000)/60000),
-      seconds:Math.floor((distance%60000)/1000)
-    };
-
-    Object.keys(values).forEach(function(id){
-      document.getElementById(id).textContent =
-        String(values[id]).padStart(2,'0');
+    document.querySelectorAll('[data-en][data-hi]').forEach(function (element) {
+      element.innerHTML = isHindi
+        ? element.getAttribute('data-hi')
+        : element.getAttribute('data-en');
     });
+
+    tapLabel.textContent = isHindi ? 'खोलने के लिए टैप करें' : 'TAP TO OPEN';
+
+    englishButton.classList.toggle('active', !isHindi);
+    hindiButton.classList.toggle('active', isHindi);
   }
 
-  updateCountdown();
-  setInterval(updateCountdown,1000);
-
-  /* English/French language switch. */
-  const langButtons = document.querySelectorAll('.lang-switch button');
-
-  function setLanguage(lang){
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-en][data-fr]').forEach(function(el){
-      el.textContent = el.dataset[lang];
-    });
-
-    document.querySelectorAll('[data-placeholder-en][data-placeholder-fr]').forEach(function(el){
-      el.placeholder = lang === 'en'
-        ? el.dataset.placeholderEn
-        : el.dataset.placeholderFr;
-    });
-
-    langButtons.forEach(function(btn){
-      btn.classList.toggle('active',btn.dataset.lang === lang);
-    });
-  }
-
-  langButtons.forEach(function(btn){
-    btn.addEventListener('click',function(){
-      setLanguage(btn.dataset.lang);
-    });
+  englishButton.addEventListener('click', function () {
+    setLanguage('en');
   });
 
-  /* RSVP guest counter, limited to 1–10. */
-  let guests = 1;
-  const guestCount = document.getElementById('guestCount');
-
-  document.getElementById('minusGuest').addEventListener('click',function(){
-    guests = Math.max(1,guests-1);
-    guestCount.textContent = guests;
+  hindiButton.addEventListener('click', function () {
+    setLanguage('hi');
   });
 
-  document.getElementById('plusGuest').addEventListener('click',function(){
-    guests = Math.min(10,guests+1);
-    guestCount.textContent = guests;
-  });
-
-  /* Demo RSVP: responses are not saved online. */
-  document.getElementById('rsvpForm').addEventListener('submit',function(e){
-    e.preventDefault();
-
-    const lang = document.documentElement.lang;
-
-    const msg = lang === 'fr'
-      ? 'Merci ! Votre réponse a été saisie dans cette démonstration. Pour enregistrer les réponses en ligne, connectez le formulaire à un tableur ou à un service RSVP.'
-      : 'Thank you! Your response was entered in this demo. To save responses online, connect this form to a spreadsheet or RSVP service.';
-
-    alert(msg);
-  });
-
-  /* Twinkling white sparkles. */
-  const canvas = document.getElementById('sparkCanvas');
-  const ctx = canvas.getContext('2d');
-
-  let width = 0;
-  let height = 0;
-  let ratio = 1;
-  let sparks = [];
-
-  function resize(){
-    ratio = Math.min(window.devicePixelRatio || 1,2);
-    width = window.innerWidth;
-    height = window.innerHeight;
-
-    canvas.width = Math.floor(width*ratio);
-    canvas.height = Math.floor(height*ratio);
-    canvas.style.width = width+'px';
-    canvas.style.height = height+'px';
-
-    ctx.setTransform(ratio,0,0,ratio,0,0);
-
-    const count = Math.min(65,Math.max(28,Math.floor(width/8)));
-
-    sparks = Array.from({length:count},function(){
-      return {
-        x:Math.random()*width,
-        y:Math.random()*height,
-        speed:Math.random()*0.25+0.08,
-        drift:(Math.random()-0.5)*0.15,
-        phase:Math.random()*Math.PI*2
-      };
-    });
-  }
-
-  function animateSparks(){
-    ctx.clearRect(0,0,width,height);
-
-    const time = performance.now()/1000;
-
-    for(let i=0;i<sparks.length;i++){
-      const s = sparks[i];
-
-      const twinkle = (Math.sin(time*2.2+s.phase)+1)/2;
-      const alpha = 0.18+twinkle*0.78;
-      const radius = 0.7+twinkle*0.9;
-
-      ctx.beginPath();
-      ctx.arc(s.x,s.y,radius,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(255,255,255,'+alpha+')';
-      ctx.shadowBlur = 2+twinkle*7;
-      ctx.shadowColor = '#ffffff';
-      ctx.fill();
-      ctx.shadowBlur = 0;
-
-      s.y += s.speed;
-      s.x += s.drift;
-
-      if(s.y > height+3){
-        s.y = -3;
-        s.x = Math.random()*width;
-      }
-
-      if(s.x < -3) s.x = width+3;
-      if(s.x > width+3) s.x = -3;
-    }
-
-    requestAnimationFrame(animateSparks);
-  }
-
-  resize();
-  window.addEventListener('resize',resize);
-  animateSparks();
+  // Start with the video hidden behind the envelope cover.
+  video.style.display = 'block';
+  cover.classList.remove('fade-out');
 })();
 </script>
+
 </body>
 </html>
