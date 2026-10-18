@@ -13,6 +13,57 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ivoryvows.github.io/Royal-Sapphire/env.jpg">
+html,body{
+  width:100%;
+  min-height:100%;
+  margin:0;
+}
+
+#opening{
+  position:relative;
+  width:100vw;
+  max-width:none;
+  height:100vh;
+  height:100dvh;
+  min-height:100vh;
+  min-height:100dvh;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+}
+
+#coverButton{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  overflow:hidden;
+  z-index:2;
+}
+
+#coverButton img,
+#openingVideo{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center center;
+}
+
+#openingVideo{
+  z-index:1;
+}
+
+#coverButton.fade-out{
+  opacity:0;
+  pointer-events:none;
+}
 
 <style>
 :root{
